@@ -1,0 +1,20 @@
+
+.header,.footer{
+	background-color: white;
+}
+
+.main-post{
+
+
+
+	background-color: white;
+	/* box-shadow: 0 0 4px rgba(0,0,0,.2);*/
+}
+
+.container .main-area article.post span.post-date{
+	background-color: white;
+}
+
+.container .side-area span.comment-date{
+	background-color: white;
+}

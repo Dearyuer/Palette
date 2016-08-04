@@ -1,0 +1,18 @@
+
+/*modernizr!*/
+
+/*  z-index: 9999;*/
+/*  height: 100%;*/
+
+  /*
+  lightslategraylightslategraylightslategraylightslategraylightslategraylightslategray
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;*/
+
+ #particles-js {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}

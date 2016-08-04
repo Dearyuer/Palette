@@ -1,0 +1,346 @@
+/*
+Theme Name: Palette
+Author: Tahitifish
+Author URI: http://codrips.com/
+Description: Palette
+Version: 1.0
+*/
+* {
+  margin: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:visited,
+a:link {
+  color: #666666;
+}
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  font-weight: 300;
+}
+p {
+  color: #666666;
+  line-height: 1.7em;
+}
+pre {
+  padding: 1.0em;
+  color: white;
+  background: #222b30;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+body {
+  background-image: url("img/bg.jpg");
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+.header {
+  height: 66px;
+  font-size: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  z-index: 1;
+}
+.header .navigation ul {
+  margin: 0;
+  padding: 0;
+  /*text-align: center;*/
+}
+.header .navigation ul .site-logo {
+  padding: 17px 30px 13px 0px;
+}
+.header .navigation ul .site-logo img {
+  max-width: 100px;
+  height: 30px;
+}
+.header .navigation ul li {
+  float: left;
+  display: inline-block;
+  padding: 22px 25px 22px 0px;
+}
+.header .navigation ul li a:visited,
+.header .navigation ul li a:link {
+  color: #666666;
+}
+.header .navigation ul:before,
+.header .navigation ul:after {
+  content: "";
+  display: table;
+}
+.header .navigation ul:after {
+  clear: both;
+}
+.header .navigation ul {
+  *zoom: 1;
+}
+.container {
+  max-width: 961px;
+  margin: 0 auto;
+}
+.container .main-area {
+  width: 67%;
+  float: left;
+  padding-top: 40px;
+}
+.container .main-area article.post {
+  padding: 0 100px 38px 0;
+  position: relative;
+}
+.container .main-area article.post span.post-date span {
+  display: block;
+  font-size: 23px;
+  font-family: 'Goudy Bookletter 1911';
+  margin-top: -18px;
+  padding-right: 3px;
+}
+.container .main-area article.post span.post-date {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 36px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+.container .main-area article.post .main-post {
+  border-radius: 5px;
+  padding: 18px;
+  /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);*/
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  position: relative;
+  /*.post-title::before{
+					content: "////////////////////////////";
+					position: absolute;
+					z-index: 5;
+					top: 0;
+					left:0;
+					width: 99.5%;
+					color: #b2d7ff;
+					font: italic 120px/8px arial;
+					overflow: hidden;
+					height: 5px;
+				}*/
+}
+.container .main-area article.post .main-post .post-title a:visited,
+.container .main-area article.post .main-post .post-title a:link {
+  color: #333333;
+}
+.container .main-area article.post .main-post .post-meta {
+  color: #666666;
+  line-height: 1.7em;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 10px;
+}
+.container .main-area article.post .main-post .post-thumbnail img {
+  height: 220px;
+  padding: 17px 18px 13px 18px;
+  margin-right: 13px;
+  max-width: 100%;
+}
+.container .main-area article.post .main-post .content {
+  margin-top: 5px;
+}
+.container .main-area article.single-post {
+  padding: 30px;
+  margin-right: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  background-color: white;
+  border-radius: 5px;
+}
+.container .side-area {
+  padding-top: 40px;
+  width: 30%;
+  float: left;
+  margin-left: 25px;
+  z-index: 1;
+}
+.container .side-area .widget-title {
+  color: white;
+  margin-bottom: 10px;
+}
+.container .side-area .sidebar-widget {
+  padding: 20px 0px 0px 0px;
+}
+.container .side-area .sidebar-widget li {
+  font-size: 14px;
+}
+.container .side-area .sidebar-widget a:link,
+.container .side-area .sidebar-widget a:visited {
+  color: white;
+}
+.container .side-area .sidebar-comments {
+  padding: 0;
+}
+.container .side-area .sidebar-comment {
+  margin-bottom: 20px;
+  padding: 0 0 0 55px;
+  position: relative;
+  margin-top: 10px;
+}
+.container .side-area .sidebar-comment .each-comment {
+  padding: 7px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+}
+.container .side-area .sidebar-comment .each-comment a:link,
+.container .side-area .sidebar-comment .each-comment a:visited {
+  color: #666666;
+}
+.container .side-area .sidebar-comments img {
+  border-radius: 50%;
+}
+.container .side-area span.comment-date span {
+  display: block;
+  font-size: 15px;
+  font-family: 'Goudy Bookletter 1911';
+  margin-top: -8px;
+  padding-right: 3px;
+}
+.container .side-area span.comment-date {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  font-size: 10px;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 24px;
+}
+.container .comment-meta {
+  margin-left: 50px;
+  font-size: 12px;
+}
+.container .comments-area {
+  margin-top: 20px;
+  color: white;
+}
+.container .comment-list {
+  padding: 0;
+}
+.container .fn {
+  font-style: normal;
+}
+.container .vcard {
+  font-size: 14px;
+}
+.container .reply a:visited,
+.container .reply a:link {
+  color: rgba(0, 0, 0, 0.08);
+}
+.container .reply {
+  float: right;
+  font-size: 14px;
+}
+.container .vcard img {
+  border-radius: 50%;
+}
+.container .comment-body:before,
+.container .comment-body:after {
+  content: "";
+  display: table;
+}
+.container .comment-body:after {
+  clear: both;
+}
+.container .comment-body {
+  *zoom: 1;
+}
+.container .comment-body {
+  margin: 0 0 10px 0px;
+}
+.container .comment-body {
+  padding: 10px;
+  margin-right: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  background-color: white;
+  border-radius: 5px;
+}
+.container .comment-body p {
+  margin-left: 40px;
+  font-size: 15px;
+}
+.container .comment-form-comment label {
+  display: none;
+}
+.container #reply-title {
+  margin-top: 16px;
+  font-size: 17px;
+}
+.container .comment-notes {
+  font-size: 15px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  color: white;
+}
+.container .comment-form {
+  margin: 10px;
+}
+.container .comment-form label {
+  display: block;
+  color: white;
+}
+.container .form-submit input {
+  margin-top: 10px;
+  box-shadow: none;
+  background: none;
+  border: 1px solid white;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+.container .comment-awaiting-moderation {
+  font-size: 13px;
+  margin-left: 25px;
+  color: white;
+}
+.footer {
+  font-size: 13px;
+  height: 66px;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.07);
+  z-index: 1;
+}
+.footer .footer-inner {
+  padding-top: 20px;
+}
+.side-logo {
+  /*float:left;*/
+  color: #666666;
+}

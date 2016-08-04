@@ -1,0 +1,161 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pure Minus\n"
+"POT-Creation-Date: 2016-07-22 10:17+0800\n"
+"PO-Revision-Date: 2016-07-22 10:17+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: comments.php:11
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+
+#: comments.php:18 comments.php:36
+msgid "Comment navigation"
+msgstr "评论导航"
+
+#: comments.php:19 comments.php:37
+msgid "&larr; Older Comments"
+msgstr "&larr; 旧的评论"
+
+#: comments.php:20 comments.php:38
+msgid "Newer Comments &rarr;"
+msgstr "新的评论"
+
+#: comments.php:43
+msgid "Comments are closed."
+msgstr "评论关闭了"
+
+#: functions.php:17
+msgid "Nav Menu"
+msgstr "导航栏"
+
+#: functions.php:25
+msgid "just now"
+msgstr "刚刚"
+
+#: functions.php:28
+#, php-format
+msgid "%d minutes ago"
+msgstr "%d 分钟前"
+
+#: functions.php:30
+msgid "half an hour ago"
+msgstr "半小时前"
+
+#: functions.php:33
+#, php-format
+msgid "%d hours ago"
+msgstr "%d 小时前"
+
+#: functions.php:35
+msgid "yesterday"
+msgstr "昨天"
+
+#: functions.php:38
+#, php-format
+msgid "%d days ago"
+msgstr "%d 天前"
+
+#: functions.php:48
+msgid "Sidebar"
+msgstr "边栏"
+
+#: functions.php:62
+msgid "Pure Minus Comments Widget"
+msgstr "Pure Minus 评论插件"
+
+#: functions.php:63
+msgid "Display recent comments"
+msgstr "显示最近评论"
+
+#: functions.php:105
+msgid "Recent Comments"
+msgstr "最近评论"
+
+#: functions.php:114
+msgid "Number of comments to view"
+msgstr "评论数量"
+
+#: functions.php:118
+msgid "Text limits"
+msgstr "评论限制字数"
+
+#: header.php:19
+msgid "You should update your browser!"
+msgstr "你的浏览器版本过低，请更新=）"
+
+#: main-area.php:9
+msgid "Posted on"
+msgstr "发表于"
+
+#: main-area.php:20
+msgid "in Category"
+msgstr "在分类"
+
+#: main-area.php:23 single.php:23
+msgid "No comments"
+msgstr "0 则评论"
+
+#: main-area.php:23 single.php:23
+msgid "1 comments"
+msgstr "1 则评论"
+
+#: main-area.php:23 single.php:23
+#, php-format
+msgid "%s comments"
+msgstr "%s 则评论"
+
+#. Theme Name of the plugin/theme
+msgid "Pure Minus"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This theme is heavily inspired by Pure theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Tahitifish"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://codrips.com/"
+msgstr ""
+
+#~ msgid "Recent posts"
+#~ msgstr "最近文章"
+
+#~ msgid "Recent activity"
+#~ msgstr "最近动态"
+
+#~ msgid "Chinese"
+#~ msgstr "中文"
+
+#~ msgid "% comments"
+#~ msgstr "% 则评论"
+
+#~ msgid "%1$d days ago"
+#~ msgstr "%1$d 天前"
+
+#~ msgid "%s days ago"
+#~ msgstr "%s 天前"
+
+#~ msgid "%1$s days ago"
+#~ msgstr "%1$s 天前"
