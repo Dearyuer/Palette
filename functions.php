@@ -1,11 +1,11 @@
 <?php 
-class Palette_Settings_Cache{
 
+require_once(get_template_directory().'/app/utl.php');
+
+class Palette_Settings_Cache{
 	var $palette_settings = [];
 
 	function __construct(){
-
-
 	}
 
 	function registerSetting($setting){
@@ -14,7 +14,6 @@ class Palette_Settings_Cache{
 	}
 
 	function removeSetting($setting){
-
 	}
 
 	function removeAllSettings(){
@@ -27,12 +26,9 @@ class Palette_Settings_Cache{
 
 $palette_settings_cache = new Palette_Settings_Cache;
 
-
-function palette_custom_scripts(){
-	
+add_action( 'wp_enqueue_scripts', function(){
 	wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css');
 	wp_enqueue_style( 'style', get_stylesheet_uri());
-
 
 	$particle_enable_state = get_option("palette_particle_toggle");
 	if($particle_enable_state && is_home()){
@@ -47,8 +43,7 @@ function palette_custom_scripts(){
 	if($transparence_enable_state){
 		wp_enqueue_style( 'transparence', get_template_directory_uri().'/css/transparence.css');
 	}
-}
-add_action( 'wp_enqueue_scripts', 'palette_custom_scripts');
+});
 
 function admin_custom_scripts( $hook_suffix ){
 	wp_enqueue_style( 'admin_style', get_template_directory_uri().'/css/admin.css');
@@ -65,121 +60,7 @@ add_action('after_setup_theme', function(){
 
 register_nav_menus(['nav' => __("Nav Menu", 'palette')]);
 
-
-function timeAgo( $now , $time){
-    $timeAgo  = $now - $time; 
-    $temp = 0;
-	if(isset($timeAgo)){
-		if($timeAgo < 60){
-			return __('just now', 'palette');
-		}elseif($timeAgo < 1800){
-			$temp = floor($timeAgo/60);
-			return  sprintf(__('%d minutes ago', 'palette'), $temp);
-		}elseif($timeAgo < 3600){
-			return __('half an hour ago', 'palette');
-		}elseif($timeAgo < 3600*24){
-			$temp = floor($timeAgo/3600);
-			return sprintf( __('%d hours ago', 'palette'), $temp);
-		}elseif($timeAgo < 3600*24*2){
-			return __('yesterday', 'palette');
-		}else{
-			$temp = floor($timeAgo/(3600*24));
-			return sprintf( __('%d days ago', 'palette'), $temp);
-		}
-	}
-	else{
-		return null;
-	}
-}
-
-class Palette_Comments_Widget extends WP_Widget {
-	function __construct() {
-		parent::__construct(
-			'palette_comments_widget', // Base ID
-			__( 'Palette Comments Widget' ), // Name
-			array( 'description' => __('Display recent comments', 'palette') ) // Args
-		);
-	}
-	public function widget( $args, $instance ) {
-		$output = "";
-		$temp = "";
-		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
-		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
-		$limit = ( ! empty( $instance['limit'] ) ) ? absint( $instance['limit'] ) : 33;
-		if ( ! $number ) $number = 5;
-		if ( ! $limit ) $limit = 33;
-		echo $args['before_widget'];
-		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		}
-		$comments = get_comments( apply_filters( 'widget_comments_args', array(
-			'number'      => $number,
-			'status'      => 'approve',
-			'post_status' => 'publish'
-		) ) );
-		$output .= '<ul class="sidebar-comments">';
-		if (is_array($comments) && $comments){
-			foreach((array)$comments as $comment){
-				$output .= '<li class="sidebar-comment">';
-				// $output .= '<div class="sidebar-avatar"><a href="'.$comment->comment_author_url.'">'.get_avatar($comment,40).'</a></div>';
-				$output .= '<span class="comment-date">'.get_comment_date('M',$comment->comment_ID).'<span>'.get_comment_date('j',$comment->comment_ID).'</span></span>';
-				if(mb_strlen($comment->comment_content,'utf8') > $limit){
-					$temp = mb_substr($comment->comment_content,0,$limit,'utf8');
-					$output .= '<p class="each-comment"><a href="'.esc_url( get_comment_link( $comment) ).'">'.$temp."..."."</a>";
-				}else{
-					$temp = $comment->comment_content;
-					$output .= '<p class="each-comment"><a href="'.esc_url( get_comment_link( $comment) ).'">'.$temp."</a>";
-				}
-				$output .= '<span class="comment-meta">'.timeAgo(time(),get_comment_date('U',$comment)).'</span>';
-				$output .= '</li>';
-				// var_dump($comment);
-			}
-		}
-		$output .= '</ul>';
-		echo $output;
-		echo $args['after_widget'];
-	}
-	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __('Recent Comments', 'palette');
-		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
-		$limit = isset( $instance['limit'] ) ? absint( $instance['limit'] ) : 33;
-		?>
-		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( esc_attr( 'Title:' ) ); ?></label> 
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-		</p>
-		<p>
-		<label for="<?php echo $this->get_field_id( 'number' ); ?> "><?php __('Number of comments to view', 'palette') ?></label>
-		<input class="tiny-text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" step="1" min="1" value="<?php echo $number; ?>" size="3" />
-		</p>
-		<p>
-		<label for="<?php echo $this->get_field_id( 'limit' ); ?>"><?php  __('Text limits', 'palette') ?></label>
-		<input class="tiny-text" id="<?php echo $this->get_field_id( 'limit' ); ?>" name="<?php echo $this->get_field_name( 'limit' ); ?>" type="number" step="1" min="1" value="<?php echo $limit; ?>" size="3" />
-		</p>
-		<?php 
-	}
-	public function update( $new_instance, $old_instance ) {
-		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['number'] = absint( $new_instance['number'] );
-		$instance['limit'] = absint( $new_instance['limit']);
-		return $instance;
-	}
-} 
-
-add_action( 'widgets_init', function(){
-	register_widget( 'Palette_Comments_Widget' );
-	register_sidebar([
-		'name'          => __( 'Sidebar'),
-		'id'            => 'sidebar',
-		'before_widget' => '<div class="sidebar-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>'
-	]);
-});
-
-
+require_once(get_template_directory().'/app/widget.php');
 
 add_action( 'admin_menu', 'palette_add_menu_page' );
 
@@ -307,57 +188,6 @@ function palette_add_menu_page_fn() {
 	require_once(get_template_directory()."/app/appWrapMain.php");
 }
 
-function  handleParticleLoopArr($particle_settings, $particle_default,$prop, $min = null, $max = null,$step = null, $isColor = null,$hasPreFactor = null,$preFactor = null){
-	$_min = "";$_max = "";$_step = "";$disableState = "";$exception="";$notice="";
-	if(!is_null($min) ){$_min = sprintf('min="%d"',$min);}
-	if(!is_null($max) ){$_max = sprintf('max="%d"',$max);}
-	if(!is_null($step) ){$_step= sprintf('step="%s"',(string)$step);}
-	if($preFactor){
-		$preFactorToString = $preFactor;//*
-	}
-	if($hasPreFactor){
-		$retrieve_palette_pre_factor = get_option($particle_settings[$preFactor]);
-		if($retrieve_palette_pre_factor != 1){
-			$disableState = "disabled";
-			$notice = '<p>'.__(sprintf("You must enable %s above",$preFactorToString)).'</p>';
-		}
-	}
-	$retrieve_palette_prop = get_option($particle_settings[$prop]);
-	$value = !empty($retrieve_palette_prop) ? $retrieve_palette_prop : $particle_default[$particle_settings[$prop]]; 
-	if($isColor){
-		$exception = sprintf('class="custom-color-field" data-default-color="%s"',$particle_default[$particle_settings[$prop]]);//*
-	}
-	
-	$type = sprintf('type="%s"',($isColor ? "text" : "number" ));
-	$result = '<input '.$type.' value="'.$value.'" '.$_min.' '.$_max.' '.$_step.' name="'.$particle_settings[$prop].'" '.$disableState.' '.$exception.' />';
-	
-	return $result.$notice; 
-}
-
-
-function handleParticleLoopArr2($particle_settings,$prop){
-	$retrieve_palette_prop = get_option($particle_settings[$prop]);
-	$checkedOrNot = "";
-	if(empty($retrieve_palette_prop)){
-		$checkedOrNot = "checked";
-	}elseif(!empty($retrieve_palette_prop) && $retrieve_palette_prop == 1){
-		$checkedOrNot = "checked";
-	}
-	return '<input type="checkbox" name="'.$particle_settings[$prop].'" value="'.$particle_settings[$prop].'" '.$checkedOrNot.' />';
-}
-
-
-function handleParticleLoopArr3($particle_settings,$prop){
-	$retrieve_palette_prop = get_option($particle_settings[$prop]);
-	$checkedOrNot = "";
-	if($retrieve_palette_prop){
-		$checkedOrNot = "checked";
-	}
-	return '<input type="checkbox" name="'.$particle_settings[$prop].'" value="'.$particle_settings[$prop].'" '.$checkedOrNot.' />';
-}
-
-
-
 function palette_add_submenu_fn(){
 	if (!current_user_can('manage_options')){
 	  wp_die( __('You do not have sufficient permissions to access this page.') );
@@ -417,12 +247,5 @@ function palette_add_submenu_fn(){
 	}
 
 	require_once(get_template_directory()."/app/appWrapSideOne.php");
-
 }
-
-
-
-
-
-
 ?>
