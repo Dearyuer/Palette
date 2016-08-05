@@ -190,7 +190,7 @@ body {
   margin-bottom: 10px;
 }
 .container .side-area .sidebar-widget {
-  padding: 20px 0px 0px 0px;
+  padding: 0px 0px 20px 0px;
 }
 .container .side-area .sidebar-widget li {
   font-size: 14px;
@@ -198,6 +198,56 @@ body {
 .container .side-area .sidebar-widget a:link,
 .container .side-area .sidebar-widget a:visited {
   color: white;
+}
+.container .side-area .palette-sidebar-profile {
+  margin-bottom: 10px;
+}
+.container .side-area .palette-sidebar-profile .widget-title {
+  color: white;
+  margin-bottom: 6px;
+}
+.container .side-area .palette-sidebar-profile .palette-profile {
+  padding-left: 57px;
+}
+.container .side-area .palette-sidebar-profile .palette-profile .palette-profile-avatar {
+  width: 100%;
+}
+.container .side-area .palette-sidebar-profile .palette-profile .palette-profile-avatar img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: white;
+  box-sizing: border-box;
+}
+.container .side-area .palette-sidebar-profile .palette-profile-name p {
+  color: white;
+  font-size: 23px;
+  font-weight: 600;
+}
+.container .side-area .palette-sidebar-profile .palette-profile-email p {
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+}
+.container .side-area .palette-sidebar-profile .palette-profile-social {
+  padding: 0;
+  margin-top: 5px;
+}
+.container .side-area .palette-sidebar-profile .palette-profile-social li {
+  padding: 0 6px;
+  display: inline;
+  font-size: 26px;
+}
+.container .side-area .palette-sidebar-profile .palette-profile-social li a:link,
+.container .side-area .palette-sidebar-profile .palette-profile-social li a:visited {
+  color: white;
+}
+.container .side-area .palette-sidebar-profile .palette-profile-social li:first-child {
+  padding-left: 0;
+}
+.container .side-area .palette-sidebar-profile .palette-profile-social li:last-child {
+  padding-right: 0;
 }
 .container .side-area .palette-recent-posts {
   background-color: white;

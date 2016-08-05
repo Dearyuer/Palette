@@ -28,7 +28,9 @@ $palette_settings_cache = new Palette_Settings_Cache;
 
 add_action( 'wp_enqueue_scripts', function(){
 	wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css');
+	wp_enqueue_style( 'font_awesome', get_template_directory_uri().'/css/font-awesome.css');
 	wp_enqueue_style( 'style', get_stylesheet_uri());
+	
 
 	$particle_enable_state = get_option("palette_particle_toggle");
 	if($particle_enable_state && is_home()){

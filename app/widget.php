@@ -1,5 +1,156 @@
 <?php 
 
+class Palette_Profile_Widget extends WP_Widget{
+	function __construct(){
+		parent::__construct(
+			'palette_profile_widget',
+			__( 'Palette Profile', 'palette'),
+			array( 'description' => __('Your profile', 'palette'))
+		);
+	}
+	public function widget( $args, $instance ){
+
+
+
+		echo '<div class="palette-sidebar-profile">';
+		if ( ! empty( $instance['title'] ) ) {
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+		}
+		?>
+		<ul class="palette-profile clearfix">
+			<li class="palette-profile-avatar">
+				<img src="<?php echo $instance['avatar_src'] ?>" alt=""/>
+			</li>
+			<li class="palette-profile-name">
+				<p><?php echo get_userdata(1)->display_name; ?></p>
+			</li>
+			<li class="palette-profile-email">
+				<a href="mailto:<?php echo get_userdata(1)->user_email;?>"><p><i class="fa fa-envelope-o" aria-hidden="true"></i> <?php echo get_userdata(1)->user_email; ?></p>
+				</a>
+			</li>
+			<li>
+				<ul class="palette-profile-social">
+					<li>
+						<a href="#">
+							<i class="fa fa-github" aria-hidden="true"></i>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class="fa fa-facebook-official" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class="fa fa-dribbble" aria-hidden="true"></i>
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class="fa fa-tumblr" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</li>
+			
+			
+
+		</ul>
+
+
+
+
+
+		<?php
+		echo $args['after_widget'];
+	}
+	public function form($instance){
+		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : "";
+		$avatar_src  = isset( $instance['avatar_src'] ) ? esc_attr( $instance['avatar_src'] ) : "#";
+		$display_mode    = isset( $instance['display_mode'] ) ? absint( $instance['display_mode'] ) : "Round square";
+		$show_email = isset( $instance['show_email'] ) ? (bool) $instance['show_email'] : false;
+
+		?>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
+
+		
+
+		<p><label for="<?php echo $this->get_field_name( 'avatar_src' ); ?>"><?php _e( 'Profile URL' ); ?></label>
+		<input class="widefat" id="<?php echo $this->get_field_name( 'avatar_src' ); ?>" name="<?php echo $this->get_field_name( 'avatar_src' ); ?>" type="text" value="<?php echo $avatar_src;  ?>" /></p>
+
+		<p><input class="checkbox" type="checkbox"<?php checked( $show_email ); ?> id="<?php echo $this->get_field_id( 'show_email' ); ?>" name="<?php echo $this->get_field_name( 'show_email' ); ?>" />
+		<label for="<?php echo $this->get_field_id( 'show_email' ); ?>"><?php _e( 'Show email?' ); ?></label></p>
+
+
+		<?php 
+	}
+	public function update($new_instance, $old_instance){
+		$instance = $old_instance ? $old_instance : array();
+		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+		$instance['avatar_src'] = $new_instance['avatar_src'];
+		$instance['display_mode'] = $new_instance['display_mode'];
+		$instance['show_email'] = isset( $new_instance['show_email'] ) ? (bool) $new_instance['show_email'] : false;
+		return $instance;
+	}
+}
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+function handleProfileUploadFn(){
+	$profile_img_upload_name = 'palette_profile_image_upload';
+	$profile_img_upload_nonce = $profile_img_upload_name.'_nonce';
+	$profile_img_upload_src = "#";
+	if( isset($_POST['profile_image_upload_submit'])  &&  check_admin_referer($profile_img_upload_name, $profile_img_upload_nonce) ){
+		if ( 
+			isset( $_POST[$profile_img_upload_nonce], $_POST['profile_img_post_id'] ) 
+			&& current_user_can( 'manage_options' )
+		) {
+			require_once( ABSPATH . 'wp-admin/includes/image.php' );
+			require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			require_once( ABSPATH . 'wp-admin/includes/media.php' );
+			$profile_image_id = media_handle_upload( $profile_img_upload_name, $_POST['profile_img_post_id']);
+			if ( is_wp_error( $profile_image_id ) ) { ?>
+				<div class="notice notice-error">
+					
+					<p><?php _e("There's an error while uploading","palette"); ?></p>
+				</div>
+			<?php
+			} else {
+				$profile_img_upload_src = wp_get_attachment_image_src($profile_image_id)[0];
+				?>
+				<div class="notice notice-success">
+					<p><strong><?php _e('Uploaded.', 'palette' ); ?></strong></p>
+				</div>
+				<?php
+			} 
+		}
+	}
+
+}
+////////////////////////////////////////////////////////////////////////////
+// add_action('widgets_init','handleProfileUploadFn');
+
+
+
+
+
 class Palette_Recent_Posts_Widget extends WP_Widget {
 	function __construct(){
 		parent::__construct(
@@ -47,7 +198,7 @@ class Palette_Recent_Posts_Widget extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : __("Recent posts",'palette');
 		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
 		?>
@@ -148,6 +299,7 @@ class Palette_Comments_Widget extends WP_Widget {
 } 
 
 add_action( 'widgets_init', function(){
+	register_widget( 'Palette_Profile_Widget' );
 	register_widget( 'Palette_Recent_Posts_Widget' );
 	register_widget( 'Palette_Comments_Widget' );
 	register_sidebar([
