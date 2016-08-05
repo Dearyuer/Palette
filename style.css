@@ -45,6 +45,9 @@ pre {
   border-radius: 5px;
   white-space: pre-wrap;
 }
+.right {
+  float: right!important;
+}
 body {
   background-image: none!important;
   background-color: none!important;
@@ -428,9 +431,32 @@ body {
   height: 66px;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.07);
   z-index: 1;
+  padding: 20px 0 0 0;
+  box-sizing: border-box;
+  position: relative;
 }
-.footer .footer-inner {
-  padding-top: 20px;
+.footer .footer-heart {
+  font-size: 18px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  color: #ffbbb8;
+}
+.footer .footer-links {
+  display: block;
+  padding-left: 0;
+  float: left;
+}
+.footer .footer-links li {
+  display: block;
+  float: left;
+  margin-right: 30px;
+}
+.footer .footer-links li:last-child {
+  margin-right: 0;
+}
+.footer .footer-links li:first-child {
+  margin-left: 0;
 }
 .side-logo {
   /*float:left;*/
