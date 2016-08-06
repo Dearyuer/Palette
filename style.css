@@ -192,7 +192,7 @@ body {
 .container .side-area {
   padding-top: 40px;
   width: 30%;
-  float: left;
+  float: right;
   margin-left: 25px;
   z-index: 1;
 }
@@ -218,7 +218,7 @@ body {
   margin-bottom: 6px;
 }
 .container .side-area .palette-sidebar-profile .palette-profile {
-  padding-left: 57px;
+  padding: 0 30px;
 }
 .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-avatar {
   width: 100%;
@@ -303,7 +303,6 @@ body {
   color: #666666;
   margin-top: 7px;
   padding: 0;
-  margin-left: 56px;
 }
 .container .side-area .palette-recent-posts li {
   padding: 7px 20px;
@@ -477,6 +476,7 @@ body {
   position: absolute;
   top: 20px;
   left: 50%;
+  margin-left: -5px;
   color: #ffbbb8;
 }
 .footer .footer-links {
@@ -572,6 +572,7 @@ body {
   }
   .container .side-area .palette-sidebar-profile .palette-profile {
     padding-left: 0;
+    padding-right: 0;
     text-align: center;
   }
   .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-avatar img {
@@ -579,13 +580,11 @@ body {
     border-radius: 50%;
   }
   .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-counter {
-    width: 400px;
+    width: 300px;
     margin: 0 auto;
   }
-  .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-counter ul {
-    padding-left: 63px;
-  }
   .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-counter ul li {
+    width: 33%;
     margin-right: 0;
   }
   .container .side-area .palette-recent-posts {
@@ -636,6 +635,7 @@ body {
   }
   .container .side-area .palette-sidebar-profile .palette-profile {
     padding-left: 0;
+    padding-right: 0;
     text-align: center;
   }
   .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-avatar img {
@@ -643,13 +643,14 @@ body {
     border-radius: 50%;
   }
   .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-counter {
-    width: 400px;
     margin: 0 auto;
   }
   .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-counter ul {
-    padding-left: 63px;
+    width: 200px;
+    margin: 0 auto;
   }
   .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-counter ul li {
+    width: 33%;
     margin-right: 0;
   }
   .container .side-area .palette-recent-posts {
@@ -666,6 +667,7 @@ body {
     top: 20px;
     left: 50%;
     color: #ffbbb8;
+    margin-left: -5px;
   }
   .footer .footer-links {
     display: none;

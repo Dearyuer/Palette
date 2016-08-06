@@ -4,6 +4,8 @@
 	<div id="particles-js"></div>
 <?php } ?>
 <div class="container clearfix">
+	<!-- <a class="timeline" ></a> -->
+	<?php get_sidebar(); ?>
 	<div class="main-area">
 		
 		<?php 
@@ -17,7 +19,5 @@
 			}
 		?>
 	</div>
-	<a class="timeline" ></a>
-	<?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>
