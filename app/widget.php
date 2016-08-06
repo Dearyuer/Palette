@@ -25,11 +25,35 @@ class Palette_Profile_Widget extends WP_Widget{
 				<p><?php echo get_userdata(1)->display_name; ?></p>
 			</li>
 			<li class="palette-profile-email">
-				<a href="mailto:<?php echo get_userdata(1)->user_email;?>"><p><i class="fa fa-envelope-o" aria-hidden="true"></i> <?php echo get_userdata(1)->user_email; ?></p>
+				<a href="mailto:<?php echo get_userdata(1)->user_email;?>"><p><i class="fa fa-envelope-o" aria-hidden="true"></i><?php echo " ".get_userdata(1)->user_email; ?></p>
 				</a>
 			</li>
-			<li>
-				<ul class="palette-profile-social">
+
+
+			<li class="palette-profile-social-counter">
+				
+				<ul class="palette-profile-counter clearfix">
+					<li>
+						<a href="#">
+							<span class="social-counter-title">点击</span>
+							<span class="social-counter">{}</span>
+						</a>
+					</li>
+					<li>
+						<span class="social-counter-title">订阅</span>
+						<span class="social-counter">{}</span>
+					</li>
+					<li>
+						<span class="social-counter-title">赞</span>
+						<span class="social-counter">{}</span>
+					</li>
+				</ul>
+
+			</li>
+			
+			
+			<li class="palette-profile-social-parent">
+				<ul class="palette-profile-social clearfix">
 					<li>
 						<a href="#">
 							<i class="fa fa-github" aria-hidden="true"></i>
@@ -60,9 +84,6 @@ class Palette_Profile_Widget extends WP_Widget{
 					</li>
 				</ul>
 			</li>
-			
-			
-
 		</ul>
 
 
@@ -188,7 +209,6 @@ class Palette_Recent_Posts_Widget extends WP_Widget {
 			</li>
 		<?php } ?>
 		</ul>
-		<?php echo $args['after_widget']; ?>
 		<?php
 		// Reset the global $the_post as this query will have stomped on it
 		wp_reset_postdata();

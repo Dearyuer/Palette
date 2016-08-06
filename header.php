@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>" />
-		<!-- <meta name="viewport" content="width=device-width" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title><?php bloginfo('name'); ?></title>
 		<!-- playground -->
 		<!-- <link type="text/css" href="<?php //bloginfo('template_directory'); ?>/css/normalize.css" rel="stylesheet"/> -->
