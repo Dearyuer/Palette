@@ -509,6 +509,10 @@ body {
   .container {
     width: 1170px;
   }
+  .container .side-area {
+    width: 32%;
+    margin-left: 3px;
+  }
   .container .side-area .palette-sidebar-profile .palette-profile {
     padding: 0;
   }
