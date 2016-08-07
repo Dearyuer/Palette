@@ -52,3 +52,4 @@
 				</nav>
 			</header>
 		</div>
+		<div id="header-shadow"></div>

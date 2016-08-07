@@ -1,6 +1,6 @@
 
-	
 		<div class="footer">
+
 			<footer class="container">
 				
 				<ul class="footer-links right">
