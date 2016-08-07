@@ -20,6 +20,10 @@ a:visited,
 a:link {
   color: #666666;
 }
+a:hover {
+  cursor: pointer;
+  color: deepskyblue;
+}
 html,
 h1,
 h2,
@@ -92,6 +96,10 @@ body {
 .header .navigation ul li a:link {
   color: #666666;
 }
+.header .navigation ul li a:hover {
+  cursor: pointer;
+  color: deepskyblue;
+}
 .header .navigation ul:before,
 .header .navigation ul:after {
   content: "";
@@ -108,11 +116,11 @@ body {
 }
 .container .main-area {
   width: 67%;
-  float: left;
+  float: right;
   padding-top: 40px;
 }
 .container .main-area article.post {
-  padding: 0 100px 38px 0;
+  padding: 0 0 38px 90px;
   position: relative;
 }
 .container .main-area article.post span.post-date span {
@@ -124,7 +132,7 @@ body {
 }
 .container .main-area article.post span.post-date {
   position: absolute;
-  right: 15px;
+  left: 10px;
   top: 0;
   display: block;
   font-size: 11px;
@@ -161,7 +169,11 @@ body {
 }
 .container .main-area article.post .main-post .post-title a:visited,
 .container .main-area article.post .main-post .post-title a:link {
-  color: #333333;
+  color: #666666;
+}
+.container .main-area article.post .main-post .post-title a:hover {
+  cursor: pointer;
+  color: deepskyblue;
 }
 .container .main-area article.post .main-post .post-meta {
   color: #666666;
@@ -192,8 +204,7 @@ body {
 .container .side-area {
   padding-top: 40px;
   width: 30%;
-  float: right;
-  margin-left: 25px;
+  float: left;
   z-index: 1;
 }
 .container .side-area .widget-title {
@@ -209,6 +220,10 @@ body {
 .container .side-area .sidebar-widget a:link,
 .container .side-area .sidebar-widget a:visited {
   color: #666666;
+}
+.container .side-area .sidebar-widget a:hover {
+  cursor: pointer;
+  color: deepskyblue;
 }
 .container .side-area .palette-sidebar-profile {
   margin-bottom: 10px;
@@ -239,6 +254,10 @@ body {
   color: #666666;
   font-weight: 400;
   font-size: 15px;
+}
+.container .side-area .palette-sidebar-profile .palette-profile-email a:hover p {
+  cursor: pointer;
+  color: deepskyblue;
 }
 .container .side-area .palette-sidebar-profile .palette-profile-counter {
   width: 100%;
@@ -290,6 +309,10 @@ body {
 .container .side-area .palette-sidebar-profile .palette-profile-social li a:visited {
   color: #666666;
 }
+.container .side-area .palette-sidebar-profile .palette-profile-social li a:hover {
+  cursor: pointer;
+  color: deepskyblue;
+}
 .container .side-area .palette-sidebar-profile .palette-profile-social li:first-child {
   padding-left: 0;
 }
@@ -311,6 +334,10 @@ body {
 .container .side-area .palette-recent-posts li a:link,
 .container .side-area .palette-recent-posts li a:visited {
   color: #666666;
+}
+.container .side-area .palette-recent-posts li a:hover {
+  cursor: pointer;
+  color: deepskyblue;
 }
 .container .side-area .palette-recent-posts li:first-child {
   border-top-left-radius: 5px;
@@ -345,6 +372,10 @@ body {
 .container .side-area .palette-sidebar-comments .sidebar-comment .each-comment a:link,
 .container .side-area .palette-sidebar-comments .sidebar-comment .each-comment a:visited {
   color: #666666;
+}
+.container .side-area .palette-sidebar-comments .sidebar-comment .each-comment a:hover {
+  cursor: pointer;
+  color: deepskyblue;
 }
 .container .side-area .palette-sidebar-comments .sidebar-comment .each-comment:hover {
   background-color: #f5f8fa;
@@ -393,7 +424,11 @@ body {
 }
 .container .reply a:visited,
 .container .reply a:link {
-  color: rgba(0, 0, 0, 0.08);
+  color: #666666;
+}
+.container .reply a:hover {
+  cursor: pointer;
+  color: deepskyblue;
 }
 .container .reply {
   float: right;
@@ -503,60 +538,6 @@ body {
 @media (min-width: 992px) {
   .container {
     width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-  .container .side-area {
-    width: 32%;
-    margin-left: 3px;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile {
-    padding: 0;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile li {
-    display: block;
-    float: left;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-avatar {
-    width: 40%;
-    margin-right: 7px;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-email {
-    width: 58%;
-    box-sizing: border-box;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-email p {
-    word-wrap: break-word;
-    line-height: 1;
-    letter-spacing: .3px;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-email p i {
-    float: left;
-    margin-right: 4px;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-counter {
-    width: 58%;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-counter .palette-profile-counter li {
-    width: 30%;
-    height: 49px;
-    padding: 14px 8px 10px;
-    padding-bottom: 15px;
-    margin-right: 6px;
-    transition: all .1s;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-counter .palette-profile-counter li span.social-counter-title {
-    font-size: 13px;
-    margin-bottom: 4px;
-  }
-  .container .side-area .palette-sidebar-profile .palette-profile .palette-profile-social-parent {
-    text-align: center;
-  }
-  .container .side-area .palette-recent-posts {
-    margin-left: 0;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
