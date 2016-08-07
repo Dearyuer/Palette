@@ -24,18 +24,6 @@
 				</td>
 			</tr>
 			<tr>
-				<th><?php _e("Enable particle effect","palette") ?></th>
-				<th><?php _e("May end up with poor performance.","palette") ?></th>
-				<td>
-
-					<?php
-					$retrieve_palette_particle_toggle = get_option($paletteOptionParticle);
-					 ?>
-					<input type="checkbox" id="particle_checkbox" name="particle_effect_checkbox"  value="particle" <?php if(!empty($retrieve_palette_particle_toggle)){ echo "checked"; }  ?>  />
-					<label for="particle_checkbox"><?php _e("Enable/Disable particle effect.") ?></label>
-				</td>
-			</tr>
-			<tr>
 				<th><?php _e("Transparent panel", "palette"); ?></th>
 				<th><?php _e("Brings high contrast while using background image", "palette"); ?></th>
 				<td>
