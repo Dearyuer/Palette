@@ -18,7 +18,7 @@ class Palette_Profile_Widget extends WP_Widget{
 			$output .= $args['before_title'];
 			$output .= '<a href="#"><span><i class="fa fa-user" aria-hidden="true"></i></span> ';
 			$output .= apply_filters( 'widget_title', $instance['title'] );
-			$output .= '</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></i></span></a>';
+			$output .= '</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></span></a>';
 			$output .= $args['after_title'];
 			echo $output;
 		}
@@ -224,7 +224,7 @@ class Palette_Recent_Posts_Widget extends WP_Widget {
 		<ul class="palette-recent-posts">
 		<?php 
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . '<a href="#"><span><i class="fa fa-file-text" aria-hidden="true"></i></span> '.apply_filters( 'widget_title', $instance['title'] ) .'</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></i></span></a>'. $args['after_title'];
+			echo $args['before_title'] . '<a href="#"><span><i class="fa fa-file-text" aria-hidden="true"></i></span> '.apply_filters( 'widget_title', $instance['title'] ) .'</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></span></a>'. $args['after_title'];
 		}
 		?>
 		<?php while ( $r->have_posts() ) { $r->the_post(); ?>
@@ -300,7 +300,7 @@ class Palette_Comments_Widget extends WP_Widget {
 		) ) );
 		$output .= '<ul class="palette-sidebar-comments">';
 		if ( ! empty( $instance['title'] ) ) {
-			$output .= $args['before_title'] .'<a href="#"><span><i class="fa fa-comments" aria-hidden="true"></i></span> '. apply_filters( 'widget_title', $instance['title'] ) .'</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></i></span></a>'. $args['after_title'];
+			$output .= $args['before_title'] .'<a href="#"><span><i class="fa fa-comments" aria-hidden="true"></i></span> '. apply_filters( 'widget_title', $instance['title'] ) .'</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></span></a>'. $args['after_title'];
 		}
 		if (is_array($comments) && $comments){
 			foreach((array)$comments as $comment){

@@ -1,7 +1,9 @@
 <article class="post <?php if ( has_post_thumbnail() ) { ?>has-thumbnail <?php } ?>">
 	<span class="post-date"><?php the_time('M') ?><span><?php the_time('j') ?></span></span>
 	<div class="main-post">
-		
+ 		<div class="post-thumbnail">
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
+		</div>
 		<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 		<div class="post-meta">
@@ -24,9 +26,7 @@
 			-	
 			<?php $escapePercentSign = "%";comments_number(__("No comments", "palette"), __("1 comments", "palette"), sprintf(__("%s comments", "palette"), $escapePercentSign)); ?>
 		</div>
- 		<div class="post-thumbnail">
-			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
-		</div>
+ 		
 		<div class="content">
 			<?php 
 			// $wordCount = 50;
