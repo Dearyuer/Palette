@@ -146,6 +146,9 @@ body {
   font-weight: 500;
   text-align: left;
 }
+.container .main-area .contri .contri-title .fa-github-alt {
+  font-size: 16px;
+}
 .container .main-area .contri .contri-title .fa-bars {
   margin-top: 3px;
   cursor: move;
@@ -364,6 +367,53 @@ body {
 .container .side-area .palette-sidebar-profile a:hover i {
   cursor: pointer;
   color: deepskyblue;
+}
+.container .side-area .palette-twitter {
+  border: 1px solid #e1e8ed;
+  color: #666666;
+  margin-top: 13px;
+  padding: 0;
+  border-radius: 5px;
+}
+.container .side-area .palette-twitter .widget-title {
+  color: #666666;
+  margin-bottom: 0;
+  padding: 8px 10px;
+  background-color: #e6e6e6;
+  font-weight: 500;
+  text-align: left;
+}
+.container .side-area .palette-twitter .widget-title .fa-twitter {
+  font-size: 16px;
+}
+.container .side-area .palette-twitter .widget-title .fa-bars {
+  margin-top: 3px;
+  cursor: move;
+}
+.container .side-area .palette-twitter ul.tweets {
+  padding: 0;
+}
+.container .side-area .palette-twitter ul.tweets li {
+  padding: 7px 20px;
+}
+.container .side-area .palette-twitter ul.tweets li a:link,
+.container .side-area .palette-twitter ul.tweets li a:visited {
+  color: #666666;
+}
+.container .side-area .palette-twitter ul.tweets li a:hover {
+  cursor: pointer;
+  color: deepskyblue;
+}
+.container .side-area .palette-twitter ul.tweets li p.tweet-text {
+  font-size: 14px;
+}
+.container .side-area .palette-twitter ul.tweets li span.tweet-time {
+  font-size: 12px;
+  float: right;
+}
+.container .side-area .palette-twitter ul.tweets li p.tweet-via {
+  float: right;
+  font-size: 12px;
 }
 .container .side-area .palette-recent-posts {
   background-color: white;

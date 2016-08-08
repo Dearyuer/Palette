@@ -1,5 +1,138 @@
 <?php 
 
+class Palette_Twitter_Widget extends WP_Widget{
+	function __construct(){
+		parent::__construct(
+			'palette_twitter_widget',
+			__( 'Palette Twitter', 'palette'),
+			array( 'description' => __('Recent tweets', 'palette'))
+		);
+	}
+
+	public function widget( $args, $instance ){
+		$output = "";
+		$count = ( ! empty( $instance['count'] ) ) ? absint( $instance['count'] ) : 5;
+		require get_template_directory().'/libs/tmhOAuth.php'; // Get it from: https://github.com/themattharris/tmhOAuth
+		// Use the data from http://dev.twitter.com/apps to fill out this info
+		// notice the slight name difference in the last two items)
+		$connection = new tmhOAuth(array(
+		  	'consumer_key' => $instance['api_key'],
+			'consumer_secret' => $instance['api_secret'],
+			'user_token' => $instance['access_token'], //access token
+			'user_secret' => $instance['access_secret'] //access token secret
+		));
+		// set up parameters to pass
+		$parameters = array();
+		if ($instance['count']) {
+			$parameters['count'] = strip_tags($instance['count']);
+		}
+		// if ($_GET['screen_name']) {
+		// 	$parameters['screen_name'] = strip_tags($_GET['screen_name']);
+		// }
+		// if (isset( $_GET['twitter_path']) ) { $twitter_path = $_GET['twitter_path']; }  else {
+		$twitter_path = '1.1/statuses/user_timeline.json';
+		// }
+		$http_code = $connection->request('GET', $connection->url($twitter_path), $parameters );
+		if ($http_code === 200) { // if everything's good
+			$response = strip_tags($connection->response['response']);
+			// if ($_GET['callback']) { // if we ask for a jsonp callback function
+			// 	echo $_GET['callback'],'(', $response,');';
+			// } else {
+			// echo $response;	
+			$tweets = json_decode($response);
+			// echo "<pre>";
+			// var_dump($tweets[0]);
+			// echo "</pre>";
+			// var_dump(json_decode($response));
+			
+			// var_dump($output);
+			echo '<div class="palette-twitter">';
+
+			if ( ! empty( $instance['title'] ) ) {
+				$output .= $args['before_title'];
+				$output .= '<a href="#"><span><i class="fa fa-twitter" aria-hidden="true"></i></span> ';
+				$output .= apply_filters( 'widget_title', $instance['title'] );
+				$output .= '</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></span></a>';
+				$output .= $args['after_title'];
+				echo $output;
+			}
+			echo '<ul class="tweets">';
+			for($i = 0; $i < $count; $i++){
+				echo '<li class="clearfix">';
+				
+				// $dt = new DateTime($tweets[$i]->created_at);
+				$dateTime = strtotime($tweets[$i]->created_at);
+				echo '<p class="tweet-text">'.$tweets[$i]->text.'<span class="tweet-time">'.'   '.timeAgo(time(),(int)$dateTime).' <i class="fa fa-twitter-square" aria-hidden="true"></i></span>'.'</p>';
+				// echo '<p class="tweet-via">'.__('via', 'palette').' '.$tweets[$i]->source.'</p>';
+				echo '</li>';
+			}
+			echo '</ul>';
+			echo '</div>';
+
+			// die();
+			// }
+		} else {
+			echo "Error ID: ",$http_code, "<br>\n";
+			echo "Error: ",$connection->response['error'], "<br>\n";
+		}
+		// You may have to download and copy http://curl.haxx.se/ca/cacert.pem
+
+
+		// $output = "";
+		// echo $output;
+	}
+	public function form( $instance ){
+		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : "";
+		$api_key = isset( $instance['api_key'] ) ? esc_attr( $instance['api_key']) : "";
+		$api_secret = isset( $instance['api_secret'] ) ? esc_attr( $instance['api_secret']) : "";
+		$access_token = isset( $instance['access_token'] ) ? esc_attr( $instance['access_token']) : "";
+		$access_secret = isset( $instance['access_secret'] ) ? esc_attr( $instance['access_secret']) : "";
+		$count = isset( $instance['count'] ) ? absint( $instance['count'] ) : 5;
+	?>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+	</p>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'api_key' ); ?>"><?php _e( 'API Key:' ); ?></label>
+	<input class="widefat" id="<?php echo $this->get_field_id( 'api_key' ); ?>" name="<?php echo $this->get_field_name( 'api_key' ); ?>" type="text" value="<?php echo $api_key; ?>" />
+	</p>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'api_secret' ); ?>"><?php _e( 'API Secret:' ); ?></label>
+	<input class="widefat" id="<?php echo $this->get_field_id( 'api_secret' ); ?>" name="<?php echo $this->get_field_name( 'api_secret' ); ?>" type="text" value="<?php echo $api_secret; ?>" />
+	</p>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'access_token' ); ?>"><?php _e( 'Access Token:' ); ?></label>
+	<input class="widefat" id="<?php echo $this->get_field_id( 'access_token' ); ?>" name="<?php echo $this->get_field_name( 'access_token' ); ?>" type="text" value="<?php echo $access_token; ?>" />
+	</p>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'access_secret' ); ?>"><?php _e( 'Token Secret:' ); ?></label>
+	<input class="widefat" id="<?php echo $this->get_field_id( 'access_secret' ); ?>" name="<?php echo $this->get_field_name( 'access_secret' ); ?>" type="text" value="<?php echo $access_secret; ?>" />
+	</p>
+	<p>
+	<label for="<?php echo $this->get_field_id( 'count' ); ?> "><?php __('Number of comments to view', 'palette') ?></label>
+	<input class="tiny-text" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="count" step="1" min="1" value="<?php echo $count; ?>" size="3" />
+	</p>
+
+	<?php
+	}
+
+	public function update($new_instance, $old_instance){
+		$instance = $old_instance ? $old_instance : array();
+		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+		$instance['api_key'] = sanitize_text_field( $new_instance['api_key'] );
+		$instance['api_secret'] = sanitize_text_field( $new_instance['api_secret'] );
+		$instance['access_token'] = sanitize_text_field( $new_instance['access_token'] );
+		$instance['access_secret'] = sanitize_text_field( $new_instance['access_secret'] );
+		$instance['count'] = absint( $new_instance['count'] );
+		return $instance;
+	}
+
+}
+
+
+
+
 class Palette_Profile_Widget extends WP_Widget{
 	function __construct(){
 		parent::__construct(
@@ -101,8 +234,10 @@ class Palette_Profile_Widget extends WP_Widget{
 
 
 		?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+		</p>
 
 		<p><label for="<?php echo $this->get_field_name( 'avatar_src' ); ?>"><?php _e( 'Profile URL' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_name( 'avatar_src' ); ?>" name="<?php echo $this->get_field_name( 'avatar_src' ); ?>" type="text" value="<?php echo $avatar_src;  ?>" /></p>
@@ -354,6 +489,7 @@ class Palette_Comments_Widget extends WP_Widget {
 
 add_action( 'widgets_init', function(){
 	register_widget( 'Palette_Profile_Widget' );
+	register_widget( 'Palette_Twitter_Widget' );
 	register_widget( 'Palette_Recent_Posts_Widget' );
 	register_widget( 'Palette_Comments_Widget' );
 	register_sidebar([
