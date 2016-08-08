@@ -10,11 +10,17 @@ class Palette_Profile_Widget extends WP_Widget{
 	}
 	public function widget( $args, $instance ){
 
-
+		$output = "";
 
 		echo '<div class="palette-sidebar-profile">';
+
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+			$output .= $args['before_title'];
+			$output .= '<a href="#"><span><i class="fa fa-user" aria-hidden="true"></i></span> ';
+			$output .= apply_filters( 'widget_title', $instance['title'] );
+			$output .= '</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></i></span></a>';
+			$output .= $args['after_title'];
+			echo $output;
 		}
 		?>
 		<ul class="palette-profile clearfix">
@@ -22,7 +28,7 @@ class Palette_Profile_Widget extends WP_Widget{
 				<img src="<?php echo $instance['avatar_src'] ?>" alt=""/>
 			</li>
 			<li class="palette-profile-name">
-				<p><?php echo get_userdata(1)->display_name; ?></p>
+				<a href="#"><p><?php echo get_userdata(1)->display_name; ?></p></a>
 			</li>
 			<li class="palette-profile-email">
 				<a href="mailto:<?php echo get_userdata(1)->user_email;?>"><p><i class="fa fa-envelope-o" aria-hidden="true"></i><?php echo " ".get_userdata(1)->user_email; ?></p>
@@ -75,6 +81,9 @@ class Palette_Profile_Widget extends WP_Widget{
 
 
 		<?php
+		$output = "";
+		$output .= '<a href="#"><span><i class="fa fa-minus" aria-hidden="true"></i></span></a>';
+		echo $output;
 		echo $args['after_widget'];
 	}
 	public function form($instance){
@@ -210,11 +219,14 @@ class Palette_Recent_Posts_Widget extends WP_Widget {
 
 		if ($r->have_posts()) {
 		echo $args['before_widget'];
-		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		}
+		
 		?>
 		<ul class="palette-recent-posts">
+		<?php 
+		if ( ! empty( $instance['title'] ) ) {
+			echo $args['before_title'] . '<a href="#"><span><i class="fa fa-file-text" aria-hidden="true"></i></span> '.apply_filters( 'widget_title', $instance['title'] ) .'</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></i></span></a>'. $args['after_title'];
+		}
+		?>
 		<?php while ( $r->have_posts() ) { $r->the_post(); ?>
 			<li>
 				<a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
@@ -223,6 +235,11 @@ class Palette_Recent_Posts_Widget extends WP_Widget {
 			<?php } ?>
 			</li>
 		<?php } ?>
+		<?php 
+		$output = "";
+		$output .= '<li class="minus-sign"><a href="#"><span><i class="fa fa-minus" aria-hidden="true"></i></span></a></li>';
+		echo $output;
+		?>
 		</ul>
 		<?php
 		// Reset the global $the_post as this query will have stomped on it
@@ -275,15 +292,16 @@ class Palette_Comments_Widget extends WP_Widget {
 		if ( ! $number ) $number = 5;
 		if ( ! $limit ) $limit = 33;
 		echo $args['before_widget'];
-		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		}
+		
 		$comments = get_comments( apply_filters( 'widget_comments_args', array(
 			'number'      => $number,
 			'status'      => 'approve',
 			'post_status' => 'publish'
 		) ) );
 		$output .= '<ul class="palette-sidebar-comments">';
+		if ( ! empty( $instance['title'] ) ) {
+			$output .= $args['before_title'] .'<a href="#"><span><i class="fa fa-comments" aria-hidden="true"></i></span> '. apply_filters( 'widget_title', $instance['title'] ) .'</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></i></span></a>'. $args['after_title'];
+		}
 		if (is_array($comments) && $comments){
 			foreach((array)$comments as $comment){
 				$output .= '<li class="sidebar-comment">';
@@ -301,6 +319,7 @@ class Palette_Comments_Widget extends WP_Widget {
 				// var_dump($comment);
 			}
 		}
+		$output .= '<li class="minus-sign"><a href="#"><span><i class="fa fa-minus" aria-hidden="true"></i></span></a></li>';
 		$output .= '</ul>';
 		echo $output;
 		echo $args['after_widget'];
