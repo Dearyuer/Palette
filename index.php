@@ -6,15 +6,22 @@
 		<div class="contri">
 			<div class="contri-title"><a href="#"><span><i class="fa fa-github-alt" aria-hidden="true"></i></span> 动态</a><a href="#"><span><i class="fa fa-bars right" aria-hidden="true"></i></span></a></div>
 			<?php 
+			echo '<div class="git-contri-loading-anim">';
+				echo '<img src="'.get_template_directory_uri().'/img/spinner.gif'.'" alt="Loading">';
+			echo '</div>';
 			if(! (home_url() == "http://localhost:8888") ){
-				// wp_enqueue_script( 'github_contri_ajax', get_template_directory_uri().'/js/widgets/githubContriAjax.js',[],false,true);
-				$githubUsername = "Dearyuer";
-				$githubContri = file_get_contents("https://github.com/users/".$githubUsername."/contributions"); 
-				$githubContri = preg_replace('/class="js-calendar-graph-svg"/','viewBox="0 -7 796 126"',$githubContri);
-				$githubContri = preg_replace('/#1e6823/','#1d9af6',$githubContri);
-				$githubContri = preg_replace('/#8cc665/','#00a8f2',$githubContri);
-				$githubContri = preg_replace('/#44a340/','#00bfff',$githubContri);
-				echo $githubContri;
+				wp_enqueue_script( 'github_contri_ajax', get_template_directory_uri().'/js/widgets/githubContriAjax.js',[],false,true);
+				wp_localize_script( 'github_contri_ajax', 'GIT_HUB_CON_AJAX', array(
+					'home_url' => home_url()
+
+				));
+				// $githubUsername = "Dearyuer";
+				// $githubContri = file_get_contents("https://github.com/users/".$githubUsername."/contributions"); 
+				// $githubContri = preg_replace('/class="js-calendar-graph-svg"/','viewBox="0 -7 796 126"',$githubContri);
+				// $githubContri = preg_replace('/#1e6823/','#1d9af6',$githubContri);
+				// $githubContri = preg_replace('/#8cc665/','#00a8f2',$githubContri);
+				// $githubContri = preg_replace('/#44a340/','#00bfff',$githubContri);
+				// echo $githubContri;
 			}
 			?>
 		</div>

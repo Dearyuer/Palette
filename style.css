@@ -153,6 +153,10 @@ body {
   margin-top: 3px;
   cursor: move;
 }
+.container .main-area .contri div.git-contri-loading-anim {
+  text-align: center;
+  padding: 30px;
+}
 .container .main-area .contri rect:hover {
   stroke: deepskyblue;
   fill: deepskyblue;

@@ -72,6 +72,7 @@
 						});
 						elemSpan.append(elemI);
 
+						elemLi.addClass('fadeIn').addClass('animated');
 						elemLi.append(elemP);
 						$(".tweets").append(elemLi);
 						//console.log(data);
