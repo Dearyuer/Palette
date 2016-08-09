@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pure Minus\n"
-"POT-Creation-Date: 2016-07-22 10:17+0800\n"
-"PO-Revision-Date: 2016-07-22 10:17+0800\n"
+"POT-Creation-Date: 2016-08-09 10:54+0800\n"
+"PO-Revision-Date: 2016-08-09 10:54+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -19,6 +19,174 @@ msgstr ""
 "_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: app/appWrapMain.php:2
+msgid "Palette Theme Settings"
+msgstr ""
+
+#: app/appWrapMain.php:7
+msgid "Image for navigation bar logo."
+msgstr ""
+
+#: app/appWrapMain.php:14
+msgid "There's no Logo image uploaded. size 100*30 is recommended"
+msgstr ""
+
+#: app/appWrapMain.php:20
+msgid "Choose a file..."
+msgstr ""
+
+#: app/appWrapMain.php:27
+msgid "Transparent panel"
+msgstr ""
+
+#: app/appWrapMain.php:28
+msgid "Brings high contrast while using background image"
+msgstr ""
+
+#: app/appWrapMain.php:34
+msgid "Enable/Disable transparent panel"
+msgstr ""
+
+#: app/widgets.php:7
+msgid "Palette Twitter"
+msgstr ""
+
+#: app/widgets.php:8
+msgid "Recent tweets"
+msgstr ""
+
+#: app/widgets.php:49 functions.php:8
+msgid "just now"
+msgstr "刚刚"
+
+#: app/widgets.php:50
+msgid " minutes ago"
+msgstr " 分钟前"
+
+#: app/widgets.php:51 functions.php:13
+msgid "half an hour ago"
+msgstr "半小时前"
+
+#: app/widgets.php:52
+msgid " hours ago"
+msgstr " 小时前"
+
+#: app/widgets.php:53 functions.php:18
+msgid "yesterday"
+msgstr "昨天"
+
+#: app/widgets.php:54
+msgid " days ago"
+msgstr " 天前"
+
+#: app/widgets.php:72 app/widgets.php:217 app/widgets.php:371
+msgid "Title:"
+msgstr ""
+
+#: app/widgets.php:76
+msgid "API Key:"
+msgstr ""
+
+#: app/widgets.php:80
+msgid "API Secret:"
+msgstr ""
+
+#: app/widgets.php:84
+msgid "Access Token:"
+msgstr ""
+
+#: app/widgets.php:88
+msgid "Token Secret:"
+msgstr ""
+
+#: app/widgets.php:92 app/widgets.php:451
+msgid "Number of comments to view"
+msgstr "评论数量"
+
+#: app/widgets.php:119
+msgid "Palette Profile"
+msgstr ""
+
+#: app/widgets.php:120
+msgid "Your profile"
+msgstr ""
+
+#: app/widgets.php:221
+msgid "Profile URL"
+msgstr ""
+
+#: app/widgets.php:225
+msgid "Show email?"
+msgstr ""
+
+#: app/widgets.php:227
+msgid "Github URL"
+msgstr ""
+
+#: app/widgets.php:230
+msgid "Facebook URL"
+msgstr ""
+
+#: app/widgets.php:233
+msgid "Twitter URL"
+msgstr ""
+
+#: app/widgets.php:236
+msgid "Dribbble URL"
+msgstr ""
+
+#: app/widgets.php:239
+msgid "Tumblr URL"
+msgstr ""
+
+#: app/widgets.php:291 functions.php:144
+msgid "There's an error while uploading"
+msgstr ""
+
+#: app/widgets.php:298 functions.php:156
+msgid "Uploaded."
+msgstr ""
+
+#: app/widgets.php:317
+msgid "Palette Recent Posts"
+msgstr ""
+
+#: app/widgets.php:318
+msgid "Display recent posts"
+msgstr ""
+
+#: app/widgets.php:367
+msgid "Recent posts"
+msgstr "最近文章"
+
+#: app/widgets.php:374
+msgid "Number of posts to show:"
+msgstr ""
+
+#: app/widgets.php:378
+msgid "Display post date?"
+msgstr ""
+
+#: app/widgets.php:396
+msgid "Palette Comments Widget"
+msgstr ""
+
+#: app/widgets.php:397
+msgid "Display recent comments"
+msgstr "显示最近评论"
+
+#: app/widgets.php:442
+msgid "Recent Comments"
+msgstr "最近评论"
+
+#: app/widgets.php:455
+msgid "Text limits"
+msgstr "评论限制字数"
+
+#: app/widgets.php:475
+msgid "Sidebar"
+msgstr "边栏"
 
 #: comments.php:11
 #, php-format
@@ -43,104 +211,97 @@ msgstr "新的评论"
 msgid "Comments are closed."
 msgstr "评论关闭了"
 
-#: functions.php:17
-msgid "Nav Menu"
-msgstr "导航栏"
+#: footer.php:8
+msgid "Activity"
+msgstr ""
 
-#: functions.php:25
-msgid "just now"
-msgstr "刚刚"
+#: footer.php:11
+msgid "Archive"
+msgstr ""
 
-#: functions.php:28
+#: footer.php:14
+msgid "About"
+msgstr ""
+
+#: footer.php:23
+msgid "Theme"
+msgstr ""
+
+#: footer.php:27
+msgid "License"
+msgstr ""
+
+#: functions.php:11
 #, php-format
 msgid "%d minutes ago"
 msgstr "%d 分钟前"
 
-#: functions.php:30
-msgid "half an hour ago"
-msgstr "半小时前"
-
-#: functions.php:33
+#: functions.php:16
 #, php-format
 msgid "%d hours ago"
 msgstr "%d 小时前"
 
-#: functions.php:35
-msgid "yesterday"
-msgstr "昨天"
-
-#: functions.php:38
+#: functions.php:21
 #, php-format
 msgid "%d days ago"
 msgstr "%d 天前"
 
-#: functions.php:48
-msgid "Sidebar"
-msgstr "边栏"
+#: functions.php:78
+msgid "Nav Menu"
+msgstr "导航栏"
 
-#: functions.php:62
-msgid "Pure Minus Comments Widget"
-msgstr "Pure Minus 评论插件"
+#: functions.php:87
+msgid "Palette Theme"
+msgstr ""
 
-#: functions.php:63
-msgid "Display recent comments"
-msgstr "显示最近评论"
+#: functions.php:111
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
 
-#: functions.php:105
-msgid "Recent Comments"
-msgstr "最近评论"
-
-#: functions.php:114
-msgid "Number of comments to view"
-msgstr "评论数量"
-
-#: functions.php:118
-msgid "Text limits"
-msgstr "评论限制字数"
+#: functions.php:186
+msgid "Updated settings"
+msgstr ""
 
 #: header.php:19
 msgid "You should update your browser!"
 msgstr "你的浏览器版本过低，请更新=）"
 
-#: main-area.php:9
+#: main-area.php:11
 msgid "Posted on"
 msgstr "发表于"
 
-#: main-area.php:20
+#: main-area.php:23
 msgid "in Category"
 msgstr "在分类"
 
-#: main-area.php:23 single.php:23
+#: main-area.php:27 single.php:23
 msgid "No comments"
 msgstr "0 则评论"
 
-#: main-area.php:23 single.php:23
+#: main-area.php:27 single.php:23
 msgid "1 comments"
 msgstr "1 则评论"
 
-#: main-area.php:23 single.php:23
+#: main-area.php:27 single.php:23
 #, php-format
 msgid "%s comments"
 msgstr "%s 则评论"
 
 #. Theme Name of the plugin/theme
-msgid "Pure Minus"
-msgstr ""
-
 #. Description of the plugin/theme
-msgid "This theme is heavily inspired by Pure theme"
+msgid "Palette"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Tahitifish"
+msgid "Dearyuer"
 msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://codrips.com/"
 msgstr ""
 
-#~ msgid "Recent posts"
-#~ msgstr "最近文章"
+#~ msgid "Pure Minus Comments Widget"
+#~ msgstr "Pure Minus 评论插件"
 
 #~ msgid "Recent activity"
 #~ msgstr "最近动态"

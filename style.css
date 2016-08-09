@@ -393,6 +393,9 @@ body {
 .container .side-area .palette-twitter ul.tweets {
   padding: 0;
 }
+.container .side-area .palette-twitter ul.tweets li.loading-anim {
+  text-align: center;
+}
 .container .side-area .palette-twitter ul.tweets li {
   padding: 7px 20px;
 }

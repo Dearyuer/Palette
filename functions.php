@@ -53,7 +53,8 @@ $palette_settings_cache = new Palette_Settings_Cache;
 add_action( 'wp_enqueue_scripts', function(){
 	wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/normalize.css');
 	wp_enqueue_style( 'font_awesome', get_template_directory_uri().'/css/font-awesome.css');
-	wp_enqueue_style( 'style', get_stylesheet_uri());
+    wp_enqueue_style( 'style', get_stylesheet_uri());
+	wp_enqueue_script( 'jquery', false ,['json2'],false,false);
 
 	$transparence_enable_state = get_option("palette_transparence_toggle");
 	if($transparence_enable_state){
@@ -76,7 +77,7 @@ add_action('after_setup_theme', function(){
 
 register_nav_menus(['nav' => __("Nav Menu", 'palette')]);
 
-require_once(get_template_directory().'/app/widget.php');
+require_once(get_template_directory().'/app/widgets.php');
 
 add_action( 'admin_menu', 'palette_add_menu_page' );
 
