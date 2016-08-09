@@ -40,20 +40,22 @@ class Palette_Twitter_Widget extends WP_Widget{
 		// }
 		echo '</ul>';
 		echo '</div>';
-		wp_enqueue_script('twitter_ajax',get_template_directory_uri().'/js/widgets/twitterAjax.js',[],false,true);
-		wp_localize_script('twitter_ajax', 'TWITTER_AJAX_SETTINGS', array(
-			'home_url' => home_url(),
-			'count'=> $count,
-			'lan'=> strtolower(get_locale()),
-			'time_ago' => array(
-				'just_now'=>__('just now', 'palette'),
-				'min_ago'=>__(' minutes ago', 'palette'),
-				'h_a_ago'=>__('half an hour ago', 'palette'),
-				'h_ago'=>__(' hours ago', 'palette'),
-				'yes'=>__('yesterday', 'palette'),
-				'days_ago'=>__(' days ago', 'palette'),
-			)
-		));
+		if(! (home_url() == "http://localhost:8888") ){
+			wp_enqueue_script('twitter_ajax',get_template_directory_uri().'/js/widgets/twitterAjax.js',[],false,true);
+			wp_localize_script('twitter_ajax', 'TWITTER_AJAX_SETTINGS', array(
+				'home_url' => home_url(),
+				'count'=> $count,
+				'lan'=> strtolower(get_locale()),
+				'time_ago' => array(
+					'just_now'=>__('just now', 'palette'),
+					'min_ago'=>__(' minutes ago', 'palette'),
+					'h_a_ago'=>__('half an hour ago', 'palette'),
+					'h_ago'=>__(' hours ago', 'palette'),
+					'yes'=>__('yesterday', 'palette'),
+					'days_ago'=>__(' days ago', 'palette'),
+				)
+			));
+		}
 		?>
 		<?php
 

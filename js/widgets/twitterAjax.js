@@ -9,7 +9,7 @@
 				if(time_ago < 60){
 					return TAS.time_ago.just_now;
 				}else if(time_ago < 1800){
-					temp = floor(time_ago/60);
+					temp = Math.floor(time_ago/60);
 					return  temp+TAS.time_ago.min_ago;
 				}else if(time_ago < 3600){
 					return  TAS.time_ago.h_a_ago
