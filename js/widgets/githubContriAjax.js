@@ -1,6 +1,6 @@
-(function(){
 
 
+jQuery(function(){
 	// $githubUsername = "Dearyuer";
 	// $githubContri = file_get_contents("https://github.com/users/".$githubUsername."/contributions"); 
 	// $githubContri = preg_replace('/class="js-calendar-graph-svg"/','viewBox="0 -7 796 126"',$githubContri);
@@ -28,4 +28,4 @@
 
 	});
 
-})();
+});

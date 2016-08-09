@@ -139,7 +139,7 @@ class Palette_Profile_Widget extends WP_Widget{
 		?>
 		<ul class="palette-profile clearfix">
 			<li class="palette-profile-avatar">
-				<img src="<?php echo $instance['avatar_src'] ?>" alt=""/>
+				<?php echo get_avatar(1,300); ?>
 			</li>
 			<li class="palette-profile-name">
 				<a href="#"><p><?php echo get_userdata(1)->display_name; ?></p></a>

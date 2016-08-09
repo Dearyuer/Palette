@@ -1,4 +1,5 @@
-(function(){
+jQuery(function(){
+
 	var TAS = TWITTER_AJAX_SETTINGS;
 	var $ = jQuery;
 
@@ -91,4 +92,4 @@
 			}
 			
 		});
-})();
+});
