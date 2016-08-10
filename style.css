@@ -123,7 +123,7 @@ body {
 .footer {
   font-size: 13px;
   height: 66px;
-  z-index: 1;
+  z-index: -9;
   box-sizing: border-box;
   position: relative;
 }
@@ -199,12 +199,15 @@ body {
 }
 .container .main-area .posts-area {
   position: relative;
-  padding: 0 0 0 20px;
+  margin: 0 0 0 20px;
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
 }
 .container .main-area .posts-area .posts-title {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
+  border-bottom: 1px solid white;
   color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
@@ -220,8 +223,6 @@ body {
 .container .main-area .posts-area article.post .main-post {
   padding: 38px 18px;
   border-bottom: 1px solid #e1e8ed;
-  border-left: 1px solid #e1e8ed;
-  border-right: 1px solid #e1e8ed;
 }
 .container .main-area .posts-area article.post .main-post .post-title a:visited,
 .container .main-area .posts-area article.post .main-post .post-title a:link {
@@ -873,7 +874,7 @@ body {
   left: 0;
   background: #fff;
   transform-origin: 0 0;
-  background-color: #e1e8ed;
+  background-color: #e6e6e6;
 }
 .placeholder-trans-in {
   -webkit-transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -935,7 +936,7 @@ body {
   transition: opacity 0.6s;
 }
 .scroll-wrap {
-  background-color: #e1e8ed;
+  background-color: #e6e6e6;
 }
 .main-content .post-content {
   background-color: white;
@@ -1005,4 +1006,7 @@ body {
 .main-content .post-content .content-text p {
   font-size: 18px;
   padding-bottom: 120px;
+}
+.main-post {
+  transition: background-color 0.2s;
 }
