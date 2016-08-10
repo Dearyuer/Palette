@@ -1,6 +1,1 @@
-<?php 
-
-echo json_encode($post);
-
-
- ?>
+<?php echo json_encode($post); ?>

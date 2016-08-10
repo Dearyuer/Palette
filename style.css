@@ -800,7 +800,7 @@ body {
 }
 .loader {
   height: 0px;
-  width: 40%;
+  width: 50%;
   margin: 1em auto;
   position: relative;
   background: rgba(0, 0, 0, 0.1);
@@ -817,7 +817,7 @@ body {
   transform-origin: 0% 50%;
 }
 .post-title {
-  transition-delay: 0.15s;
+  transition-delay: 0.2s;
 }
 .loader {
   transition-delay: 0.1s;
@@ -842,12 +842,12 @@ body {
   transform: translate3d(-20px, 0, 0);
 }
 .post-item-animate .loader {
-  transition-delay: 0.45s;
+  transition-delay: 0.3s;
   opacity: 0;
   transform: translate3d(-60px, 0, 0);
 }
 .post-item-animate .excerpt-content {
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
   opacity: 0;
   transform: translate3d(-40px, 0, 0);
 }
@@ -934,18 +934,75 @@ body {
   -webkit-transition: opacity 0.6s;
   transition: opacity 0.6s;
 }
-.post-content {
-  margin-top: 160px;
-  margin-bottom: 160px;
-  padding: 0 89px;
-  text-align: center;
-}
-.post-content .title {
-  margin: 40px;
-}
-.post-content .content-text {
-  text-align: left;
-}
 .scroll-wrap {
   background-color: #e1e8ed;
+}
+.main-content .post-content {
+  background-color: white;
+  opacity: 0;
+  transition: all .3s;
+  transform: translate3d(60px, 0, 0);
+}
+.content-animate .post-content {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.content-text .content-title {
+  opacity: 0;
+  transition: all .3s;
+  transition-delay: 0.3s;
+  transform: translate3d(60px, 0, 0);
+}
+.content-animate .content-title {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.content-text p {
+  opacity: 0;
+  transition: all .2s;
+  transition-delay: .6s;
+  transform: translate3d(60px, 0, 0);
+}
+.content-animate .content-text p {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.main-content .post-content {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
+  padding: 0;
+  text-align: center;
+}
+.main-content .post-content .title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 0;
+  font-size: 0.83em;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e1e8ed;
+  font-weight: 500;
+  text-align: left;
+}
+.main-content .post-content .title .fa-times {
+  margin-top: 3px;
+  cursor: pointer;
+  float: right;
+}
+.main-content .post-content .content-text {
+  margin-top: 100px;
+  text-align: left;
+  padding: 0 160px;
+}
+.main-content .post-content .content-text .content-title {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 38px;
+}
+.main-content .post-content .content-text p {
+  font-size: 18px;
+  padding-bottom: 120px;
 }
