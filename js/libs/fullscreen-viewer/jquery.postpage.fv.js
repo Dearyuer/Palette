@@ -114,10 +114,15 @@
 			});
 			$(".main-content").addClass('content-show');
 			// console.log($(".main-content .content-item")[current]);
-			$(".main-content .content-item")[current].className += ' content-item-show';
+			//$(".main-content .content-item")[current].className += ' content-item-show';
 
 			//close button
 			$('body').addClass('noscroll');
+
+			//custom
+			$(".main-container").hide();
+			$('.header').hide();
+			$('.footer').hide();
 
 			isAnimating = false;
 		});
