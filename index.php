@@ -13,7 +13,6 @@
 				wp_enqueue_script( 'github_contri_ajax', get_template_directory_uri().'/js/widgets/githubContriAjax.js',[],false,true);
 				wp_localize_script( 'github_contri_ajax', 'GIT_HUB_CON_AJAX', array(
 					'home_url' => home_url()
-
 				));
 			}
 			?>
@@ -34,5 +33,4 @@
 		</div>
 	</div>
 </div>
-<?php get_template_part('content','area'); ?>
 <?php get_footer(); ?>

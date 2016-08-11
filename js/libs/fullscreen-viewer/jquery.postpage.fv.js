@@ -8,13 +8,7 @@
 
 	var	separator = " ",
 		body = $('body'),
-		mainContent = $(".main-content"),
-		postItem = $(".post-item"),
-		contentAuthor = $(".content-text .content-author"),
-		contentAuthorName = $(".content-text .content-author-name"),
-		contentTitle = $(".content-text .content-title"),
-		contentMeta = $(".content-text .post-meta"),
-		contentText = $(".content-text p");
+		postItem = $(".post-item");
 	/**
 	 * gets the viewport width and height
 	 * based on http://responsejs.com/labs/dimensions/
@@ -58,29 +52,20 @@
 			});
 			$.get(self.attr("url")).done(function(data){
 				try {
-					var post = $.parseJSON(data);
+					body.append(data);
 				}catch(e){
 					self.html("cant reach server");
 					throw e;
 				}
-				//var post = $.parseJSON(data);
-				console.log(post);
+				var mainContent = $(".main-content");
 				setTimeout(function(){
 					self.addClass("post-item-loaded");
 				},500);
-				contentAuthor.children().attr("src",post.post_author_avatar.match(/src\s*=\s*"(.+?)"/)[1]);
-				contentAuthorName.children("span").html(post.post_author_name);
-				contentTitle.html(post.post_title);
-				contentText.html(post.post_content);
-				// contentMeta.children("span.post--date").html(post.post_formatted_date);
-				// contentMeta.children("span.post--category").html(post.post_category_names);
-				contentMeta.children("span.post--time--ago").html(post.post_formatted_time_ago);
-				// contentMeta.children("span.post--comments").html(post.comment_count);
 				setTimeout(function() {
 					self.addClass('post-item-animate'); //fade out
 					// reveal/load content after the last element animates out (todo: wait for the last transition to finish)
 					setTimeout(function() { 
-						loadContent(self,self.parent().parent()); 
+						loadContent(self,self.parent().parent(),mainContent); 
 					}, 500);
 				}, 1000);
 			});
@@ -90,7 +75,7 @@
 	});
 
 
-	function loadContent(item, parent) {
+	function loadContent(item, parent, mainContent) {
 
 		//const
 		var paddingLeft = 20;
@@ -155,7 +140,7 @@
 
 			//close button
 			$(".fa-times").on('click',function(){
-				hideContent(initPos,initSize);
+				hideContent(initPos,initSize,mainContent);
 			})
 
 
@@ -172,7 +157,7 @@
 	}
 
 
-	function hideContent(initPos,initSize) {
+	function hideContent(initPos,initSize,mainContent) {
 		// $(".main-container").show();
 		// $('.header').show();
 		// $('.footer').show();
@@ -204,10 +189,8 @@
 						'backgroundColor': "white"
 					});
 				},500);
+				mainContent.remove();
 			});
-
-			// dummy.style.WebkitTransform = 'translate3d(' + gridItem.offsetLeft + 'px, ' + gridItem.offsetTop + 'px, 0px) scale3d(' + gridItem.offsetWidth/gridItemsContainer.offsetWidth + ',' + gridItem.offsetHeight/getViewport('y') + ',1)';
-			// dummy.style.transform = 'translate3d(' + gridItem.offsetLeft + 'px, ' + gridItem.offsetTop + 'px, 0px) scale3d(' + gridItem.offsetWidth/gridItemsContainer.offsetWidth + ',' + gridItem.offsetHeight/getViewport('y') + ',1)';
 
 			// onEndTransition(dummy, function() {
 			// 	// reset content scroll..
@@ -227,147 +210,3 @@
 
 
 }).call(this);
-
-
-
-
-
-// console.log(parent.width());
-// console.log(item.parent().width());
-// console.log(parent);
-// console.log(item.parent());
-// dummy.style.WebkitTransform = 'translate3d(' + (item.offsetLeft - 5) + 'px, ' + (item.offsetTop - 5) + 'px, 0px) scale3d(' + item.offsetWidth/gridItemsContainer.offsetWidth + ',' + item.offsetHeight/getViewport('y') + ',1)';
-// dummy.style.transform = 'translate3d(' + (item.offsetLeft - 5) + 'px, ' + (item.offsetTop - 5) + 'px, 0px) scale3d(' + item.offsetWidth/gridItemsContainer.offsetWidth + ',' + item.offsetHeight/getViewport('y') + ',1)';
-
-// // console.log(getViewport('x'));
-// // console.log(scrollX())
-// // $(".side-area").css({
-// // 	opacity:0
-// // });
-// // $(".contri").css({
-// // 	opacity:0
-// // });
-// // add expanding element/placeholder 
-// // var dummy = $('<div></div>');
-// // dummy.addClass('placeholder');
-// // console.log(item);
-// // // set the width/heigth and position
-// // // dummy[0].style.WebkitTransform = 'translate3d(' + (item.offsetLeft - 5) + 'px, 
-// // //' + (item.offsetTop - 5) + 'px, 
-// // //0px) 
-// // //scale3d(
-// // //' + item.offsetWidth/$(".container").offsetWidth + ',
-// // //' + item.offsetHeight/getViewport('y') + ',1)';
-
-
-
-// // // dummy[0].style.transform = 'translate3d(' + (item.offsetLeft - 5) + 'px, ' + (item.offsetTop - 5) + 'px, 0px) scale3d(' + item.offsetWidth/$(".container").offsetWidth + ',' + item.offsetHeight/getViewport('y') + ',1)';
-
-// // // add transition class 
-// // dummy.addClass('placeholder-trans-in');
-
-// // // insert it after all the grid items
-// // $(".post").append(dummy);
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // $('body').addClass('view-single');
-// // console.log(item.children('.main-post')[0].offsetWidth);
-
-// // item.children('.main-post').css({
-// // 	transform:"translate3d( 87vw,0,0) scale3d("+(getViewport('x')-15)/item.children('.main-post')[0].offsetWidth+","+getViewport('y')/item.children('.main-post')[0].offsetHeight+","+"1)",
-	
-// // })
-// // setTimeout(function(){
-// // 	item.children('.main-post').css({
-// // 		//transform:"scale3d("+item.children('.main-post')[0].offsetWidth/getViewport('x')+","+item.children('.main-post')[0].offsetHeight/getViewport('y')+","+"1)",
-// // 		// width:"100vw",
-// // 		// height:"100vw",
-// // 		// position:"fixed",
-// // 		// top:0,
-// // 		// left:0,
-// // 		// pointerEvents: "none",
-// // 		// position: "fixed",
-// // 		// width: "100%",
-// // 		// height: "100vh",
-// // 		// zIndex: 100,
-// // 		// top: 0,
-// // 		// left: 0,
-// // 		// background: "#fff",
-// // 		// transformOrigin: "0 0",
-// // 	});
-// // },300)
-
-
-// // window.addEventListener('scroll', noscroll);
-// // // // body overlay
-// // // classie.add(bodyEl, 'view-single');
-
-// console.log(item.position());
-// dummy = $('<article></article>');
-// dummy.addClass('placeholder');
-
-// dummy.css({
-// 	transform : 'translate3d(' + (item.children('.main-post')[0].offsetLeft - 5) + 'px, ' + (item.children('.main-post')[0].offsetTop - 5) + 'px, 0px) scale3d(' + item.children('.main-post')[0].offsetWidth/$(".main-area")[0].offsetWidth + ',' + item.children('.main-post')[0].offsetHeight/getViewport('y') + ',1)'
-// });
-// // add transition class 
-// dummy.addClass('placeholder-trans-in');
-
-// // insert it after all the grid items
-// $(".main-area").prepend(dummy);
-
-// $('body').addClass('view-single');
-// setTimeout(function() {
-// 	// expands the placeholder
-// 	dummy.css({
-// 		//transform:"translate3d( 87vw,0,0) scale3d("+(getViewport('x')-15)/item.children('.main-post')[0].offsetWidth+","+getViewport('y')/item.children('.main-post')[0].offsetHeight+","+"1)",
-// 		transform : 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)'
-// 	});
-// 	// disallow scroll
-// 	window.addEventListener('scroll', noscroll);
-// }, 25);
-
-
-
-// // setTimeout(function() {
-// // // 	// expands the placeholder
-// // // 	dummy.style.WebkitTransform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
-// // 	dummy[0].style.transform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
-// // // 	// disallow scroll
-// // // 	window.addEventListener('scroll', noscroll);
-// // }, 25);
-
-
-// // $(".main-area").on('transitionend webkitTransitionEnd oTransitionEnd', function (e) {
-//     // your event handler
-//     // $(".hidden-content").addClass('content--show');
-// // });
-
-
-// // onEndTransition(dummy, function() {
-// // 	// add transition class 
-// // 	classie.remove(dummy, 'placeholder--trans-in');
-// // 	classie.add(dummy, 'placeholder--trans-out');
-// // 	// position the content container
-// // 	contentItemsContainer.style.top = scrollY() + 'px';
-// // 	// show the main content container
-// // 	classie.add(contentItemsContainer, 'content--show');
-// // 	// show content item:
-// // 	classie.add(contentItems[current], 'content__item--show');
-// // 	// show close control
-// // 	classie.add(closeCtrl, 'close-button--show');
-// // 	// sets overflow hidden to the body and allows the switch to the content scroll
-// // 	classie.addClass(bodyEl, 'noscroll');
-
-// // 	isAnimating = false;
-// // });
