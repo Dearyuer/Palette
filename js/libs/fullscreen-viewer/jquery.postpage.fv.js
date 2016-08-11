@@ -50,26 +50,33 @@
 			}
 			isAnimating = true;
 			self.addClass("post-item-loading");
-
-			$.get(self.attr("url")).done(function(data){
-				var post = $.parseJSON(data);
-				//console.log(post);
-				contentTitle.html(post.post_title);
-				contentText.html(post.post_content);
-			});
-			//stop load
-
-
 			self.children().css({
 				'backgroundColor': "#e6e6e6"
 			});
-			setTimeout(function() {
-				self.addClass('post-item-animate');
-				// reveal/load content after the last element animates out (todo: wait for the last transition to finish)
-				setTimeout(function() { 
-					loadContent(self,self.parent().parent()); 
-				}, 500);
-			}, 1000);
+			$.get(self.attr("url")).done(function(data){
+				try {
+					var post = $.parseJSON(data);
+				}catch(e){
+					self.html("cant reach server");
+					throw e;
+				}
+				//var post = $.parseJSON(data);
+				console.log(post);
+				setTimeout(function(){
+					self.addClass("post-item-loaded");
+				},500);
+				contentTitle.html(post.post_title);
+				contentText.html(post.post_content);
+				setTimeout(function() {
+					self.addClass('post-item-animate'); //fade out
+					// reveal/load content after the last element animates out (todo: wait for the last transition to finish)
+					setTimeout(function() { 
+						loadContent(self,self.parent().parent()); 
+					}, 500);
+				}, 1000);
+			});
+			//stop load
+			
 		});
 	});
 
@@ -106,7 +113,7 @@
 		//expand
 		var offsetWidth = 16;
 		var expandSize = "";
-		console.log(parent.position())
+		//console.log(parent.position())
 		expandSize += 'translate3d(' + (-parent.position().left - paddingLeft + getViewport('x')) + 'px,' + separator;
 		expandSize += scrollY() - parent.position().top + 'px,' + separator;
 		expandSize += '0px)';
@@ -177,6 +184,7 @@
 				mainContent.hide();
 			
 				postItem.removeClass('post-item-loading');
+				postItem.removeClass('post-item-loaded');
 				postItem.removeClass('post-item-animate');
 				body.removeClass('noscroll');
 				lockScroll = false;

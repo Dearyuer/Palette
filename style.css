@@ -207,7 +207,6 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  border-bottom: 1px solid white;
   color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
@@ -801,7 +800,7 @@ body {
 }
 .loader {
   height: 0px;
-  width: 50%;
+  width: 40%;
   margin: 1em auto;
   position: relative;
   background: rgba(0, 0, 0, 0.1);
@@ -821,7 +820,7 @@ body {
   transition-delay: 0.2s;
 }
 .loader {
-  transition-delay: 0.1s;
+  transition-delay: 0s;
 }
 .post-item .excerpt-content {
   transition-delay: 0s;
@@ -833,7 +832,12 @@ body {
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 .post-item-loading .loader::before {
-  transition: transform 1s;
+  transition: transform .4s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale3d(0.618, 1, 1);
+}
+.post-item-loaded .loader::before {
+  transition: transform .25s;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   transform: scale3d(1, 1, 1);
 }
