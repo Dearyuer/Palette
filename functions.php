@@ -199,4 +199,13 @@ function palette_add_submenu_fn(){
 	
 }
 
+function palette_get_comments_template(){
+
+    
+}
+
+
+
+
+
 ?>

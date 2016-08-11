@@ -310,7 +310,7 @@ body {
   height: auto;
   margin-top: 20px;
   border: 1px solid #e1e8ed;
-  padding: 3px;
+  padding: 5px;
   border-radius: 5px;
   background-color: white;
   box-sizing: border-box;
@@ -958,7 +958,7 @@ body {
 .content-text .content-divider-line {
   opacity: 0;
   transition: all .3s;
-  transition-delay: .8s;
+  transition-delay: .9s;
   width: 0%;
 }
 .content-animate .content-divider-line {
@@ -1061,8 +1061,8 @@ body {
 .main-content .post-content .content-text .content-author img {
   max-width: 60px;
   border-radius: 50%;
-  padding: 7px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .main-content .post-content .content-text .content-author-name {
   text-align: center;

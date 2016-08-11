@@ -20,7 +20,8 @@
 	//get_comments_number
 
 
-	echo json_encode(array(
+	//echo json_encode(array(
+	echo var_dump(array(
 	'post_link' => get_the_permalink(),
 	'post_ID' => $post->ID,
 	'post_type' => $post->post_type,
@@ -52,6 +53,32 @@
 	// comments
 	'comment_status' => $post->comment_status,
 	'comment_count' => $post->comment_count,
-	//'comments_template' => comments_template()
+	//templates
+	'post_password_required' => post_password_required(),
+	//check
+
+	'have_comments' => $post->comment_count > 0,//have_comments(),
+	'comments_title' => sprintf( _nx(
+									'One thought on &ldquo;%2$s&rdquo;', 
+									'%1$s thoughts on &ldquo;%2$s&rdquo;',
+									get_comments_number(), 
+									'comments title', 
+									'palette' 
+								),
+								number_format_i18n( get_comments_number() ),
+								get_the_title() 
+							),
+	'comments_overflow_state' => get_comment_pages_count() > 1, //*
+	'page_comments' => get_option( 'page_comments' ), //*
+	'previous_comments_link' => previous_comments_link( __( '&larr; Older Comments', 'palette' ) ),
+	'next_comments_link' => next_comments_link( __( 'Newer Comments &rarr;', 'palette' ) ),
+	'list_comments' => wp_list_comments( array(
+				'style'       => '',
+				'short_ping'  => true,
+				'avatar_size' => 34,
+			) ),
+
+
+
 
 )); ?>
