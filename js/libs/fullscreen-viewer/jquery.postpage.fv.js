@@ -10,7 +10,10 @@
 		body = $('body'),
 		mainContent = $(".main-content"),
 		postItem = $(".post-item"),
+		contentAuthor = $(".content-text .content-author"),
+		contentAuthorName = $(".content-text .content-author-name"),
 		contentTitle = $(".content-text .content-title"),
+		contentMeta = $(".content-text .post-meta"),
 		contentText = $(".content-text p");
 	/**
 	 * gets the viewport width and height
@@ -65,8 +68,14 @@
 				setTimeout(function(){
 					self.addClass("post-item-loaded");
 				},500);
+				contentAuthor.children().attr("src",post.post_author_avatar.match(/src\s*=\s*"(.+?)"/)[1]);
+				contentAuthorName.children("span").html(post.post_author_name);
 				contentTitle.html(post.post_title);
 				contentText.html(post.post_content);
+				// contentMeta.children("span.post--date").html(post.post_formatted_date);
+				// contentMeta.children("span.post--category").html(post.post_category_names);
+				contentMeta.children("span.post--time--ago").html(post.post_formatted_time_ago);
+				// contentMeta.children("span.post--comments").html(post.comment_count);
 				setTimeout(function() {
 					self.addClass('post-item-animate'); //fade out
 					// reveal/load content after the last element animates out (todo: wait for the last transition to finish)

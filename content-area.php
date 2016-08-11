@@ -4,7 +4,26 @@
 			<div class="post-content">
 				<div class="title"><a href="#"><span><i class="fa fa-sticky-note" aria-hidden="true"></i></span> 博文</a><span class="fullscreen-component"><i class="fa fa-times" aria-hidden="true"></i></span></div>
 				<div class="content-text">
+					<div class="content-author">
+						<img src="" />
+					</div>
+					<div class="content-author-name">
+						<span></span>
+					</div>
 					<h1 class="content-title"></h1>
+					<div class="post-meta">
+						<?php /*<i class="fa fa-calendar-o" aria-hidden="true"></i> <span class="post--date"></span>
+						-
+						<i class="fa fa-bookmark-o" aria-hidden="true"></i> <span class="post--category"></span>
+						-
+						<i class="fa fa-clock-o" aria-hidden="true"></i> <span class="post--time--ago"></span>
+						-	
+						<i class="fa fa-comments-o" aria-hidden="true"></i> <span class="post--comments"></span>*/ ?>
+						<i class="fa fa-clock-o" aria-hidden="true"></i> <span class="post--time--ago"></span>
+					</div>
+					<div class="content-divider">
+						<div class="content-divider-line"></div>
+					</div>
 					<p>
 					</p>
 				</div>

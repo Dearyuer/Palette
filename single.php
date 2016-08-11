@@ -27,6 +27,8 @@
 	//'post_name' => $post->post_name,
 	'post_title' => $post->post_title,
 	'post_author' => $post->post_author,
+	'post_author_name' => get_userdata($post->post_author)->display_name,
+	'post_author_avatar' => get_avatar($post->post_author,300),
 	'post_date' => $post->post_date,
 	'post_category_names' => $outputCategoryNames,
 	'post_category_links' => $outputCategoryLinks,

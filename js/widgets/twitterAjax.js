@@ -68,7 +68,7 @@ jQuery(function(){
 						elemP.append(elemSpan);
 
 
-						elemI.addClass("fa").addClass("fa-twitter-square").attr({
+						elemI.addClass("fa").addClass("fa-clock-o").attr({
 							"aria-hidden": "true"
 						});
 						elemSpan.append(elemI);
