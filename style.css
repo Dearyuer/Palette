@@ -69,6 +69,13 @@ body {
 .clearfix {
   *zoom: 1;
 }
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: -9999;
+  left: -99999;
+}
 .header {
   height: 66px;
   font-size: 15px;
@@ -709,98 +716,6 @@ body {
     margin-left: 0;
   }
 }
-.container .comment-meta {
-  margin-left: 50px;
-  font-size: 12px;
-}
-.container .comments-area {
-  margin-top: 20px;
-  color: white;
-}
-.container .comment-list {
-  padding: 0;
-}
-.container .fn {
-  font-style: normal;
-}
-.container .vcard {
-  font-size: 14px;
-}
-.container .reply a:visited,
-.container .reply a:link {
-  color: #666666;
-}
-.container .reply a:hover {
-  cursor: pointer;
-  color: deepskyblue;
-}
-.container .reply {
-  float: right;
-  font-size: 14px;
-}
-.container .vcard img {
-  border-radius: 50%;
-}
-.container .comment-body:before,
-.container .comment-body:after {
-  content: "";
-  display: table;
-}
-.container .comment-body:after {
-  clear: both;
-}
-.container .comment-body {
-  *zoom: 1;
-}
-.container .comment-body {
-  margin: 0 0 10px 0px;
-}
-.container .comment-body {
-  padding: 10px;
-  margin-right: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
-  background-color: white;
-  border-radius: 5px;
-}
-.container .comment-body p {
-  margin-left: 40px;
-  font-size: 15px;
-}
-.container .comment-form-comment label {
-  display: none;
-}
-.container #reply-title {
-  margin-top: 16px;
-  font-size: 17px;
-}
-.container .comment-notes {
-  font-size: 15px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  color: white;
-}
-.container .comment-form {
-  margin: 10px;
-}
-.container .comment-form label {
-  display: block;
-  color: white;
-}
-.container .form-submit input {
-  margin-top: 10px;
-  box-shadow: none;
-  background: none;
-  border: 1px solid white;
-  font-size: 15px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: white;
-}
-.container .comment-awaiting-moderation {
-  font-size: 13px;
-  margin-left: 25px;
-  color: white;
-}
 .loader {
   height: 0px;
   width: 40%;
@@ -1090,6 +1005,93 @@ body {
 .main-content .post-content .content-text p {
   padding-bottom: 80px;
   font-size: 18px;
+}
+.main-content .post-content .comments-area {
+  margin-top: 20px;
+  text-align: left;
+  padding: 0 160px;
+}
+.main-content .post-content .comments-area .comments-title {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+.main-content .post-content .comments-area .comment-meta {
+  margin-left: 50px;
+  font-size: 12px;
+}
+.main-content .post-content .comments-area .comment-list {
+  padding: 0;
+}
+.main-content .post-content .comments-area .comment-list .comment-body:before,
+.main-content .post-content .comments-area .comment-list .comment-body:after {
+  content: "";
+  display: table;
+}
+.main-content .post-content .comments-area .comment-list .comment-body:after {
+  clear: both;
+}
+.main-content .post-content .comments-area .comment-list .comment-body {
+  *zoom: 1;
+}
+.main-content .post-content .comments-area .comment-list .comment-body {
+  margin: 0 0 10px 0px;
+}
+.main-content .post-content .comments-area .comment-list .comment-body {
+  padding: 20px;
+  border: 1px solid #e1e8ed;
+  background-color: white;
+  border-radius: 5px;
+}
+.main-content .post-content .comments-area .comment-list .comment-body .comment-author {
+  font-size: 14px;
+}
+.main-content .post-content .comments-area .comment-list .comment-body .comment-author img {
+  border-radius: 50%;
+}
+.main-content .post-content .comments-area .comment-list .comment-body p {
+  margin-left: 40px;
+  font-size: 15px;
+}
+.main-content .post-content .comments-area .comment-list .comment-body .reply a:visited,
+.main-content .post-content .comments-area .comment-list .comment-body .reply a:link {
+  color: #666666;
+}
+.main-content .post-content .comments-area .comment-list .comment-body .reply a:hover {
+  cursor: pointer;
+  color: deepskyblue;
+}
+.main-content .post-content .comments-area .comment-list .comment-body .reply {
+  float: right;
+  font-size: 14px;
+}
+.main-content .post-content .comments-area .comment-respond #reply-title {
+  margin-top: 16px;
+  font-size: 17px;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-notes {
+  font-size: 15px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  color: white;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form label {
+  display: block;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .form-submit input {
+  margin-top: 10px;
+  box-shadow: none;
+  background: none;
+  border: 1px solid #e1e8ed;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.main-content .post-content .comments-area .fn {
+  font-style: normal;
+}
+.main-content .post-content .comments-area .comment-awaiting-moderation {
+  font-size: 13px;
+  margin-left: 25px;
 }
 .main-post {
   transition: background-color 0.2s;

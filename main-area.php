@@ -1,6 +1,6 @@
 <article class="post<?php if ( has_post_thumbnail() ) { ?> has-thumbnail<?php } ?>">
 	<!-- <span class="post-date"><?php the_time('M') ?><span><?php the_time('j') ?></span></span> -->
-	<a class="post-item" url="<?php the_permalink(); ?>">
+	<a class="post-item" url="<?php the_permalink(); ?>" post-id="<?php echo get_the_ID(); ?>">
 		<div class="main-post">
 
 	 		<div class="post-thumbnail">

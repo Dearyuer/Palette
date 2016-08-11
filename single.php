@@ -29,8 +29,10 @@
 						<?php echo $post->post_content; ?>
 					</p>
 				</div>
+				<div class="hidden">{{</div>
+					<div class="comments-template-area"><?php comments_template(); ?></div>
+				<div class="hidden">}}</div>
 			</div>
 		</article>
-		<?php comments_template(); ?>
 	</div>
 </section>

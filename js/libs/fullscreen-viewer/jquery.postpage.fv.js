@@ -68,9 +68,68 @@
 						loadContent(self,self.parent().parent(),mainContent); 
 					}, 500);
 				}, 1000);
+
+				//handlesubmit comment
+
+				var submitHandler = function(e){
+					e.preventDefault();
+					$.ajax({
+						url: COMMENT_SUBMIT_AJAX.ajaxurl,
+						type: 'POST',
+						dataType: 'json',
+						data: {
+							//comment_post_ID: self.attr("post-id"),
+							comment_post_ID: self.attr("post-id"),
+							author: $(".comment-form-author #author").val(),
+							email: $(".comment-form-email #email").val(),
+							url: $(".comment-form-url #url").val(),
+							comment: $(".comment-form-comment #comment").val(),
+							comment_parent: $(".form-submit #comment_parent").val(),
+							// _wp_unfiltered_html_comment: ""
+
+
+
+							//add action nonce!!!!!!!!!!!!
+
+
+
+
+
+						},
+						success: function (obj){
+							console.log(obj);
+						},
+						error: function (obj){
+							console.log(obj);
+							//console.log(obj.responseText);
+							// (.|[\r\n]) include newline
+							try{
+							// var reg = /({{<\/div>)((.|[\r\n])+?)(?=<div>}})/;
+							var reg = /({{<\/div>)((.|[\r\n])+?)(?=<div class="hidden">}})/;
+							var data = obj.responseText.match(reg)[0];
+							data = data.slice(8,data.length)
+							$(".comments-template-area").html(data);
+							$(".form-submit #submit").on('click',submitHandler);
+							// remove handler delete element!!!!!
+							// console.log(reg.exec(obj.responseText)[0]);
+							console.log(2);
+							//{{<\/div>(.+?)<div>}}
+							}catch(e){
+								throw e;
+							}finally{
+								//link to error page
+							}
+						}
+
+					});
+				}
+
+
+				$(".form-submit #submit").on('click',submitHandler);
+				//$(".form-submit #submit").unbind()
+				//remove handler
 			});
 			//stop load
-			
 		});
 	});
 
@@ -195,9 +254,6 @@
 			// onEndTransition(dummy, function() {
 			// 	// reset content scroll..
 			// 	contentItem.parentNode.scrollTop = 0;
-			// 	gridItemsContainer.removeChild(dummy);
-			// 	classie.remove(gridItem, 'grid__item--loading');
-			// 	classie.remove(gridItem, 'grid__item--animate');
 			// 	lockScroll = false;
 			// 	window.removeEventListener( 'scroll', noscroll );
 			// });
