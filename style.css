@@ -1088,7 +1088,7 @@ body {
 .main-content .post-content .comments-area .comment-respond .comment-form {
   border-radius: 5px;
   text-align: left;
-  padding-bottom: 36px;
+  padding-bottom: 16px;
   margin-top: 20px;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form label {
@@ -1104,6 +1104,8 @@ body {
   border: 1px solid #e1e8ed;
   margin-bottom: 15px;
   border-radius: 5px;
+  width: 50%;
+  height: 100px;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-form-comment textarea:focus {
   outline: none;
@@ -1146,9 +1148,14 @@ body {
 .main-content .post-content .comments-area .comment-respond .comment-form .form-submit button:focus {
   outline: none;
 }
+.main-content .post-content .comments-area .comment-respond .iframe-notice-div p,
+.main-content .post-content .comments-area .comment-respond .iframe-notice-div strong {
+  color: #de5347;
+}
 .main-content .post-content .comments-area .comment-awaiting-moderation {
   font-size: 13px;
   margin-left: 25px;
+  color: #de5347;
 }
 .main-post {
   transition: background-color 0.2s;

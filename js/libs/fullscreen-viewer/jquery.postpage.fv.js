@@ -112,6 +112,13 @@
 								data = data.slice(8,data.length)
 								$(".comments-template-area").html(data);
 								$(".form-submit #submit").on('click',submitHandler);
+
+
+
+								//add animation!!!loading
+
+
+
 								// remove handler delete element!!!!!
 								// console.log(reg.exec(obj.responseText)[0]);
 								console.log(2);
@@ -122,9 +129,16 @@
 									var data2 = obj.responseText.match(reg2)[0];
 									data2 = data2.replace(/(<a)((.|[\r\n])+?)(<\/a>)/,'');
 									var iframe = $("<div></div");
+									iframe.addClass('iframe-notice-div');
 									iframe.html(data2);
 									// iframe.html(obj.responseText);
-									$("#respond").prepend(iframe);
+									$(".iframe-notice-div").remove();
+
+									// use # go to that id!!!!!!!!!!!!!!!! or not
+
+
+
+									$("#respond").append(iframe);
 								}
 							},
 							statusCode: {
