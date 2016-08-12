@@ -529,6 +529,9 @@ body {
   cursor: pointer;
   color: deepskyblue;
 }
+.container .side-area .palette-sidebar-comments .sidebar-comment .each-comment .comment-meta {
+  float: right;
+}
 .container .side-area .palette-sidebar-comments li.minus-sign {
   text-align: center;
   padding-top: 0;
@@ -1011,14 +1014,11 @@ body {
   margin-top: 20px;
   text-align: left;
   padding: 0 160px;
+  padding-bottom: 40px;
 }
 .main-content .post-content .comments-area .comments-title {
   font-size: 14px;
   margin-bottom: 30px;
-}
-.main-content .post-content .comments-area .comment-meta {
-  margin-left: 50px;
-  font-size: 12px;
 }
 .main-content .post-content .comments-area .comment-list {
   padding: 0;
@@ -1038,16 +1038,27 @@ body {
   margin: 0 0 10px 0px;
 }
 .main-content .post-content .comments-area .comment-list .comment-body {
-  padding: 20px;
-  border: 1px solid #e1e8ed;
+  margin: 0;
+  padding: 10px;
+  border-top: 1px solid #f3f3f3;
   background-color: white;
-  border-radius: 5px;
 }
 .main-content .post-content .comments-area .comment-list .comment-body .comment-author {
   font-size: 14px;
+  margin: 10px 0;
+  display: inline-block;
 }
 .main-content .post-content .comments-area .comment-list .comment-body .comment-author img {
   border-radius: 50%;
+  width: 50px;
+  height: auto;
+}
+.main-content .post-content .comments-area .comment-list .comment-body .comment-author .fn {
+  font-style: normal;
+}
+.main-content .post-content .comments-area .comment-list .comment-body .comment-meta {
+  font-size: 12px;
+  display: inline-block;
 }
 .main-content .post-content .comments-area .comment-list .comment-body p {
   margin-left: 40px;
@@ -1069,16 +1080,52 @@ body {
   margin-top: 16px;
   font-size: 17px;
 }
-.main-content .post-content .comments-area .comment-respond .comment-form .comment-notes {
-  font-size: 15px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  color: white;
+.main-content .post-content .comments-area .comment-respond .comment-form {
+  border-radius: 5px;
+  text-align: center;
+  padding-bottom: 36px;
+  margin-top: 20px;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form label {
   display: block;
 }
-.main-content .post-content .comments-area .comment-respond .comment-form .form-submit input {
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-notes {
+  font-size: 15px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-form-comment textarea {
+  border-top: 1px solid #e1e8ed;
+  border-bottom: 1px solid #e1e8ed;
+  border-left: none;
+  border-right: none;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-form-comment textarea:focus {
+  outline: none;
+  border-top: 1px solid deepskyblue;
+  border-bottom: 1px solid deepskyblue;
+  border-left: none;
+  border-right: none;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-form-author input,
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-form-email input,
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-form-url input {
+  border-top: 1px solid #e1e8ed;
+  border-bottom: 1px solid #e1e8ed;
+  border-left: none;
+  border-right: none;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-form-author input:focus,
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-form-email input:focus,
+.main-content .post-content .comments-area .comment-respond .comment-form .comment-form-url input:focus {
+  outline: none;
+  border-top: 1px solid deepskyblue;
+  border-bottom: 1px solid deepskyblue;
+  border-left: none;
+  border-right: none;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .form-submit input,
+.main-content .post-content .comments-area .comment-respond .comment-form .form-submit button {
   margin-top: 10px;
   box-shadow: none;
   background: none;
@@ -1086,9 +1133,6 @@ body {
   font-size: 15px;
   padding: 5px 10px;
   border-radius: 5px;
-}
-.main-content .post-content .comments-area .fn {
-  font-style: normal;
 }
 .main-content .post-content .comments-area .comment-awaiting-moderation {
   font-size: 13px;

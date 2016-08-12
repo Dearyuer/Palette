@@ -425,12 +425,12 @@ class Palette_Comments_Widget extends WP_Widget {
 				$output .= '<span class="comment-date">'.get_comment_date('M',$comment->comment_ID).'<span>'.get_comment_date('j',$comment->comment_ID).'</span></span>';
 				if(mb_strlen($comment->comment_content,'utf8') > $limit){
 					$temp = mb_substr($comment->comment_content,0,$limit,'utf8');
-					$output .= '<p class="each-comment"><a href="'.esc_url( get_comment_link( $comment) ).'">'.$temp."..."."</a>";
+					$output .= '<p class="each-comment">'.$temp."...";
 				}else{
 					$temp = $comment->comment_content;
-					$output .= '<p class="each-comment"><a href="'.esc_url( get_comment_link( $comment) ).'">'.$temp."</a>";
+					$output .= '<p class="each-comment">'.$temp;
 				}
-				$output .= '<span class="comment-meta">'.timeAgo(time(),get_comment_date('U',$comment)).'</span>';
+				$output .= '<span class="comment-meta">'.timeAgo(time(),get_comment_date('U',$comment)).'</span></p>';
 				$output .= '</li>';
 				// var_dump($comment);
 			}
