@@ -85,7 +85,7 @@
 								email: $(".comment-form-email #email").val(),
 								url: $(".comment-form-url #url").val(),
 								comment: $(".comment-form-comment #comment").val(),
-								comment_parent: $(".form-submit #comment_parent").val(),
+								comment_parent: $(".form-submit #comment_parent").val()
 								// _wp_unfiltered_html_comment: ""
 								//test it out
 

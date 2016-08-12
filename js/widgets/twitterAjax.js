@@ -34,7 +34,7 @@ jQuery(function(){
 			count:TAS.count
 		}).done(function(data){
 			$('.loading-anim').hide();
-			var data = JSON.parse(data);
+			var data = jQuery.parseJSON(data);
 			if(TAS.lan == 'zh_cn'){
 				for(var i = 0;i < TAS.count;i++){
 					if(data[i].lang == "zh"){

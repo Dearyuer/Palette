@@ -67,7 +67,7 @@ add_action( 'wp_enqueue_scripts', function(){
   ));
   wp_enqueue_script( 'comment-reply', false,[],false,true);
   //wp_enqueue_script('comment_submit_ajax',get_template_directory_uri().'/js/widgets/commentSubmitAjax.js',[],false,true);
-  wp_enqueue_script( 'feature-detection', get_template_directory_uri().'/js/feature-detection.js',[],false,false);
+  wp_enqueue_script( 'feature-detection', get_template_directory_uri().'/js/feature-detection.js',[],false,true);
 	$transparence_enable_state = get_option("palette_transparence_toggle");
 	if($transparence_enable_state){
 		wp_enqueue_style( 'transparence', get_template_directory_uri().'/css/transparence.css');
