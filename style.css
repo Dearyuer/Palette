@@ -176,7 +176,7 @@ body {
   margin: 0 0 10px 20px;
   border: 1px solid #e1e8ed;
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
 }
 .container .main-area .contri .contri-title {
   border-top-left-radius: 5px;
@@ -208,6 +208,7 @@ body {
 .container .main-area .posts-area {
   position: relative;
   margin: 0 0 0 20px;
+  border: 1px solid #e1e8ed;
   border-radius: 5px;
 }
 .container .main-area .posts-area .posts-title {
@@ -226,44 +227,28 @@ body {
   margin-top: 3px;
   cursor: move;
 }
-.container .main-area .posts-area article.post .main-post {
+.container .main-area .posts-area article.post a .main-post {
   padding: 38px 18px;
-  border-bottom: 1px solid #e1e8ed;
+  border-top: 1px solid #e1e8ed;
 }
-.container .main-area .posts-area article.post .main-post .post-title a:visited,
-.container .main-area .posts-area article.post .main-post .post-title a:link {
-  color: #333333;
-}
-.container .main-area .posts-area article.post .main-post .post-title a:hover {
-  cursor: pointer;
-  color: deepskyblue;
-}
-.container .main-area .posts-area article.post .main-post .post-meta {
+.container .main-area .posts-area article.post a .main-post .post-meta {
   color: #666666;
   line-height: 1.7em;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.4);
   margin-top: 10px;
 }
-.container .main-area .posts-area article.post .main-post .post-thumbnail img {
+.container .main-area .posts-area article.post a .main-post .post-thumbnail img {
   float: right;
   height: 120px;
   margin-left: 13px;
   max-width: 140px;
 }
-.container .main-area .posts-area article.post .main-post .content {
+.container .main-area .posts-area article.post a .main-post .content {
   margin-top: 5px;
 }
-.container .main-area .posts-area article.post:last-child .main-post {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.container .main-area article.single-post {
-  padding: 30px;
-  margin-right: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
-  background-color: white;
-  border-radius: 5px;
+.container .main-area .posts-area article.post a:hover .post-title {
+  color: inherit;
 }
 .container .side-area {
   padding-top: 40px;
@@ -289,7 +274,7 @@ body {
 }
 .container .side-area .palette-sidebar-profile {
   border: 1px solid #e1e8ed;
-  background-color: white;
+  background-color: transparent;
   padding: 0;
   border-radius: 5px;
   text-align: center;
@@ -319,7 +304,7 @@ body {
   border: 1px solid #e1e8ed;
   padding: 5px;
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
   box-sizing: border-box;
 }
 .container .side-area .palette-sidebar-profile .palette-profile-name {
@@ -376,7 +361,7 @@ body {
 }
 .container .side-area .palette-twitter {
   border: 1px solid #e1e8ed;
-  background-color: white;
+  background-color: transparent;
   color: #666666;
   margin-top: 13px;
   padding: 0;
@@ -426,7 +411,7 @@ body {
   font-size: 12px;
 }
 .container .side-area .palette-recent-posts {
-  background-color: white;
+  background-color: transparent;
   border: 1px solid #e1e8ed;
   color: #666666;
   margin-top: 13px;
@@ -470,7 +455,7 @@ body {
   background-color: #f5f5f5;
 }
 .container .side-area .palette-recent-posts li.minus-sign:hover {
-  background-color: white;
+  background-color: transparent;
 }
 .container .side-area .palette-recent-posts li.minus-sign {
   text-align: center;
@@ -487,7 +472,7 @@ body {
   color: deepskyblue;
 }
 .container .side-area .palette-sidebar-comments {
-  background-color: white;
+  background-color: transparent;
   margin-top: 13px;
   border: 1px solid #e1e8ed;
   padding: 0;
@@ -624,7 +609,7 @@ body {
     border: none;
   }
   .container .main-area article.post .main-post:hover {
-    background-color: white;
+    background-color: transparent;
   }
   .container .side-area {
     margin-left: 0;
@@ -1038,9 +1023,14 @@ body {
 }
 .main-content .post-content .comments-area .comment-list .comment-body {
   margin: 0;
-  padding: 26px 0;
-  border-top: 1px solid #f3f3f3;
-  background-color: white;
+  padding: 26px 16px;
+  border: 1px solid #f3f3f3;
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 24px 0;
+}
+.main-content .post-content .comments-area .comment-list .comment-body:hover {
+  background-color: #f3f3f3;
 }
 .main-content .post-content .comments-area .comment-list .comment-body .comment-author {
   font-size: 14px;

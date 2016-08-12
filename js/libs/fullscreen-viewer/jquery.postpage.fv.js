@@ -267,7 +267,7 @@
 				mainContent.removeClass('content-animate');
 				setTimeout(function(){
 					postItem.children().css({
-						'backgroundColor': "white"
+						'backgroundColor': "transparent"
 					});
 				},500);
 				mainContent.remove();
