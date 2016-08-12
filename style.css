@@ -95,6 +95,7 @@ body {
   height: 30px;
 }
 .header .navigation ul li {
+  font-weight: 500;
   float: left;
   display: inline-block;
   padding: 22px 25px 22px 0px;
@@ -105,6 +106,10 @@ body {
 }
 .header .navigation ul li a:hover {
   cursor: pointer;
+  color: deepskyblue;
+}
+.header .navigation ul .current_page_item a:visited,
+.header .navigation ul .current_page_item a:link {
   color: deepskyblue;
 }
 .header .navigation ul:before,
@@ -1023,11 +1028,9 @@ body {
 }
 .main-content .post-content .comments-area .comment-list .comment-body {
   margin: 0;
-  padding: 26px 16px;
-  border: 1px solid #f3f3f3;
+  padding: 28px 16px;
+  border-bottom: 1px solid #f3f3f3;
   background-color: transparent;
-  border-radius: 5px;
-  margin: 24px 0;
 }
 .main-content .post-content .comments-area .comment-list .comment-body:hover {
   background-color: #f3f3f3;
@@ -1075,53 +1078,50 @@ body {
 .main-content .post-content .comments-area .comment-list .comment-body .comment-text p {
   font-size: 15px;
 }
+.main-content .post-content .comments-area .comment-respond {
+  padding-top: 24px;
+}
 .main-content .post-content .comments-area .comment-respond #reply-title {
   margin-top: 16px;
-  font-size: 17px;
+  font-size: 15px;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form {
   border-radius: 5px;
-  text-align: center;
+  text-align: left;
   padding-bottom: 36px;
   margin-top: 20px;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form label {
   display: block;
+  font-size: 14px;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-notes {
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 6px;
   margin-bottom: 6px;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-form-comment textarea {
-  border-top: 1px solid #e1e8ed;
-  border-bottom: 1px solid #e1e8ed;
-  border-left: none;
-  border-right: none;
+  border: 1px solid #e1e8ed;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-form-comment textarea:focus {
   outline: none;
-  border-top: 1px solid deepskyblue;
-  border-bottom: 1px solid deepskyblue;
-  border-left: none;
-  border-right: none;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-form-author input,
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-form-email input,
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-form-url input {
-  border-top: 1px solid #e1e8ed;
-  border-bottom: 1px solid #e1e8ed;
-  border-left: none;
-  border-right: none;
+  border: 1px solid #e1e8ed;
+  margin-bottom: 15px;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-form-author input:focus,
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-form-email input:focus,
 .main-content .post-content .comments-area .comment-respond .comment-form .comment-form-url input:focus {
   outline: none;
-  border-top: 1px solid deepskyblue;
-  border-bottom: 1px solid deepskyblue;
-  border-left: none;
-  border-right: none;
 }
 .main-content .post-content .comments-area .comment-respond .comment-form .form-submit input,
 .main-content .post-content .comments-area .comment-respond .comment-form .form-submit button {
@@ -1132,6 +1132,19 @@ body {
   font-size: 15px;
   padding: 5px 10px;
   border-radius: 5px;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .form-submit button {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  border-color: deepskyblue;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .form-submit button:hover {
+  background: deepskyblue;
+  color: white;
+}
+.main-content .post-content .comments-area .comment-respond .comment-form .form-submit button:focus {
+  outline: none;
 }
 .main-content .post-content .comments-area .comment-awaiting-moderation {
   font-size: 13px;

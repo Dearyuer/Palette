@@ -36,10 +36,11 @@
 							'after' 		  => '',
 							'link_before'     => '',
 							'link_after'      => '',
-							'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s</ul>',
+							'items_wrap'      => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
 							'depth' 		  => 0,
 							'walker' 		  => ''
 						);
+						//'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s</ul>',
 						wp_nav_menu( $args ); ?>
 				</nav>
 			</header>
