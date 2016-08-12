@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pure Minus\n"
-"POT-Creation-Date: 2016-08-09 10:54+0800\n"
-"PO-Revision-Date: 2016-08-09 10:54+0800\n"
+"POT-Creation-Date: 2016-08-12 18:58+0800\n"
+"PO-Revision-Date: 2016-08-12 18:58+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -56,135 +56,135 @@ msgstr ""
 msgid "Recent tweets"
 msgstr ""
 
-#: app/widgets.php:49 functions.php:8
+#: app/widgets.php:50 functions.php:8
 msgid "just now"
 msgstr "刚刚"
 
-#: app/widgets.php:50
+#: app/widgets.php:51
 msgid " minutes ago"
 msgstr " 分钟前"
 
-#: app/widgets.php:51 functions.php:13
+#: app/widgets.php:52 functions.php:13
 msgid "half an hour ago"
 msgstr "半小时前"
 
-#: app/widgets.php:52
+#: app/widgets.php:53
 msgid " hours ago"
 msgstr " 小时前"
 
-#: app/widgets.php:53 functions.php:18
+#: app/widgets.php:54 functions.php:18
 msgid "yesterday"
 msgstr "昨天"
 
-#: app/widgets.php:54
+#: app/widgets.php:55
 msgid " days ago"
 msgstr " 天前"
 
-#: app/widgets.php:72 app/widgets.php:217 app/widgets.php:371
+#: app/widgets.php:74 app/widgets.php:219 app/widgets.php:373
 msgid "Title:"
 msgstr ""
 
-#: app/widgets.php:76
+#: app/widgets.php:78
 msgid "API Key:"
 msgstr ""
 
-#: app/widgets.php:80
+#: app/widgets.php:82
 msgid "API Secret:"
 msgstr ""
 
-#: app/widgets.php:84
+#: app/widgets.php:86
 msgid "Access Token:"
 msgstr ""
 
-#: app/widgets.php:88
+#: app/widgets.php:90
 msgid "Token Secret:"
 msgstr ""
 
-#: app/widgets.php:92 app/widgets.php:451
+#: app/widgets.php:94 app/widgets.php:453
 msgid "Number of comments to view"
 msgstr "评论数量"
 
-#: app/widgets.php:119
+#: app/widgets.php:121
 msgid "Palette Profile"
 msgstr ""
 
-#: app/widgets.php:120
+#: app/widgets.php:122
 msgid "Your profile"
 msgstr ""
 
-#: app/widgets.php:221
+#: app/widgets.php:223
 msgid "Profile URL"
 msgstr ""
 
-#: app/widgets.php:225
+#: app/widgets.php:227
 msgid "Show email?"
 msgstr ""
 
-#: app/widgets.php:227
+#: app/widgets.php:229
 msgid "Github URL"
 msgstr ""
 
-#: app/widgets.php:230
+#: app/widgets.php:232
 msgid "Facebook URL"
 msgstr ""
 
-#: app/widgets.php:233
+#: app/widgets.php:235
 msgid "Twitter URL"
 msgstr ""
 
-#: app/widgets.php:236
+#: app/widgets.php:238
 msgid "Dribbble URL"
 msgstr ""
 
-#: app/widgets.php:239
+#: app/widgets.php:241
 msgid "Tumblr URL"
 msgstr ""
 
-#: app/widgets.php:291 functions.php:144
+#: app/widgets.php:293 functions.php:156
 msgid "There's an error while uploading"
 msgstr ""
 
-#: app/widgets.php:298 functions.php:156
+#: app/widgets.php:300 functions.php:168
 msgid "Uploaded."
 msgstr ""
 
-#: app/widgets.php:317
+#: app/widgets.php:319
 msgid "Palette Recent Posts"
 msgstr ""
 
-#: app/widgets.php:318
+#: app/widgets.php:320
 msgid "Display recent posts"
 msgstr ""
 
-#: app/widgets.php:367
+#: app/widgets.php:369
 msgid "Recent posts"
 msgstr "最近文章"
 
-#: app/widgets.php:374
+#: app/widgets.php:376
 msgid "Number of posts to show:"
 msgstr ""
 
-#: app/widgets.php:378
+#: app/widgets.php:380
 msgid "Display post date?"
 msgstr ""
 
-#: app/widgets.php:396
+#: app/widgets.php:398
 msgid "Palette Comments Widget"
 msgstr ""
 
-#: app/widgets.php:397
+#: app/widgets.php:399
 msgid "Display recent comments"
 msgstr "显示最近评论"
 
-#: app/widgets.php:442
+#: app/widgets.php:444
 msgid "Recent Comments"
 msgstr "最近评论"
 
-#: app/widgets.php:455
+#: app/widgets.php:457
 msgid "Text limits"
 msgstr "评论限制字数"
 
-#: app/widgets.php:475
+#: app/widgets.php:477
 msgid "Sidebar"
 msgstr "边栏"
 
@@ -195,41 +195,41 @@ msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 
-#: comments.php:18 comments.php:36
+#: comments.php:18 comments.php:39
 msgid "Comment navigation"
 msgstr "评论导航"
 
-#: comments.php:19 comments.php:37
+#: comments.php:19 comments.php:40
 msgid "&larr; Older Comments"
 msgstr "&larr; 旧的评论"
 
-#: comments.php:20 comments.php:38
+#: comments.php:20 comments.php:41
 msgid "Newer Comments &rarr;"
 msgstr "新的评论"
 
-#: comments.php:43
+#: comments.php:47
 msgid "Comments are closed."
 msgstr "评论关闭了"
 
 #: footer.php:8
 msgid "Activity"
-msgstr ""
+msgstr "动态"
 
 #: footer.php:11
 msgid "Archive"
-msgstr ""
+msgstr "归档"
 
 #: footer.php:14
 msgid "About"
-msgstr ""
+msgstr "关于"
 
 #: footer.php:23
 msgid "Theme"
-msgstr ""
+msgstr "主题"
 
 #: footer.php:27
 msgid "License"
-msgstr ""
+msgstr "条款"
 
 #: functions.php:11
 #, php-format
@@ -246,43 +246,125 @@ msgstr "%d 小时前"
 msgid "%d days ago"
 msgstr "%d 天前"
 
-#: functions.php:78
+#: functions.php:90
 msgid "Nav Menu"
 msgstr "导航栏"
 
-#: functions.php:87
+#: functions.php:99
 msgid "Palette Theme"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:123
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: functions.php:186
+#: functions.php:198
 msgid "Updated settings"
 msgstr ""
 
-#: header.php:19
+#: functions.php:227
+#, php-format
+msgid "<div class=\"fn\"><div class=\"comment-author-link\">%s</div>"
+msgstr ""
+
+#: functions.php:232
+#, php-format
+msgid "<i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i> %1$s"
+msgstr ""
+
+#: functions.php:236
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:239
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:278
+msgid "Name"
+msgstr ""
+
+#: functions.php:280
+msgid "Email"
+msgstr ""
+
+#: functions.php:282
+msgid "Website"
+msgstr ""
+
+#: functions.php:286
+#, php-format
+msgid "Required fields are marked %s"
+msgstr ""
+
+#: functions.php:298
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: functions.php:302
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: functions.php:308
+#, php-format
+msgid ""
+"<a href=\"%1$s\" aria-label=\"%2$s\">Logged in as %3$s</a>. <a href=\"%4$s"
+"\">Log out?</a>"
+msgstr ""
+
+#: functions.php:311
+#, php-format
+msgid "Logged in as %s. Edit your profile."
+msgstr ""
+
+#: functions.php:315
+msgid "Your email address will not be published."
+msgstr ""
+
+#: functions.php:322
+msgid "Leave a Reply"
+msgstr ""
+
+#: functions.php:323
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: functions.php:328
+msgid "Cancel reply"
+msgstr ""
+
+#: functions.php:329
+msgid "Post Comment"
+msgstr ""
+
+#: header.php:11
 msgid "You should update your browser!"
 msgstr "你的浏览器版本过低，请更新=）"
 
-#: main-area.php:11
+#: header.php:39
+msgid "Language"
+msgstr "语言"
+
+#: main-area.php:14
 msgid "Posted on"
 msgstr "发表于"
 
-#: main-area.php:23
+#: main-area.php:27
 msgid "in Category"
 msgstr "在分类"
 
-#: main-area.php:27 single.php:23
+#: main-area.php:31
 msgid "No comments"
 msgstr "0 则评论"
 
-#: main-area.php:27 single.php:23
+#: main-area.php:31
 msgid "1 comments"
 msgstr "1 则评论"
 
-#: main-area.php:27 single.php:23
+#: main-area.php:31
 #, php-format
 msgid "%s comments"
 msgstr "%s 则评论"

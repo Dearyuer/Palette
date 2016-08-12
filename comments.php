@@ -6,12 +6,12 @@
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : ?>
 
-	<!-- <h2 class="comments-title"> -->
+	<h2 class="comments-title">
 		<?php
-			//printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'palette' ),
-				//number_format_i18n( get_comments_number() ), get_the_title() );
+			printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'palette' ),
+				number_format_i18n( get_comments_number() ), get_the_title() );
 		?>
-	<!-- </h2> -->
+	</h2>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<!-- <nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">

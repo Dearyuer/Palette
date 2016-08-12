@@ -17,11 +17,14 @@
 	<![endif]-->
 		<!-- happy coding have fun! o((◕ฺ∀ ◕ฺ))o -->
 		<div class="header">
+			<?php $logo_img_src = get_option("palette_logo_image_src");
+				$optimize_logo_img_src = !empty($logo_img_src) ? $logo_img_src : get_bloginfo('template_directory')."/img/logo.png";
+			?>
+			<!-- <span class="site-logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo $optimize_logo_img_src; ?>"/></a></span> -->
 			<header class="container">
 				<nav class="navigation">
 					<?php    
-						$logo_img_src = get_option("palette_logo_image_src");
-						$optimize_logo_img_src = !empty($logo_img_src) ? $logo_img_src : get_bloginfo('template_directory')."/img/logo.png";
+						
 						$args = array(
 							'theme_location'  => 'nav',
 							'menu' 			  => '',
@@ -36,7 +39,7 @@
 							'after' 		  => '',
 							'link_before'     => '',
 							'link_after'      => '',
-							'items_wrap'      => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+							'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo menu-item"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s<li class="site-language menu-item"><a href="#">'.__("Language","palette").'</a></li><li class="search-bar">'.get_search_form( $echo=false ).'</li></ul>',
 							'depth' 		  => 0,
 							'walker' 		  => ''
 						);
@@ -44,5 +47,6 @@
 						wp_nav_menu( $args ); ?>
 				</nav>
 			</header>
+			
 		</div>
 		<div id="header-shadow"></div>
