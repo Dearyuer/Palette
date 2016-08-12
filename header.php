@@ -4,25 +4,9 @@
 		<meta charset="<?php bloginfo('charset'); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title><?php bloginfo('name'); ?></title>
-		<!-- playground -->
-		<!-- <link type="text/css" href="<?php //bloginfo('template_directory'); ?>/css/normalize.css" rel="stylesheet"/> -->
-		<!-- <script type="text/javascript" src="<?php //bloginfo('template_directory'); ?>/js/modernizr.js"></script> -->
-		<!-- <link type="text/css" href="<?php //bloginfo('template_directory'); ?>/style.css" rel="stylesheet"/> -->
-
-
-		<!-- /playground -->
-		<!-- make sure this is the last line -->
 		<?php wp_head(); ?>
 	</head>
-	<!--[if lte IE 8]>
-	<body <?php body_class(); ?> >
-	<div><p><?php echo __("You should update your browser!", "palette") ?></p></div>
-	<div style="display:none;">
-	<![endif]-->
-	<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
 	<body <?php body_class(); ?>>
-		<div>
-	<!--<![endif]-->
 		<!-- happy coding have fun! o((◕ฺ∀ ◕ฺ))o -->
 		<div class="header">
 			<header class="container">

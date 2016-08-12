@@ -73,55 +73,77 @@
 
 				var submitHandler = function(e){
 					e.preventDefault();
-					$.ajax({
-						url: COMMENT_SUBMIT_AJAX.ajaxurl,
-						type: 'POST',
-						dataType: 'json',
-						data: {
-							//comment_post_ID: self.attr("post-id"),
-							comment_post_ID: self.attr("post-id"),
-							author: $(".comment-form-author #author").val(),
-							email: $(".comment-form-email #email").val(),
-							url: $(".comment-form-url #url").val(),
-							comment: $(".comment-form-comment #comment").val(),
-							comment_parent: $(".form-submit #comment_parent").val(),
-							// _wp_unfiltered_html_comment: ""
+					try{
+						$.ajax({
+							url: COMMENT_SUBMIT_AJAX.ajaxurl,
+							type: 'POST',
+							dataType: 'json',
+							data: {
+								//comment_post_ID: self.attr("post-id"),
+								comment_post_ID: self.attr("post-id"),
+								author: $(".comment-form-author #author").val(),
+								email: $(".comment-form-email #email").val(),
+								url: $(".comment-form-url #url").val(),
+								comment: $(".comment-form-comment #comment").val(),
+								comment_parent: $(".form-submit #comment_parent").val(),
+								// _wp_unfiltered_html_comment: ""
+								//test it out
 
 
 
-							//add action nonce!!!!!!!!!!!!
+								//add action nonce!!!!!!!!!!!!
 
 
 
 
 
-						},
-						success: function (obj){
-							console.log(obj);
-						},
-						error: function (obj){
-							console.log(obj);
-							//console.log(obj.responseText);
-							// (.|[\r\n]) include newline
-							try{
-							// var reg = /({{<\/div>)((.|[\r\n])+?)(?=<div>}})/;
-							var reg = /({{<\/div>)((.|[\r\n])+?)(?=<div class="hidden">}})/;
-							var data = obj.responseText.match(reg)[0];
-							data = data.slice(8,data.length)
-							$(".comments-template-area").html(data);
-							$(".form-submit #submit").on('click',submitHandler);
-							// remove handler delete element!!!!!
-							// console.log(reg.exec(obj.responseText)[0]);
-							console.log(2);
-							//{{<\/div>(.+?)<div>}}
-							}catch(e){
-								throw e;
-							}finally{
-								//link to error page
+							},
+							success: function (obj){
+								console.log(obj);
+							},
+							error: function (obj){
+								console.log(obj);
+								//console.log(obj.responseText);
+								// (.|[\r\n]) include newline
+								try{
+								// var reg = /({{<\/div>)((.|[\r\n])+?)(?=<div>}})/;
+								var reg = /({{<\/div>)((.|[\r\n])+?)(?=<div class="elem-hidden">}})/;
+								var data = obj.responseText.match(reg)[0];
+								data = data.slice(8,data.length)
+								$(".comments-template-area").html(data);
+								$(".form-submit #submit").on('click',submitHandler);
+								// remove handler delete element!!!!!
+								// console.log(reg.exec(obj.responseText)[0]);
+								console.log(2);
+								//{{<\/div>(.+?)<div>}}
+								}catch(e){
+									//var reg2 = /(<body)((.|[\r\n])+?)(<\/body>)/;
+									var reg2 = /(<body)((.|[\r\n])+?)(<\/body>)/;
+									var data2 = obj.responseText.match(reg2)[0];
+									data2 = data2.replace(/(<a)((.|[\r\n])+?)(<\/a>)/,'');
+									var iframe = $("<div></div");
+									iframe.html(data2);
+									// iframe.html(obj.responseText);
+									$("#respond").prepend(iframe);
+								}
+							},
+							statusCode: {
+							    404: function() {
+							      alert( "page not found" );
+							    }
 							}
-						}
 
-					});
+						}).done(function(){
+							console.log('done');
+						}).fail(function() {
+						    console.log('fail');
+						}).always(function() {
+							console.log('always');
+						});
+					}catch(error){
+						alert("You are not supported ajax in your current browser!plz consider update=)");
+						throw error;
+					}
 				}
 
 

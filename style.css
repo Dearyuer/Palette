@@ -69,12 +69,13 @@ body {
 .clearfix {
   *zoom: 1;
 }
-.hidden {
+.elem-hidden {
   opacity: 0;
   visibility: hidden;
   position: absolute;
   top: -9999;
   left: -99999;
+  display: none;
 }
 .header {
   height: 66px;
