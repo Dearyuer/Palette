@@ -32,7 +32,7 @@ jQuery(function(){
 		TAS.home_url+"/wp-content/themes/palette/libs/tmhOAuth/tweets_json.php",{
 		count:TAS.count
 	}).done(function(data){
-			$('.loading-anim').hide();
+			$('.palette-twitter .loading-anim').hide();
 			var data = jQuery.parseJSON(data);
 			if(TAS.lan == 'zh_cn'){
 				for(var i = 0;i < TAS.count;i++){

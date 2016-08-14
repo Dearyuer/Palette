@@ -380,7 +380,6 @@ body {
   background-color: transparent;
   padding: 0;
   border-radius: 5px;
-  text-align: center;
   margin-top: 13px;
 }
 .container .side-area .palette-evernote a:hover path {
@@ -405,6 +404,9 @@ body {
 }
 .container .side-area .palette-evernote .evernote {
   padding: 7px 10px 0px 10px;
+}
+.container .side-area .palette-evernote .evernote .loading-anim {
+  text-align: center;
 }
 .container .side-area .palette-evernote .evernote .loading-anim img {
   margin-top: 10px;
