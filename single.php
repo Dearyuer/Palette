@@ -13,13 +13,6 @@
 					</div>
 					<h1 class="content-title"><?php echo $post->post_title; ?></h1>
 					<div class="post-meta">
-						<?php /*<i class="fa fa-calendar-o" aria-hidden="true"></i> <span class="post--date"></span>
-						-
-						<i class="fa fa-bookmark-o" aria-hidden="true"></i> <span class="post--category"></span>
-						-
-						<i class="fa fa-clock-o" aria-hidden="true"></i> <span class="post--time--ago"></span>
-						-	
-						<i class="fa fa-comments-o" aria-hidden="true"></i> <span class="post--comments"></span>*/ ?>
 						<i class="fa fa-clock-o" aria-hidden="true"></i> <span class="post--time--ago"><?php echo timeAgo(time(),get_the_time("U")); ?></span>
 					</div>
 					<div class="content-divider">

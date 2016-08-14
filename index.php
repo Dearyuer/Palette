@@ -12,7 +12,7 @@
 			if(! (home_url() == "http://localhost:8888") ){
 				wp_enqueue_script( 'github_contri_ajax', get_template_directory_uri().'/js/widgets/githubContriAjax.js',[],false,true);
 				wp_localize_script( 'github_contri_ajax', 'GIT_HUB_CON_AJAX', array(
-					'home_url' => home_url()
+					'home_url' => home_url(),
 				));
 			}
 			?>
