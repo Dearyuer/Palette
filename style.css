@@ -375,6 +375,45 @@ body {
   cursor: pointer;
   color: #03a9f4;
 }
+.container .side-area .palette-evernote {
+  border: 1px solid #e1e8ed;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 13px;
+}
+.container .side-area .palette-evernote a:hover path {
+  fill: #03a9f4;
+}
+.container .side-area .palette-evernote .widget-title {
+  color: #666666;
+  margin-bottom: 0;
+  padding: 8px 10px;
+  background-color: #e6e6e6;
+  font-weight: 500;
+  text-align: left;
+}
+.container .side-area .palette-evernote .widget-title .evernote-icon {
+  position: relative;
+}
+.container .side-area .palette-evernote .widget-title .evernote-icon svg {
+  position: absolute;
+}
+.container .side-area .palette-evernote .widget-title .evernote-title-text {
+  margin-left: 20px;
+}
+.container .side-area .palette-evernote .evernote {
+  padding: 7px 10px 0px 10px;
+}
+.container .side-area .palette-evernote .evernote .loading-anim img {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.container .side-area .palette-evernote .evernote div {
+  font-size: 14px;
+  padding-bottom: 7px;
+}
 .container .side-area .palette-sidebar-profile {
   border: 1px solid #e1e8ed;
   background-color: transparent;

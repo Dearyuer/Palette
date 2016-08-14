@@ -29,10 +29,9 @@ jQuery(function(){
 			}
 	}
 	$.get(
-		TAS.home_url+"/wp-content/themes/palette/libs/tmhOAuth/tweets_json.php",
-		{
-			count:TAS.count
-		}).done(function(data){
+		TAS.home_url+"/wp-content/themes/palette/libs/tmhOAuth/tweets_json.php",{
+		count:TAS.count
+	}).done(function(data){
 			$('.loading-anim').hide();
 			var data = jQuery.parseJSON(data);
 			if(TAS.lan == 'zh_cn'){
