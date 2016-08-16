@@ -20,14 +20,14 @@ add_action('after_setup_theme', function(){
 * Post Support
 */
 add_action('after_setup_theme', function(){
-  add_theme_support('post-thumbnails');
+	add_theme_support('post-thumbnails');
 });
 
 /*
 * Nav menu setup
 */
 register_nav_menus([
-  'nav' => __('Nav Menu', 'palette'),
+	'nav' => __('Nav Menu', 'palette'),
 ]);
 
 /*
@@ -39,16 +39,16 @@ require_once(get_template_directory().'/app/widgets.php');
 * Palette main menu page
 */
 add_action( 'admin_menu', function(){
-  $sortIndex = 61;
-  add_menu_page(
-      'palette',
-      __('Palette Theme','palette'),
-      'manage_options',
-      'palette',
-      'palette_add_menu_page_fn',
-      'dashicons-art',
-      $sortIndex
-  );
+	$sortIndex = 61;
+	add_menu_page(
+			'palette',
+			__('Palette Theme','palette'),
+			'manage_options',
+			'palette',
+			'palette_add_menu_page_fn',
+			'dashicons-art',
+			$sortIndex
+	);
 });
 /* palette_add_menu_page_fn */
 require_once get_template_directory().'/app/functions/main-menu.php';
@@ -58,14 +58,14 @@ require_once get_template_directory().'/app/functions/main-menu.php';
 * Palette sub menu page
 */
 add_action( 'admin_menu', function(){
-  add_submenu_page(
-    'palette',
-    'Palette',
-    'Particle effect settings',
-    'manage_options',
-    'settings',
-    'palette_add_submenu_fn'
-  );
+	add_submenu_page(
+		'palette',
+		'Palette',
+		'Particle effect settings',
+		'manage_options',
+		'settings',
+		'palette_add_submenu_fn'
+	);
 });
 /* palette_add_submenu_fn */
 require_once get_template_directory().'/app/functions/sub-menu.php';
@@ -86,8 +86,8 @@ require_once get_template_directory().'/app/functions/comment-form.php';
 * Logout redirection
 */
 add_action('wp_logout', function(){
-  wp_redirect( home_url() );
-  exit();
+	wp_redirect( home_url() );
+	exit();
 });
 
 ?>

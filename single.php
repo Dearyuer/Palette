@@ -1,5 +1,12 @@
 <section class="main-content">
 	<div class="scroll-wrap">
+		<div class="prev-post-left-arrow">
+			<img src="" alt="" />
+		</div>
+		<div class="next-post-right-arrow">
+			<img src="" alt="" />
+		</div>
+
 		<article class="content-item container">
 			<div class="post-content">
 				<div class="title"><a href="#"><span><i class="fa fa-sticky-note" aria-hidden="true"></i></span> 博文</a><span class="fullscreen-component"><i class="fa fa-times" aria-hidden="true"></i></span></div>

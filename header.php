@@ -27,21 +27,21 @@
 						
 						$args = array(
 							'theme_location'  => 'nav',
-							'menu' 			  => '',
-							'container' 	  => '',
+							'menu'            => '',
+							'container'       => '',
 							'container_class' => '',
 							'container_id'    => '',
 							'menu_class'      => 'menu',
-							'menu_id'  		  => '',
-							'echo'			  => true,
-							'fallback_cb' 	  => 'wp_page_menu',
-							'before' 		  => '',
-							'after' 		  => '',
+							'menu_id'         => '',
+							'echo'            => true,
+							'fallback_cb'     => 'wp_page_menu',
+							'before'          => '',
+							'after'           => '',
 							'link_before'     => '',
 							'link_after'      => '',
 							'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo menu-item"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s<li class="site-language menu-item"><a href="#">'.__("Language","palette").'</a></li><li class="search-bar">'.get_search_form( $echo=false ).'</li></ul>',
-							'depth' 		  => 0,
-							'walker' 		  => ''
+							'depth'           => 0,
+							'walker'          => ''
 						);
 						//'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s</ul>',
 						wp_nav_menu( $args ); ?>
