@@ -1,3 +1,10 @@
+<?php 
+
+/*
+Template Name: Workshop
+*/
+
+?>
 <?php get_header(); ?>
 <div class="container clearfix">
     <div class="workshop">
@@ -9,3 +16,4 @@
     </div>
 </div>
 <?php get_footer();?>
+
