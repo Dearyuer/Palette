@@ -13,10 +13,6 @@
 	$getResourceAlternateData = false;
 	$results = $client->findNotesWithSearch('');
 	$noteGuid;
-    $getNoteContent = true;
-	$getResourceBody = true;
-	$getResourceOCRData = false;
-	$getResourceAlternateData = false;
 	$notes = [];		
 	foreach ($results as $note) {
 	    $noteGuid    = $note->guid;
@@ -25,7 +21,7 @@
 	    $noteCreated = $note->created;
 	    $noteUpdated = $note->updated;
 	    //$str = $noteStore->getNoteContent($token, $noteGuid);
-        $note = $noteStore->getNote($token,$noteGuid,$getNoteContent,$getResourceBody,$getResourceBody,$getResourceAlternateData);
+        $note = $noteStore->getNote($token,$noteGuid,$getNoteContent,$getResourceBody,$getResourceOCRData,$getResourceAlternateData);
 	    //preg_match("/(<en-note>)((.|[\r\n])+?)(?=<\/en-note>)/",$str,$match);
 	    // var_dump($match[0]);
 	    //$content = str_replace('<en-note>', '', $match[0]);

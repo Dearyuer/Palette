@@ -51,7 +51,7 @@ class Palette_Evernote_Widget extends WP_Widget {
 
 
 		?>
-		<div class="evernote">
+		<ul class="evernote">
 			<?php 
 
 				echo '<section class="loading-anim clearfix">';
@@ -75,7 +75,7 @@ class Palette_Evernote_Widget extends WP_Widget {
 			
 
 			?>
-		</div>
+		</ul>
 		<?php
 
 

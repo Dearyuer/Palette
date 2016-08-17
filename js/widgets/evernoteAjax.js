@@ -10,9 +10,14 @@ jQuery(function(){
 		try{
 			var data = $.parseJSON(data);
 			$(".evernote .loading-anim").hide();
-			
-			$.each(data,function(index,val){
-				$(".evernote").append(val.title);
+			$.each(data,function(index,val){ 
+		        var $note = $("<li></li>");
+                var $anchor = $("<a></a>");
+                $anchor.attr("href","#");
+                $anchor.html(val.title);
+                $note.append($anchor);
+				$(".evernote").append($note);
+                console.log($note);
 			});
 		}
 		catch(e){
