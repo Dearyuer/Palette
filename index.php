@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php after_header(); ?>
 <div class="container main-container clearfix">
 	<?php get_sidebar(); ?>
 	<div class="main-area">
@@ -70,4 +71,5 @@
 		</div>
 	</div>
 </div>
+<?php before_footer(); ?>
 <?php get_footer(); ?>

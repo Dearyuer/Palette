@@ -81,6 +81,7 @@ body {
   height: 66px;
   font-size: 15px;
   z-index: -9;
+  /* position: fixed; */
 }
 .header .site-logo {
   float: left;
@@ -1290,6 +1291,36 @@ body {
   font-size: 13px;
   margin-left: 25px;
   color: #de5347;
+}
+.archi-nav,
+.archi-footer-nav {
+  position: fixed;
+  margin-left: -485px;
+  left: 50%;
+  bottom: 0px;
+}
+.archi-nav {
+  top: 0px;
+}
+.archi-header {
+  width: 30%;
+  float: left;
+  position: fixed;
+  top: 80px;
+}
+.archi-content {
+  width: 59%;
+  float: right;
+  margin-top: 98px;
+}
+.archi-content .archive-post {
+  margin-bottom: 60px;
+}
+.archi-footer {
+  width: 30%;
+  float: left;
+  position: fixed;
+  bottom: 80px;
 }
 .main-post {
   transition: background-color 0.2s;

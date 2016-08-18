@@ -2,7 +2,7 @@
 /*
 * Establish util functionality
 */
-require_once get_template_directory().'/app/util.php';
+require_once get_template_directory().'/app/utils.php';
 
 /*
 * Enqueue front-end based scripts
