@@ -77,6 +77,18 @@ body {
   left: -99999;
   display: none;
 }
+.title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 0;
+  font-size: 0.83em;
+  padding: 8px 10px;
+  background-color: #e6e6e6;
+  font-weight: 500;
+  text-align: left;
+}
 .header {
   height: 66px;
   font-size: 15px;
@@ -1292,35 +1304,59 @@ body {
   margin-left: 25px;
   color: #de5347;
 }
-.archi-nav,
-.archi-footer-nav {
-  position: fixed;
-  margin-left: -485px;
-  left: 50%;
-  bottom: 0px;
+.archi-content-before {
+  margin-top: 40px;
 }
-.archi-nav {
-  top: 0px;
+.archi-content-before .category {
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  background-color: transparent;
 }
-.archi-header {
-  width: 30%;
+.archi-content-before .category .title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 0;
+  font-size: 0.83em;
+  padding: 8px 10px;
+  background-color: #e6e6e6;
+  font-weight: 500;
+  text-align: left;
+}
+.archi-content-before .category ul {
+  padding: 0;
+}
+.archi-content-before .category ul li {
   float: left;
-  position: fixed;
-  top: 80px;
+  width: 33.3333333%;
+  padding: 4px;
+  text-align: center;
 }
 .archi-content {
-  width: 59%;
-  float: right;
-  margin-top: 98px;
+  margin-top: 16px;
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  background-color: transparent;
+  margin-bottom: 40px;
 }
-.archi-content .archive-post {
-  margin-bottom: 60px;
+.archi-content .title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 0;
+  font-size: 0.83em;
+  padding: 8px 10px;
+  background-color: #e6e6e6;
+  font-weight: 500;
+  text-align: left;
 }
-.archi-footer {
-  width: 30%;
-  float: left;
-  position: fixed;
-  bottom: 80px;
+.archi-content .archi-year-wrapper {
+  padding: 40px;
+}
+.archi-content .archi-month-wrapper {
+  padding: 30px;
 }
 .main-post {
   transition: background-color 0.2s;

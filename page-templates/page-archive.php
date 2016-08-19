@@ -7,161 +7,82 @@ Template Name: Page Archives
 ?>
 
 <?php get_header(); ?>
-<div class="archi-nav">
-    <?php after_header(); ?>
-</div>
+<?php after_header(); ?>
 <div class="container clearfix">
     <div class="page-archive">
-        <div class="archi-header">
-            <h1>Title</h1>
-            <p>Except content</p>
-            <div class="meta">
-                Date author
+        <div class="archi-content-before">
+            <div class="category">
+                <div class="title">分类</div>
+                <ul class="category-list clearfix">
+                    <?php 
+                    $categories = get_categories(); 
+                    if($categories){
+                        foreach ($categories as $category) {
+                            echo '<li>'.$category->cat_name ."</li>";
+                        }
+                    }
+                     ?>
+                </ul>
             </div>
         </div>
         <div class="archi-content">
-            <?php 	
-                $month = '';
-                $prevmonth = '';
-                $year = '';
-                $prevyear = ''; ?>
+        <div class="title">归档</div>
+        <?php 
+        $month = '';
+        $prev_month = '';
+        $year = '';
+        $prev_year = '';
+        $archi_posts = new WP_Query('posts_per_page=-1');
 
-            <?php // Cycle through all the posts to display the archive ?>
-            <?php query_posts('showposts=-1'); ?>
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        if($archi_posts->have_posts()){
+            while($archi_posts->have_posts()){
+                $archi_posts->the_post();
 
-            <?php // Find the month/year of the current post ?>
-            <?php $year = mysql2date('Y', $post->post_date); ?>
-            <?php $month = mysql2date('F', $post->post_date); ?>
-            <div class="archive-post">
-            <?php // Compare the current month with the $prevmonth ?>
-            <?php if ($month != $prevmonth) { ?>
-                <?php // If it is different, display the new month and reset $prevmonth ?>
-                <h4><?php echo $month . ' ' . $year; ?></h4>
-                <?php $prevmonth = $month; ?>
+                $year = mysql2date('Y', $post->post_date); 
+                $month = mysql2date('F', $post->post_date);
 
-            <?php // In case the previous post was a year ago in the same month ?>
-            <?php } elseif ($year != $prevyear) { ?>
-                <h4><?php // echo $month . ' ' . $year; ?></h4>
-                <?php $prevmonth = $month; ?>
-                <?php $prevyear = $year; ?>
-            <?php } ?>
+                if($year != $prev_year){
+                    if($prev_year != ""){
+                        ?>
+                        </div>
+                        <?php
+                    }
+                    $prev_year = $year;
 
-            <?php // Display the post in this month ?>
-            
-                <p><a href="<?php the_permalink(); ?>"><?php echo mysql2date('d.m.y', $post->post_date); ?> - <?php the_title(); ?></a></p>
-               
+                    ?>
+                    <div class="archi-year-wrapper">
+                    <h2 class="archi-year"><?php echo $year; ?></h2>
+
+                    <?php
+                }
+
+                if($month != $prev_month){
+                    if($prev_month != ""){
+                        ?>
+                        </div>
+                        <?php
+                    }
+                    $prev_month = $month;
+                    ?>
+                    <div class="archi-month-wrapper">
+                    <h4 class="archi-month"><?php echo $month; ?></h4>
+                    <?php
+                }
+
+                ?>
+                <p class="archi-title"><?php echo the_title(); ?></p>
+                <?php
+            }
+            // Close year & month wrapper once if have_posts() is true
+            ?>
+                </div>
             </div>
-            <?php endwhile; endif; ?>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="archi-footer">
-            footer
+            <?php 
+        }
+        wp_reset_postdata();
+        ?> 
         </div>
     </div>
 </div>
-<div class="archi-footer-nav">
-    <?php before_footer(); ?>
-</div>
+<?php before_footer(); ?>
 <?php get_footer(); ?>
