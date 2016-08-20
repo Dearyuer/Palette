@@ -67,9 +67,9 @@ function after_header(){
 					function detect_lan(){
 						$locale = sanitize_key( get_locale() );;
 						if( $locale == 'zh_cn' ){
-							return 'en_us';
+							return 'en';
 						}
-						return 'zh_cn';
+						return 'cn';
 					}
 					$args = array(
 						'theme_location'  => 'nav',
@@ -85,7 +85,7 @@ function after_header(){
 						'after'           => '',
 						'link_before'     => '',
 						'link_after'      => '',
-						'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo menu-item"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s<li class="site-language menu-item"><a class="palette-lan"href="'.$current_url.'?lan='.detect_lan().'">'.__("Language","palette").'</a></li><li class="search-bar">'.get_search_form( $echo=false ).'</li></ul>',
+						'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo menu-item"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s<li class="site-language menu-item"><a class="palette-lan"href="'.$current_url.'?lan='.detect_lan().'">'.__("Chinese","palette").'</a></li><li class="search-bar">'.get_search_form( $echo=false ).'</li></ul>',
 						'depth'           => 0,
 						'walker'          => ''
 					);

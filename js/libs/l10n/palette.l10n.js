@@ -14,17 +14,17 @@
 	    }
 	    return vars;
 	}
-	if(getUrlVars()['lan'] && getUrlVars()['lan'] == 'en_us'){
+	if(getUrlVars()['lan'] && getUrlVars()['lan'] == 'en'){
 		$.each(anchor, function(index, item){
 			$(this).attr('href', $(this).attr('href').replace(/\/?(\?|#|$)/, '/$1') + '?' + $.param({
-				'lan' : 'en_us'
+				'lan' : 'en'
 				})
 			);
 		});
 	}else{
 		$.each(anchor, function(index, item){
 			$(this).attr('href', $(this).attr('href').replace(/\/?(\?|#|$)/, '/$1') + '?' + $.param({
-				'lan' : 'zh_cn'
+				'lan' : 'cn'
 				})
 			);
 		});
