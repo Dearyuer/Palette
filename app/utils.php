@@ -60,7 +60,17 @@ function after_header(){
 		<header class="container">
 			<nav class="navigation">
 				<?php    
-					
+					 
+					global $wp;
+					$current_url = trailingslashit(trailingslashit(home_url()).add_query_arg([],$wp->request));
+					$current_url = str_replace("%","%%",$current_url);
+					function detect_lan(){
+						$locale = sanitize_key( get_locale() );;
+						if( $locale == 'zh_cn' ){
+							return 'en_us';
+						}
+						return 'zh_cn';
+					}
 					$args = array(
 						'theme_location'  => 'nav',
 						'menu'            => '',
@@ -75,7 +85,7 @@ function after_header(){
 						'after'           => '',
 						'link_before'     => '',
 						'link_after'      => '',
-						'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo menu-item"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s<li class="site-language menu-item"><a href="#">'.__("Language","palette").'</a></li><li class="search-bar">'.get_search_form( $echo=false ).'</li></ul>',
+						'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo menu-item"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s<li class="site-language menu-item"><a class="palette-lan"href="'.$current_url.'?lan='.detect_lan().'">'.__("Language","palette").'</a></li><li class="search-bar">'.get_search_form( $echo=false ).'</li></ul>',
 						'depth'           => 0,
 						'walker'          => ''
 					);

@@ -90,4 +90,18 @@ add_action('wp_logout', function(){
 	exit();
 });
 
+/*
+* Change local language
+*/
+function palette_localized_factory(){
+	wp_enqueue_script( 'palette_localization', get_template_directory_uri().'/js/libs/l10n/palette.l10n.js',[],false,true);
+}
+add_filter( 'locale', 'palette_localized');
+function palette_localized( $locale ){
+	if( isset( $_GET['lan'] ) ){
+		add_action( 'wp_enqueue_scripts', 'palette_localized_factory' );
+		return sanitize_key( $_GET['lan'] );
+	}
+	return $locale;
+}
 ?>

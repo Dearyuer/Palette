@@ -20,17 +20,11 @@
 		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'palette' ) ); ?></div>
 	</nav> -->
 	<!-- #comment-nav-above -->
-	<?php endif; // Check for comment navigation. ?>
+	<?php endif;  ?>
 
 	<ol class="comment-list">
 		<?php
-			// wp_list_comments( array(
-			// 	'style'       => 'ul',
-			// 	// 'short_ping'  => true,
-			// 	'avatar_size' => 34,
-			// ) );
 			wp_list_comments( 'type=comment&callback=mytheme_comment' );
-
 		?>
 	</ol><!-- .comment-list -->
 
