@@ -9,11 +9,16 @@
 	$noteStore = $advancedClient->getNoteStore();
 	$getNoteContent = true;
 	$getResourceBody = true;
-	$getResourceOCRData = false;
-	$getResourceAlternateData = false;
+	$getResourceOCRData = true;
+	$getResourceAlternateData = true;
 	$results = $client->findNotesWithSearch('');
 	$noteGuid;
 	$notes = [];		
+
+
+	$withData = true;
+	$withRecognition = true;
+	$withAlternateData = true;
 	foreach ($results as $note) {
 	    $noteGuid    = $note->guid;
 	    $noteType    = $note->type;
@@ -22,6 +27,9 @@
 	    $noteUpdated = $note->updated;
 	    //$str = $noteStore->getNoteContent($token, $noteGuid);
         $note = $noteStore->getNote($token,$noteGuid,$getNoteContent,$getResourceBody,$getResourceOCRData,$getResourceAlternateData);
+
+        //$contentHash = 'da27ddc619e60d0c8d1eab981c525999';
+	    //$hash = $noteStore->getResourceByHash($token, $noteGuid, $contentHash,$withData , $withRecognition, $withAlternateData);
 	    //preg_match("/(<en-note>)((.|[\r\n])+?)(?=<\/en-note>)/",$str,$match);
 	    // var_dump($match[0]);
 	    //$content = str_replace('<en-note>', '', $match[0]);

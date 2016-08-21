@@ -38,6 +38,7 @@ class Palette_Twitter_Widget extends WP_Widget{
 			// echo '<p class="tweet-via">'.__('via', 'palette').' '.$tweets[$i]->source.'</p>';
 			
 		// }
+		echo '<li class="minus"><a href="#"><span><i class="fa fa-minus" aria-hidden="true"></i></span></a></li>';
 		echo '</ul>';
 		echo '</div>';
 		if(! (home_url() == "http://localhost:8888") ){

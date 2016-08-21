@@ -48,6 +48,15 @@ register_nav_menus([
 	'nav' => __('Nav Menu', 'palette'),
 ]);
 
+// function add_nav_menu_classes($classes, $item){
+//    if( is_home() ){
+//       $classes[0] = 'current_page_item';
+//    }
+//    return $classes;
+// }
+// add_filter('nav_menu_css_class' , 'add_nav_menu_classes' , 10 , 2);
+
+
 /*
 * Widgets setup
 */

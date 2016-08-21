@@ -82,7 +82,6 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;
@@ -267,8 +266,26 @@ body {
   box-sizing: border-box;
   position: relative;
 }
+.footer #footer-shadow {
+  -webkit-transform: rotate(180deg);
+  /* Chrome and other webkit browsers */
+  /* FF */
+  /* Opera */
+  /* IE9 */
+  transform: rotate(180deg);
+  /* W3C compliant browsers */
+  /* IE8 and below */
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=-1, M12=0, M21=0, M22=-1, DX=0, DY=0, SizingMethod='auto expand');
+  background: transparent url('img/header-shadow.png') no-repeat center top;
+  background-size: 100% auto;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 66px;
+  left: 0;
+  z-index: -9;
+}
 .footer footer {
-  border-top: 1px solid #e1e8ed;
   padding: 20px 0 0 0;
 }
 .footer .footer-heart {
@@ -306,6 +323,7 @@ body {
 }
 .container .main-area .contri {
   margin: 0 0 10px 20px;
+  margin-left: 2px;
   border-radius: 5px;
   background-color: white;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.07);
@@ -314,7 +332,6 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;
@@ -334,21 +351,22 @@ body {
 }
 .container .main-area .posts-area {
   position: relative;
-  margin: 0 0 0 20px;
+  margin-left: 2px;
   border-radius: 5px;
   background-color: white;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.07);
+  background-color: #e6e6e6;
 }
 .container .main-area .posts-area .posts-title {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;
   font-weight: 500;
   text-align: left;
+  background-color: white;
 }
 .container .main-area .posts-area article.post a .main-post {
   padding: 38px 18px;
@@ -372,6 +390,18 @@ body {
 }
 .container .main-area .posts-area article.post a:hover .post-title {
   color: #03a9f4;
+}
+.container .main-area .posts-area .posts-footer {
+  text-align: center;
+  border-top: 1px solid #e1e8ed;
+  padding: 5px 0px 3px 0px;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.container .main-area .posts-area .posts-footer .fa-minus {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 20px;
 }
 .container .side-area {
   padding-top: 40px;
@@ -409,7 +439,6 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;
@@ -426,7 +455,7 @@ body {
   margin-left: 20px;
 }
 .container .side-area .palette-evernote .evernote {
-  padding: 7px 10px 0px 10px;
+  padding: 7px 15px 10px 15px;
 }
 .container .side-area .palette-evernote .evernote .loading-anim {
   text-align: center;
@@ -435,7 +464,7 @@ body {
   margin-top: 10px;
   margin-bottom: 8px;
 }
-.container .side-area .palette-evernote .evernote div {
+.container .side-area .palette-evernote .evernote li {
   font-size: 14px;
   padding-bottom: 7px;
 }
@@ -450,7 +479,6 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;
@@ -538,7 +566,6 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;
@@ -575,6 +602,14 @@ body {
 .container .side-area .palette-twitter ul.tweets li p.tweet-via {
   float: right;
   font-size: 12px;
+}
+.container .side-area .palette-twitter ul.tweets li.minus {
+  text-align: center;
+  padding-bottom: 0px;
+}
+.container .side-area .palette-twitter ul.tweets li.minus .fa-minus {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 20px;
 }
 .container .side-area .palette-recent-posts {
   background-color: transparent;
@@ -648,7 +683,6 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;
@@ -1400,7 +1434,6 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;
@@ -1427,7 +1460,6 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  color: #666666;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;

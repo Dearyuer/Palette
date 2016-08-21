@@ -16,12 +16,12 @@
 	function getViewport( axis ) {
 		var client, inner;
 		if( axis === 'x' ) {
-			client = doc['clientWidth'];
-			inner = this['innerWidth'];
+			client = doc.clientWidth;
+			inner = this.innerWidth;
 		}
 		else if( axis === 'y' ) {
-			client = doc['clientHeight'];
-			inner = this['innerHeight'];
+			client = doc.clientHeight;
+			inner = this.innerHeight;
 		}
 		
 		return client < inner ? inner : client;
@@ -61,11 +61,17 @@
 				setTimeout(function(){
 					self.addClass("post-item-loaded");
 				},500);
+
 				setTimeout(function() {
 					self.addClass('post-item-animate'); //fade out
 					// reveal/load content after the last element animates out (todo: wait for the last transition to finish)
+					
+
 					setTimeout(function() { 
-						loadContent(self,self.parent().parent(),mainContent); 
+						
+						loadContent(self,self.parent().parent(),mainContent,self.parent()); 
+						
+						
 					}, 500);
 				}, 1000);
 
@@ -109,7 +115,7 @@
 								// var reg = /({{<\/div>)((.|[\r\n])+?)(?=<div>}})/;
 								var reg = /({{<\/div>)((.|[\r\n])+?)(?=<div class="elem-hidden">}})/;
 								var data = obj.responseText.match(reg)[0];
-								data = data.slice(8,data.length)
+								data = data.slice(8,data.length);
 								$(".comments-template-area").html(data);
 								$(".form-submit #submit").on('click',submitHandler);
 
@@ -158,7 +164,7 @@
 						alert("You are not supported ajax in your current browser!plz consider update=)");
 						throw error;
 					}
-				}
+				};
 
 
 				$(".form-submit #submit").on('click',submitHandler);
@@ -170,10 +176,11 @@
 	});
 
 
-	function loadContent(item, parent, mainContent) {
+	function loadContent(item, parent, mainContent,postArticle) {
 
 		//const
-		var paddingLeft = 20;
+		//var paddingLeft = 20;
+		var paddingLeft = 2;
 			// titleTop = 36;
 		
 
@@ -200,9 +207,9 @@
 
 		// console.log(parent.position());
 		//expand
-		var offsetWidth = 16;
+		var offsetWidth = 15;
 		var expandSize = "";
-		//console.log(parent.position())
+
 		expandSize += 'translate3d(' + (-parent.position().left - paddingLeft + getViewport('x')) + 'px,' + separator;
 		expandSize += scrollY() - parent.position().top + 'px,' + separator;
 		expandSize += '0px)';
@@ -216,12 +223,10 @@
 			});
 			window.addEventListener('scroll', noscroll);
 		}, 35);
-		$dummy.on('transitionend webkitTransitionEnd oTransitionEnd', function (e) {
+		$dummy.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
 
 			/////notice
 			mainContent.show();
-
-
 			$dummy.removeClass('placeholder-trans-in');
 			$dummy.addClass('placeholder-trans-out');
 
@@ -235,8 +240,8 @@
 
 			//close button
 			$(".fa-times").on('click',function(){
-				hideContent(initPos,initSize,mainContent);
-			})
+				hideContent(initPos,initSize,mainContent,postArticle);
+			});
 
 
 			body.addClass('noscroll');
@@ -249,13 +254,22 @@
 			isAnimating = false;
 		});
 
+
 	}
 
 
-	function hideContent(initPos,initSize,mainContent) {
+	function hideContent(initPos,initSize,mainContent,postArticle) {
 		// $(".main-container").show();
 		// $('.header').show();
 		// $('.footer').show();
+
+		// var nextElem = postArticle.next();
+		// if(!nextElem.is('div')){
+		// 	postArticle.hide();
+		// 	nextElem.css({
+		// 		'marginTop': -postArticle.height()
+		// 	});
+		// }
 		mainContent.removeClass('content-show');
 		
 		// classie.remove(closeCtrl, 'close-button--show');
@@ -268,10 +282,22 @@
 			$dummy.css({
 				transform: initPos + separator + initSize
 			});
-			$dummy.on('transitionend webkitTransitionEnd oTransitionEnd', function (e) {
+			// setTimeout(function(){
+			// 	//var nextElem = postArticle.next();
+			// 	if(!nextElem.is('div')){
+			// 		postArticle.show();
+			// 		nextElem.css({
+			// 			'marginTop': 0
+			// 		});
+			// 	}
+				
+			// },150);
+			
+			$dummy.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+
 				$dummy.remove();
 				mainContent.hide();
-			
+				
 				postItem.removeClass('post-item-loading');
 				postItem.removeClass('post-item-loaded');
 				postItem.removeClass('post-item-animate');
@@ -281,7 +307,7 @@
 				mainContent.removeClass('content-animate');
 				setTimeout(function(){
 					postItem.children().css({
-						'backgroundColor': "transparent"
+						'backgroundColor': "white"
 					});
 				},500);
 				mainContent.remove();

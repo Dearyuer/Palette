@@ -36,7 +36,7 @@ jQuery(function(){
 			var data = jQuery.parseJSON(data);
 			if(TAS.lan == 'zh_cn'){
 				for(var i = 0;i < TAS.count;i++){
-					if(data[i].lang == "zh"){
+					if(data[i].lang == "zh" || data[i].lang == "ja"){
 						var elemLi = $('<li></li>');
 						var elemP = $('<p></p>');
 						var elemSpan = $('<span></span>');
@@ -74,7 +74,8 @@ jQuery(function(){
 
 						elemLi.addClass('fadeIn').addClass('animated');
 						elemLi.append(elemP);
-						$(".tweets").append(elemLi);
+						$(".tweets .minus").before(elemLi);
+
 						//console.log(data);
 					}
 					

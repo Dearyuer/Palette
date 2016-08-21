@@ -7,7 +7,6 @@ Template Name: Page Archives
 ?>
 
 <?php get_header(); ?>
-<?php after_header(); ?>
 <div class="container clearfix">
     <div class="page-archive">
         <div class="archi-content-before">
@@ -84,5 +83,4 @@ Template Name: Page Archives
         </div>
     </div>
 </div>
-<?php before_footer(); ?>
 <?php get_footer(); ?>

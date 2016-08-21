@@ -14,11 +14,22 @@ jQuery(function(){
 		        var $note = $("<li></li>");
                 var $anchor = $("<a></a>");
                 $anchor.attr("href","#");
+                $anchor.addClass('evernote-anchor');
                 $anchor.html(val.title);
                 $note.append($anchor);
 				$(".evernote").append($note);
-                console.log($note);
+                //console.log($note);
 			});
+			$.each($('.evernote-anchor'),function(index,item){
+				console.log($(this));
+				$(this).on("click",function(e){
+				e.preventDefault();
+				//console.log(data[index].content);
+
+				// $(".posts-area").html(data[index].content);
+				});
+			});
+			
 		}
 		catch(e){
 			throw e;
