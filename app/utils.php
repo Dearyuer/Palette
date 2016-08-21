@@ -85,10 +85,11 @@ function after_header(){
 						'after'           => '',
 						'link_before'     => '',
 						'link_after'      => '',
-						'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo menu-item"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s<li class="site-language menu-item"><a class="palette-lan"href="'.$current_url.'?lan='.detect_lan().'">'.__("Chinese","palette").'</a></li><li class="search-bar">'.get_search_form( $echo=false ).'</li></ul>',
+						'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo menu-item"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s<li class="search-bar">'.get_search_form( $echo=false ).'</li></ul>',
 						'depth'           => 0,
 						'walker'          => ''
 					);
+					//<li class="site-language menu-item"><a class="palette-lan"href="'.$current_url.'?lan='.detect_lan().'">'.__("Chinese","palette").'</a></li>
 					//'items_wrap'      => '<ul id = "%1$s" class = "%2$s"><li class="site-logo"><a href="'.home_url().'"><img src="'.$optimize_logo_img_src.'"/></a></li>%3$s</ul>',
 					wp_nav_menu( $args ); 
 				?>

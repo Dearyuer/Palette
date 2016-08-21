@@ -27,7 +27,6 @@ function palette_localized( $locale ){
 	return $locale;
 }
 
-
 /*
 * Language setup
 */
