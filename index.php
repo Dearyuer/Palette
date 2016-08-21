@@ -5,7 +5,7 @@
 	<div class="main-area">
 		<!-- scrape -->
 		<div class="contri">
-			<div class="contri-title"><a href="#"><span><i class="fa fa-github-alt" aria-hidden="true"></i></span> 动态</a><span class="fullscreen-component"><i class="fa fa-bars right" aria-hidden="true"></i></span></div>
+			<div class="contri-title"><a href="#"><span><i class="fa fa-github-alt" aria-hidden="true"></i></span> 动态</a><span class="fullscreen-component"></span></div>
 			<?php 
 			echo '<div class="git-contri-loading-anim">';
 				echo '<img src="'.get_template_directory_uri().'/img/spinner.gif'.'" alt="Loading">';
@@ -19,7 +19,7 @@
 			?>
 		</div>
 		<div class="posts-area">
-			<div class="posts-title"><a href="#"><span><i class="fa fa-sticky-note posts-title-icon" aria-hidden="true"></i></span> 博文</a><span class="fullscreen-component"><i class="fa fa-bars right" aria-hidden="true"></i></span></div>
+			<div class="posts-title"><a href="#"><span><i class="fa fa-sticky-note posts-title-icon" aria-hidden="true"></i></span> 博文</a><span class="fullscreen-component"></span></div>
 			<?php 
 				if(have_posts()) {
 					while(have_posts()){the_post();
