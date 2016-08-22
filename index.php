@@ -1,74 +1,78 @@
 <?php get_header(); ?>
-<div class="container main-container clearfix">
- 	<?php get_sidebar(); ?>
- 	<div class="main-area">
- 		<!-- scrape -->
- 		<div class="contri">
- 			<div class="contri-title"><a href="#"><span><i class="fa fa-github-alt" aria-hidden="true"></i></span> 动态</a><span class="fullscreen-component"></span></div>
- 			<?php 
- 			echo '<div class="git-contri-loading-anim">';
- 				echo '<img src="'.get_template_directory_uri().'/img/spinner.gif'.'" alt="Loading">';
- 			echo '</div>';
- 			if(! (home_url() == "http://localhost:8888") ){
- 				wp_enqueue_script( 'github_contri_ajax', get_template_directory_uri().'/js/widgets/githubContriAjax.js',[],false,true);
- 				wp_localize_script( 'github_contri_ajax', 'GIT_HUB_CON_AJAX', array(
- 					'home_url' => home_url(),
- 				));
- 			}
- 			?>
- 		</div>
- 		<div class="posts-area">
- 			<div class="posts-title"><a href="#"><span><i class="fa fa-sticky-note posts-title-icon" aria-hidden="true"></i></span> 博文</a><span class="fullscreen-component"></span></div>
- 			<?php 
- 				$blog_posts = new WP_Query('posts_per_page=-1');
- 				if($blog_posts->have_posts()) {
- 					while($blog_posts->have_posts()){$blog_posts->the_post();
- 			?>
- 			<article class="post<?php if ( has_post_thumbnail() ) { ?> has-thumbnail<?php } ?>">
- 				<a class="post-item" url="<?php the_permalink(); ?>" post-id="<?php echo get_the_ID(); ?>">
- 					<div class="main-post">
- 				 		<div class="post-thumbnail">
- 							<?php the_post_thumbnail('small-thumbnail'); ?>
- 						</div>
- 						<h2 class="post-title"><?php the_title(); ?></h2>
- 						<div class="post-meta">
- 							<i class="fa fa-calendar-o" aria-hidden="true"></i> <?php echo sprintf("%s %s%s,%s",__("Posted on","palette"),get_the_time('M'),get_the_time('d'),get_the_time('Y')) ?>
- 							-
- 							<?php $categories = get_the_category(); 
- 							// var_dump($categories);
- 							$outputCategories = "";
- 							if($categories){
- 								foreach ($categories as $category) {
- 									$outputCategories .= $category->cat_name .",";
- 								}
- 							}
- 							$outputCategories = trim($outputCategories, ",");
- 							?>
- 							<i class="fa fa-bookmark-o" aria-hidden="true"></i>
- 							<?php echo sprintf("%s %s",__("in Category","palette"),$outputCategories); ?>
- 							-
- 							<i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo timeAgo(time(),get_the_time("U")); ?>
- 							-	
- 							<i class="fa fa-comments-o" aria-hidden="true"></i> <?php $escapePercentSign = "%";comments_number(__("No comments", "palette"), __("1 comments", "palette"), sprintf(__("%s comments", "palette"), $escapePercentSign)); ?>
- 						</div>
+<div class="container clearfix">
+	<div class="page-home">
+		<div class="blog-info">
+			<h2 class="title"><?php bloginfo('name'); ?></h2>
+			<p class="description"><?php bloginfo('description'); ?></p>
+			<button class="btn">Go to blog</button>
+		</div>	
+		<div class="latest-post">
+			<div class="component-title"><p><i class="fa fa-sticky-note" aria-hidden="true"></i> 最新文章</p></div>
+			<div class="row">
+				<div class="pallete-col-2 content">
+					<div>
+						<?php 
+						$home_latest_post = new WP_Query('posts_per_page=1');
+						$home_latest_post_title = '';
+						if($home_latest_post->have_posts()){
+							while($home_latest_post->have_posts()){
+								$home_latest_post->the_post();
 
- 						<div class="excerpt-content content">
- 							<?php 
- 							the_excerpt();
- 							?>
- 						</div>
- 						<div class="loader"></div>
- 					</div>
- 				</a>
- 			</article>
- 			<?php
- 					}
- 				}else{
- 						echo "<p> No posts </p>";
- 				}
- 			?>
- 			<div class="posts-footer"><a href="#"><span><i class="fa fa-minus" aria-hidden="true"></i></span></a></span></div>
- 		</div>
- 	</div>
- </div>
- <?php get_footer(); ?>
+								$home_latest_post_title = get_the_title();
+
+
+								?>
+								<p><?php the_excerpt(); ?></p>
+								<?php
+							}
+						}
+						wp_reset_postdata();
+						?>
+					</div>
+				</div>
+				<div class="pallete-col-2">
+					<div class="inner">
+						<div class="sticky-note"><i class="fa fa-sticky-note-o" aria-hidden="true"></i></div>
+						<div class="title"><?php echo $home_latest_post_title; ?></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="latest-post latest-comment">
+			<div class="component-title"><p><i class="fa fa-comment" aria-hidden="true"></i> 最新评论</p></div>
+			<div class="row">
+				<div class="pallete-col-2">
+					<div class="inner">
+						<div class="sticky-note"><i class="fa fa-comment-o" aria-hidden="true"></i></div>
+						<!-- <div class="title"><?php //echo $home_latest_post_title; ?></div> -->
+					</div>
+				</div>
+				<div class="pallete-col-2 content right">
+					<div>
+						<?php 
+						$comments = get_comments(array(
+							'number'      => 1,
+							'status'      => 'approve',
+							'post_status' => 'publish'
+						));
+						foreach((array)$comments as $comment){
+							echo '<p>'.$comment->comment_content.'</p><br/>';
+						}
+						
+						?>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="footer-info ">
+			<button class="btn"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+		</div>	
+
+
+	</div>
+</div>
+<?php get_footer(); ?>

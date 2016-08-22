@@ -46,6 +46,8 @@ add_action('after_setup_theme', function(){
 */
 register_nav_menus([
 	'nav' => __('Nav Menu', 'palette'),
+	'footer-left' => __('Footer Left Menu', 'palette'),
+	'footer-right' => __('Footer Right Menu', 'palette'),
 ]);
 
 // function add_nav_menu_classes($classes, $item){

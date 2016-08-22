@@ -1,22 +1,25 @@
 	<div class="footer">
 		<div id="footer-shadow"></div>
-		<footer class="container">
-			<ul class="footer-links right">
-				<li><p><a href="//codrips.com"><?php _e("Activity","palette"); ?></a></p></li>
-				<li><p><a href="//codrips.com"><?php _e("Archive","palette"); ?></a></p></li>
-				<li><p><a href="//codrips.com"><?php _e("About","palette"); ?></a></p></li>
-			</ul>
+		<footer class="container clearfix">
+			
+			<?php 
+			$args = array(
+				'theme_location'  => 'footer-right',
+				'menu_class'      => 'footer-links right',
+			);
+			wp_nav_menu( $args ); 
+			 ?>
 			<a href="<?php echo home_url(); ?>" class="footer-heart">
 				<i class="fa fa-heart" aria-hidden="true"></i>
 			</a>
-			<ul class="footer-links">
-				<li><p class="footer-inner"><?php bloginfo('name'); ?> - <i class="fa fa-copyright" aria-hidden="true"></i> <?php echo date('Y') ?></p></li>
-				<li><p><a href="//codrips.com"><?php _e("Theme","palette"); ?></a></p></li>
-				<li>
-					<!-- <i class="fa fa-creative-commons" aria-hidden="true"></i> -->
-					<p><?php _e("License","palette"); ?></a></p>
-				</li>
-			</ul>
+			<?php 
+			$args = array(
+				'theme_location'  => 'footer-left',
+				'menu_class'      => 'footer-links',
+				'items_wrap' => '<ul id = "%1$s" class = "%2$s"><li><p class="footer-inner">'.get_bloginfo('name').' - <i class="fa fa-copyright" aria-hidden="true"></i> '.date('Y'). '</p></li>%3$s</ul>',
+			);
+			wp_nav_menu( $args ); 
+			 ?>
 		</footer>
 	</div>
 	<?php wp_footer(); ?>
