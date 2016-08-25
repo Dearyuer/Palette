@@ -34,9 +34,9 @@ jQuery(function(){
 	}).done(function(data){
 			$('.palette-twitter .loading-anim').hide();
 			var data = jQuery.parseJSON(data);
-			if(TAS.lan == 'zh_cn'){
+			// if(TAS.lan == 'zh_cn'){
 				for(var i = 0;i < TAS.count;i++){
-					if(data[i].lang == "zh" || data[i].lang == "ja"){
+					// if(data[i].lang == "zh" || data[i].lang == "ja"){
 						var elemLi = $('<li></li>');
 						var elemP = $('<p></p>');
 						var elemSpan = $('<span></span>');
@@ -79,8 +79,8 @@ jQuery(function(){
 						//console.log(data);
 					}
 					
-				}
-			}else if(TAS.lan == 'en_us'){
+				// }
+			// }else if(TAS.lan == 'en_us'){
 				// for(var i = 0;i < TAS.count;i++){
 				// 	if(data[i].lang == "en"){
 				// 		$(".tweet-text")[i].innerHTML= data[i].text;
@@ -89,7 +89,7 @@ jQuery(function(){
 					
 				// }
 				// wait for update
-			}
+			// }
 			
 		});
 });
