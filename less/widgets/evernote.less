@@ -1,0 +1,40 @@
+
+.palette-evernote{
+	.content-mixin;
+	padding: 0;
+	// text-align: center;
+	margin-top: 13px;
+	a:hover path{
+		fill:@paletteHoverBlue;
+	}
+	.anchor-effect;
+	.widget-title{
+		.title-mixin;
+		.evernote-icon{
+			position:relative;
+			svg{
+				position: absolute;
+			}
+		}
+		.evernote-title-text{
+			margin-left: 20px;
+
+		}
+	}
+
+	.evernote{
+		padding:7px 15px 10px 15px;
+
+		.loading-anim{
+			text-align: center;
+			img{
+				margin-top:10px;
+				margin-bottom: 8px;
+			}
+		}
+		li{
+			font-size: 14px;
+			padding-bottom: 7px;
+		}
+	}
+}

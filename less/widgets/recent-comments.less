@@ -1,0 +1,87 @@
+
+.palette-sidebar-comments{
+	.content-mixin;
+	margin-top: 13px;
+	padding: 0;
+	img{
+		border-radius: 50%;
+	}
+	border:1px solid @borderColor;
+	padding: 0;
+	
+	border-radius: 5px;
+	.widget-title{
+		.title-mixin;
+		
+		
+		
+	}
+
+	.sidebar-comment{
+		margin-bottom: 20px;
+		padding: 0 0 0 55px;
+		position: relative;
+		margin-top:10px;
+		.each-comment{
+			padding:7px;
+			padding-top: 0;
+			margin-right: 7px;
+			
+			
+			
+			
+			border-radius: 5px;
+			a:link,a:visited{
+				color:@paletteLighterGrey;
+			}
+			a:hover{
+				cursor: pointer;
+				color:@paletteHoverBlue;
+			}
+			.comment-meta{
+			  float:right;
+			}
+		}
+	}
+	li.minus-sign{
+		text-align: center;
+		padding-top: 0;
+		padding-bottom: 0px;
+		.fa-minus{
+			color:rgba(0,0,0,.2);
+			font-size: 20px;
+			margin-bottom: -5px;
+		}
+		a:hover i{
+			cursor: pointer;
+			color:@paletteHoverBlue;
+		}
+	}
+}
+span.comment-date span{
+	display: block;
+	font-size: 15px;
+	font-family: 'Goudy Bookletter 1911';
+	margin-top: -8px;
+	 padding-right: 3px;
+
+}
+
+span.comment-date{
+	position: absolute;
+	left:10px;
+	top:0;
+	display: block;
+	border:1px solid @borderColor;
+	font-size: 10px;
+	text-align: center;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	line-height: 24px;
+}
+span.comment-date:hover{
+	background-color: @bgHoverColor;
+}

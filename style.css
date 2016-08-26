@@ -1550,6 +1550,13 @@ body {
   width: 50%;
   float: left;
 }
+.page-home {
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.07);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .page-home .blog-info {
   text-align: center;
   padding: 80px 0;
@@ -1562,35 +1569,34 @@ body {
   margin: 15px auto 20px auto;
   font-size: 16px;
 }
-.page-home .latest-post {
+.page-home .latest-content {
   margin-bottom: 40px;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.07);
+  margin-left: 40px;
+  margin-right: 40px;
 }
-.page-home .latest-post .component-title {
+.page-home .latest-content .component-title {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  text-align: center;
   margin-bottom: 0;
   font-size: 0.83em;
   padding: 8px 10px;
   font-weight: 500;
   text-align: left;
+  text-align: center;
 }
-.page-home .latest-post .content {
+.page-home .latest-content .content {
   padding: 70px;
 }
-.page-home .latest-post .inner {
+.page-home .latest-content .inner {
   padding: 20px 0 70px 0;
 }
-.page-home .latest-post .inner .sticky-note {
+.page-home .latest-content .inner .sticky-note {
   text-align: center;
   padding: 20px 0 0 0;
   font-size: 80px;
   color: #666666;
 }
-.page-home .latest-post .inner .title {
+.page-home .latest-content .inner .title {
   color: #666666;
   text-align: center;
 }

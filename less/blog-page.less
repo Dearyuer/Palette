@@ -1,0 +1,155 @@
+.container{
+	margin:0 auto;
+	.main-area{
+		width: 70%;
+		float: right;
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		.contri{
+			margin:0 0 10px 20px;
+			margin-left:2px;
+			.content-mixin;
+			.contri-title{
+				.title-mixin;
+					.fa-github-alt{
+						font-size: 16px;
+					}
+					
+					
+			}
+			div.git-contri-loading-anim{
+				text-align: center;
+				padding: 20px;
+			}
+			rect:hover{
+				stroke:@paletteHoverBlue;
+				fill:@paletteHoverBlue;
+			}
+		}
+	
+		.posts-area{
+			position:relative;
+			//margin:0 0 0 20px;
+			margin-left: 2px;
+			.content-mixin;
+			background-color: #e6e6e6;
+			.posts-title{
+				.title-mixin;
+				background-color: white;
+					
+			}
+
+			article.post{
+				// .anchor-effect;
+				// transition: all .3s;
+				a{
+					.main-post{
+						padding: 38px 18px;
+						border-top:1px solid @borderColor;
+						// border-left:1px solid @borderColor;
+						// border-right:1px solid @borderColor;
+						// .post-title a:visited,
+						// .post-title a:link{
+						// 	color: #333333;
+						// }
+						// .post-title a:hover{
+						// 	cursor: pointer;
+						// 	color:@paletteHoverBlue;
+						// }
+						.post-meta{
+							color:@paletteLighterGrey;
+							line-height: 1.7em;
+							font-size: 14px;
+							color:rgba(0,0,0,.4);
+							margin-top: 10px;
+							
+						}
+						.post-thumbnail img{
+						   	float:right;
+						   	height: 120px;
+						    margin-left: 13px;
+						    
+						   	max-width: 140px;
+						   	
+						}
+						.content{
+							margin-top: 5px;
+						}
+
+						// &:hover{
+						// 	background-color: @bgHoverColor;
+						// }
+					}
+					&:hover .post-title{
+						color:@deepskyblue;
+					}
+					// &:hover .post-meta{
+					// 	color:@deepskyblue;
+					// }
+					// &:hover .excerpt-content p{
+					// 	color:@deepskyblue;
+					// }
+					
+				}
+				// &:last-child .main-post{
+				// 	border-bottom-left-radius: 5px;
+				// 	border-bottom-right-radius: 5px;
+				// }
+				
+
+			}
+			.posts-footer{
+				text-align: center;
+				border-top: 1px solid @borderColor;
+				padding:5px 0px 3px 0px;
+				background-color: white;
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+				// transition: all .3s;
+				.fa-minus{
+				color:rgba(0,0,0,.2);
+				font-size: 20px;
+				
+				}
+			}
+		}
+		// article.single-post{
+		// 		padding:30px;
+		// 		margin-right: 25px;
+		// 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+		// 		background-color: white;
+		// 		border-radius: 5px;
+			
+		// }
+	}
+	.side-area{
+		
+		padding-top: 40px;
+		width: 29%;
+		float:left;
+		padding-bottom: 40px;
+		
+		z-index: 1;
+		.widget-title{
+			
+			color:#666666;
+			margin-bottom: 10px;
+			
+		}
+		.sidebar-widget{
+			
+			li{
+				font-size: 14px;
+				
+			}
+		}
+		@import "widgets/evernote";
+		@import "widgets/profile";
+		@import "widgets/twitter";
+		@import "widgets/recent-posts";
+		@import "widgets/recent-comments";
+	
+
+	}
+}

@@ -1,0 +1,156 @@
+*{
+	margin: 0;
+	box-sizing: border-box;
+}
+
+ol,ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+ 
+a:visited,
+a:link{
+	color: @paletteLighterGrey;
+}
+a:hover{
+	cursor: pointer;
+	color: @paletteHoverBlue;
+}
+
+
+html,h1,h2,h3,h4,h5,h6,p{
+	font-family: "PingFang SC",
+		"Hiragino Sans GB",
+		"Microsoft YaHei",
+		"STHeiti",
+		"WenQuanYi Micro Hei",
+		Helvetica,
+		Arial,
+		sans-serif;
+	text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+    font-weight: 300;
+}
+
+
+p{
+	color:@paletteLighterGrey;
+	line-height: 1.7em;
+}
+
+pre{
+	padding: 1.0em;
+	color: white;
+	background: #222b30;
+	border-radius: 5px;
+	white-space: pre-wrap;
+}
+
+.right{
+	float:right!important;
+}
+
+body{
+	position: relative;
+	background-image: url("./img/body-noise.png");
+	background-repeat: repeat;
+	background-position: 0px 0px;
+	// background-size: 
+	// background-color: #f3f3f3;
+	// background-image: none!important;
+	// background-color: none!important;
+	
+}
+
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+
+.row:before, .row:after { content: ""; display: table; }
+.row:after { clear: both; }
+.row { *zoom: 1; }
+
+.elem-hidden{
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top:-9999;
+	left:-99999;
+	display: none;
+}
+
+.title-mixin{
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	text-align: center;
+	//color:#666666;
+	margin-bottom: 0;
+	font-size: 0.83em;
+	padding: 8px 10px;
+	//background-color: #e6e6e6;
+	font-weight: 500;
+	text-align: left;
+	//background-image: linear-gradient(to top, #ffb018, #ffcf39);
+	//border-bottom: 1px solid #ffcf39;
+	
+}
+.content-mixin{
+	// border:1px solid @borderColor;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 0px 0px 16px rgba(0,0,0,.07);
+}
+.anchor-effect{
+	& a:visited, & a:link{
+		color:@paletteLighterGrey;
+	}
+	
+	& a:hover{
+		cursor: pointer;
+		color:@paletteHoverBlue;
+		// text-decoration:  underline;
+	}
+}
+.current_page_item{
+		
+	& a:visited, & a:link{
+		color:@deepskyblue;
+
+	}
+}
+
+
+
+.page-comming-soon{
+	position: relative;
+	text-align: center;
+	height: 700px;
+	font-size: 30px;
+	width: 100%;
+	.outer {
+
+	    display: table;
+	    position: absolute;
+	    height: 100%;
+
+	    width: 100%;
+	}
+
+	.middle {
+	    display: table-cell;
+	    vertical-align: middle;
+	}
+
+	.inner {
+	    margin-left: auto;
+	    margin-right: auto; 
+	    width: /*whatever width you want*/;
+	}
+}

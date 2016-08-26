@@ -1,0 +1,263 @@
+/*
+Theme Name: Palette
+Author: Dearyuer
+Author URI: http://codrips.com/
+Description: Palette
+Version: 1.0
+*/
+// @paletteLighterGrey: #666666;
+@paletteLighterGrey: #666666;
+@paletteHoverBlue: #03a9f4;
+
+@bgHoverColor: #f5f5f5;
+// @bgHoverColor: #f5f8fa;
+
+@paletteDarkerGrey: #333333;
+@paletteLineDarkerGrey: rgba(0,0,0,.15);
+@paletteLineLighterGrey: rgba(0, 0, 0, 0.08);
+@borderColor: #e1e8ed;
+//@borderColor: #f3f3f3;
+@deepskyblue: #03a9f4;
+
+@import "less/global";
+@import "less/header";
+@import "less/footer";
+@import "less/blog-page";
+@import "less/screen";
+@import "less/small-screen";
+@import "less/mid-screen";
+
+
+// .post{
+// 	overflow: hidden;
+// }
+
+@import "less/anim/before";
+@import "less/anim/after";
+@import "less/single";
+
+
+
+
+@import "less/pages/archive";
+@import "less/home";
+//@import "less/anim/content-area";
+// /* closing (delays) */
+// .post-title {
+//   transition-delay: 0.15s;
+// }
+
+// .loader {
+//   transition-delay: 0.1s;
+// }
+
+// .post--item .excerpt-content {
+//   transition-delay: 0s;
+// }
+
+.main-post{
+  transition:background-color .2s;
+}
+
+
+// .placeholder {
+//   pointer-events: none;
+//   position: absolute;
+//   width: calc(100% + 5px);
+//   height: calc(100vh + 5px);
+//   z-index: 100;
+//   top: 0;
+//   left: 0;
+//   background: #fff;
+//   transform-origin: 0 0;
+// }
+// .placeholder.placeholder--trans-in {
+//   transition: transform 0.5s;
+//   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+// }
+
+// .hidden-content{
+// 	position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     pointer-events: none;
+//     height: 0;
+//     visibility: hidden;
+//     z-index: 400;
+//     overflow: hidden;
+// }
+
+// .view-single .main-area::after {
+//   opacity: 1;
+// }
+
+// .main-area::after {
+//   content: '';
+//   background: rgba(202, 202, 202, 0.4);
+//   opacity: 0;
+//   position: absolute;
+//   pointer-events: none;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   -webkit-transition: opacity 0.5s;
+//   transition: opacity 0.5s;
+// }
+
+
+
+// .content--show {
+//   height: 100vh;
+//   pointer-events: auto;
+//   visibility: visible;
+// }
+
+
+// .content__item {
+// 	position: absolute;
+// 	top: 0;
+// 	width: 100%;
+// 	overflow: hidden;
+// 	height: 0;
+// 	opacity: 0;
+// 	padding: 60px 60px 80px 60px;
+// 	pointer-events: none;
+// 	font-size: 0.85em;
+// 	p {
+// 		max-width: 1200px;
+// 		margin: 1em auto;
+// 		text-align: justify;
+// 	}
+// 	p:first-of-type {
+// 		font-size: 1.35em;
+// 	}
+// }
+
+// .content__item.content__item--show {
+// 	height: auto;
+// 	min-height: 100vh;
+// 	opacity: 1;
+// 	pointer-events: auto;
+// 	-webkit-transition: opacity 0.6s;
+// 	transition: opacity 0.6s;
+// }
+
+// /* content elements */
+// .category--full {
+// 	font-size: 1.25em;
+// 	margin-bottom: 20px;
+// 	color: $color_link;
+// }
+
+// .title--full {
+// 	font-size: 3.25em;
+// }
+
+// .meta--full {
+// 	font-size: 1em;
+// 	margin: 0 auto 2em;
+// 	max-width: 1200px;
+// 	.meta__author {
+// 		display: block;
+// 		text-align: center;
+// 		font-weight: bold;
+// 		margin-bottom: 20px;
+// 	}
+// 	.meta__author::before {
+// 		content: 'by ';
+// 		font-weight: normal;
+// 	}
+// 	.meta__category {
+// 		font-style: italic;
+// 		float: left;
+// 		margin: 0 5px;
+// 		font-family: $serif;
+// 	}
+// 	.meta__category::before {
+// 		content: 'in '
+// 	}
+// 	.meta__avatar {
+// 		margin: 1em auto;
+// 	}
+// }
+
+
+// .category--full,
+// .title--full,
+// .meta--full .meta__avatar,
+// .meta--full .meta__author,
+// .meta--full .meta__date,
+// .meta--full .meta__reading-time {
+// 	opacity: 0;
+// }
+
+// .content__item p {
+// 	opacity: 0;
+// }
+
+// .category--full,
+// .title--full {
+// 	-webkit-transform: translate3d(0, 40px, 0);
+// 	transform: translate3d(0, 40px, 0);
+// }
+
+// .meta--full {
+// 	.meta__avatar,
+// 	.meta__author,
+// 	.meta__date,
+// 	.meta__reading-time {
+// 		-webkit-transform: scale3d(0.5,0.5,1);
+// 		transform: scale3d(0.5,0.5,1);
+// 	}
+// }
+
+// .content__item--show {
+// 	.category--full,
+// 	.title--full,
+// 	.meta--full .meta__avatar,
+// 	.meta--full .meta__author,
+// 	.meta--full .meta__date,
+// 	.meta--full .meta__reading-time {
+// 		opacity: 1;
+// 		-webkit-transform: translate3d(0,0,0);
+// 		transform: translate3d(0,0,0);
+// 		-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+// 		transition: transform 0.3s, opacity 0.3s;
+// 		-webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+// 		transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+// 	}
+// }
+
+// .content__item--show .category--full,
+// .content__item--show .title--full {
+// 	-webkit-transition-timing-function: ease-out;
+// 	transition-timing-function: ease-out;
+// }
+
+// .content__item--show .title--full {
+// 	-webkit-transition-delay: 0.05s;
+// 	transition-delay: 0.05s;
+// }
+
+// .content__item--show .meta--full .meta__avatar {
+// 	-webkit-transition-delay: 0.2s;
+// 	transition-delay: 0.2s;
+// }
+
+// .content__item--show .meta--full .meta__date {
+// 	-webkit-transition-delay: 0.27s;
+// 	transition-delay: 0.27s;
+// }
+
+// .content__item--show .meta--full .meta__reading-time {
+// 	-webkit-transition-delay: 0.34s;
+// 	transition-delay: 0.34s;
+// }
+
+// .content__item--show.content__item p {
+// 	opacity: 1;
+// 	-webkit-transition: opacity 0.5s 0.25s;
+// 	transition: opacity 0.5s 0.25s;
+// }
