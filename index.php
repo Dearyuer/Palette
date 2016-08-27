@@ -29,6 +29,24 @@
 				</div>
 				<div class="pallete-col-2 content">
                     <div class="component-title"><p>Lastest comments</p></div>
+                    <div class="home-comments">
+                        <ul>
+						<?php 
+						$comments = get_comments(array(
+							'number'      => 3,
+							'status'      => 'approve',
+							'post_status' => 'publish'
+						));
+						foreach((array)$comments as $comment){
+                            echo '<li>';
+                            echo '<div class="comment-avatar right"><a href="'.$comment->comment_author_url.'">'.get_avatar($comment,40).'</a></div>';
+							echo '<p>'.$comment->comment_content.'</p><br/>';
+                            echo '</li>';
+						}
+						
+						?>
+                        </ul>
+					</div>
 				</div>
 			</div>
 		</div>

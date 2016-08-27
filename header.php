@@ -15,7 +15,6 @@
 	<body <?php body_class(); ?>>
 		<div>
 	<![endif]-->
-		<!-- happy coding have fun! o((◕ฺ∀ ◕ฺ))o -->
 		<div class="header">
 			<?php $logo_img_src = get_option("palette_logo_image_src");
 				$optimize_logo_img_src = !empty($logo_img_src) ? $logo_img_src : get_bloginfo('template_directory')."/img/logo.png";
