@@ -1,28 +1,13 @@
 <?php 
-function palette_add_menu_page_fn() {
-    if (!current_user_can('manage_options')){
-      wp_die( __('You do not have sufficient permissions to access this page.') );
-    }
-    $noChangesSaved = 0;
-    $paletteOptionLogoImgSrc = 'palette_logo_image_src';
-    $paletteOptionLogoId = 'palette_logo_id';
-    $paletteOptionTransparence = "palette_transparence_toggle";
 
-    //state
+function handle_img_upload($name,$post_id,$option_id,$option_src){
 
-    $transparent_effect_state;
+    $submit = $name."_submit";
+    $nonce = $name."_nonce";
 
-    //register
-    global $palette_settings_cache;
-    $palette_settings_cache->registerSetting($paletteOptionLogoImgSrc);
-    $palette_settings_cache->registerSetting($paletteOptionLogoId);
-    // $palette_settings_cache->registerSetting($paletteOptionParticle);
-    $palette_settings_cache->registerSetting($paletteOptionTransparence);
-
-   //&& wp_verify_nonce( $_POST['logo_image_upload_nonce'], 'logo_image_upload' )
-    if( isset($_POST['logo_image_upload_submit'])  &&  check_admin_referer('logo_image_upload', 'logo_image_upload_nonce') ){
+    if( isset($_POST[$submit])  &&  check_admin_referer($name, $nonce) ){
         if (
-            isset( $_POST['logo_image_upload_nonce'], $_POST['post_id'] )
+            isset( $_POST[$nonce], $_POST[$post_id] )
             && current_user_can( 'manage_options' )
         ) {
             require_once( ABSPATH . 'wp-admin/includes/image.php' );
@@ -31,16 +16,16 @@ function palette_add_menu_page_fn() {
 
             // Let WordPress handle the upload.
             // Remember, 'logo_image_upload' is the name of our file input in our form above.
-            $logo_attachment_id = media_handle_upload( 'logo_image_upload', $_POST['post_id'] );
-            if ( is_wp_error( $logo_attachment_id ) ) { ?>
+            $attachment_id = media_handle_upload( $name, $_POST[$post_id] );
+            if ( is_wp_error( $attachment_id ) ) { ?>
                 <div class="notice notice-error">
                     <p><?php _e("There's an error while uploading","palette") ?></p>
                 </div>
             <?php
             } else {
-                if(isset($logo_attachment_id)){
-                    update_option($paletteOptionLogoId,$logo_attachment_id);
-                    update_option($paletteOptionLogoImgSrc, wp_get_attachment_image_src($logo_attachment_id)[0]);
+                if(isset($attachment_id)){
+                    update_option($option_id,$attachment_id);
+                    update_option($option_src, wp_get_attachment_image_src($attachment_id)[0]);
                 }
                 // echo wp_get_attachment_image($logo_attachment_id);
                 ?>
@@ -53,7 +38,37 @@ function palette_add_menu_page_fn() {
         }
 
     }
+}
 
+
+
+function palette_add_menu_page_fn() {
+    if (!current_user_can('manage_options')){
+      wp_die( __('You do not have sufficient permissions to access this page.') );
+    }
+    $noChangesSaved = 0;
+    $paletteOptionTransparence = "palette_transparence_toggle";
+
+    $paletteOptionPrefix = 'palette_';
+    $paletteOptionLogoImgSrc = $paletteOptionPrefix.'logo_image_src';
+    $paletteOptionLogoId = $paletteOptionPrefix.'logo_id';
+    $paletteOptionHomeLogoImgSrc = $paletteOptionPrefix.'home_logo_image_src';
+    $paletteOptionHomeLogoId = $paletteOptionPrefix.'home_logo_id';
+    //state
+
+    $transparent_effect_state;
+
+    //register
+    global $palette_settings_cache;
+    $palette_settings_cache->registerSetting($paletteOptionLogoImgSrc);
+    $palette_settings_cache->registerSetting($paletteOptionLogoId);
+    // $palette_settings_cache->registerSetting($paletteOptionParticle);
+    $palette_settings_cache->registerSetting($paletteOptionTransparence);
+
+    handle_img_upload('logo_image_upload','post_id',$paletteOptionLogoId,$paletteOptionLogoImgSrc);
+    handle_img_upload('home_logo_image_upload', 'post_id', $paletteOptionHomeLogoId, $paletteOptionHomeLogoImgSrc);
+   //&& wp_verify_nonce( $_POST['logo_image_upload_nonce'], 'logo_image_upload' )
+    
     if( isset($_POST['palette_settings_submit']) && check_admin_referer('palette_settings_submit', 'palette_settings_submit_nonce') ){
 
         if( isset($_POST['panel_transparence_checkbox']) && $_POST['panel_transparence_checkbox'] == 'transparence'  ){

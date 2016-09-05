@@ -21,24 +21,45 @@
 	width: 50%;
 	float: left;
 }
-
-
+.pallete-col-8-100{
+    width: 8%;
+    float:left;
+}
+.pallete-col-92-100{
+    width: 92%;
+    float: left;
+}
 .page-home{
-    .content-mixin;
-    margin-top:40px;
+    //.content-mixin;
+    margin-top:20px;
     margin-bottom: 40px;
 
 	.blog-info{
-		text-align: center;
-		padding: 80px 0;
-		.title{
-			font-size: 30px;
-		}
-		.description{
-			width: 500px;
-			margin:15px auto 20px auto;
-			font-size: 16px;
-		}
+        // .content-mixin;
+        border-bottom: 1px solid @paletteLineLighterGrey;
+		padding: 0;
+        margin-bottom: 20px;
+        .info-img{
+            padding: 14px;
+            img{
+                max-width: 50px;
+                height: auto;
+                border-radius:5px;
+            }
+        }
+        .home-info{
+            padding:12px 0 0 0;
+            .title{
+
+                font-size: 20px;
+                font-weight:500;
+            }
+            .description{
+                width: 500px;
+                // margin:15px auto 20px auto;
+                font-size: 16px;
+            }
+        }
 	}
 	.latest-content{
 		margin-bottom: 40px;
