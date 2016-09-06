@@ -1475,6 +1475,7 @@ body {
 .page-home .blog-info .info-img img {
   max-width: 50px;
   height: auto;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
 .page-home .blog-info .home-info {
