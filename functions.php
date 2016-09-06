@@ -50,6 +50,15 @@ register_nav_menus([
 	'footer-right' => __('Footer Right Menu', 'palette'),
 ]);
 
+/*
+ * Register sidebar
+ */
+register_sidebar([
+    'id' => 'home_page',
+    'name' => 'Home Page',
+    'description' => 'Add widget to home page'
+]);
+
 // function add_nav_menu_classes($classes, $item){
 //    if( is_home() ){
 //       $classes[0] = 'current_page_item';

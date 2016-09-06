@@ -61,17 +61,48 @@
             }
         }
 	}
-	.latest-content{
-		margin-bottom: 40px;
-        margin-left: 40px;
-        margin-right: 40px;
+	.home-component{
+		// margin-bottom: 40px;
+        // margin-left: 40px;
+        // margin-right: 40px;
+        margin-top:40px;
+        position: relative;
+        padding-left:25px;
+        padding-top:25px;
+        .component-identifier{
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 999;
+            width: 50px;
+            height:50px;
+            border-radius: 50%;
+            background-color: @deepskyblue;
+            color:white;
+            text-align: center;
+            font-weight:300;
+            font-size:17px;
+            line-height:2em;
+            span{
+
+                font-weight:500;
+                display:block;
+                padding:0;
+                margin-top:-16px;
+
+            }
+
+        }
 
 		.component-title{
 			.title-mixin;
             text-align: center;
 		}
 		.content{
-			padding: 70px;
+			// padding: 70px;
+            .content-mixin;
+            padding:12px;
+            
 		}
 
     	.inner{
@@ -89,9 +120,12 @@
     		}
     	}
 	}
+    .home-comments{
+        padding-left:50px;
+    }
 	.latest-comment{
 		.inner{
-			padding: 10px 0 70px 0;
+			padding: 10px 0 70px 10px;
 		}
 	}
 
