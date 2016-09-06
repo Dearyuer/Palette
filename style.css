@@ -365,7 +365,7 @@ body {
 .container .main-area {
   width: 70%;
   float: right;
-  padding-top: 40px;
+  padding-top: 15px;
   padding-bottom: 40px;
 }
 .container .main-area .contri {
@@ -451,7 +451,7 @@ body {
   font-size: 20px;
 }
 .container .side-area {
-  padding-top: 40px;
+  padding-top: 15px;
   width: 29%;
   float: left;
   padding-bottom: 40px;
@@ -1461,31 +1461,16 @@ body {
   float: left;
 }
 .page-home {
-  margin-top: 20px;
   margin-bottom: 40px;
 }
-.page-home .blog-info {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 0;
-  margin-bottom: 20px;
-}
-.page-home .blog-info .info-img {
-  padding: 14px;
-}
-.page-home .blog-info .info-img img {
-  max-width: 50px;
-  height: auto;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-}
-.page-home .blog-info .home-info {
+.page-home .home-info {
   padding: 12px 0 0 0;
 }
-.page-home .blog-info .home-info .title {
+.page-home .home-info .title {
   font-size: 20px;
   font-weight: 500;
 }
-.page-home .blog-info .home-info .description {
+.page-home .home-info .description {
   width: 500px;
   font-size: 16px;
 }
@@ -1581,6 +1566,37 @@ body {
 .page-home .footer-info .btn i {
   display: block;
   padding-bottom: 5px;
+}
+.page-info {
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0;
+  margin-bottom: 20px;
+}
+.page-info .info-icon {
+  margin: 0;
+  margin: 14px;
+  background: white;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.6em;
+  color: #03a9f4;
+}
+.page-info .info-text {
+  padding: 12px 0 0 0;
+}
+.page-info .info-text .title {
+  font-size: 20px;
+  font-weight: 500;
+}
+.page-info .info-text .description {
+  width: 500px;
+  font-size: 16px;
 }
 .main-post {
   -webkit-transition: background-color 0.2s;

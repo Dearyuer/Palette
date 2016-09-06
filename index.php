@@ -1,21 +1,19 @@
 <?php get_header(); ?>
 <div class="container clearfix">
 	<div class="page-home">
-		<div class="row blog-info">
+
+        <div class="row page-info">
             <div class="pallete-col-8-100">
-                <?php 
-                $home_logo_img_src = get_option("palette_home_logo_image_src");
-                $optimize_home_logo_img_src = !empty($home_logo_img_src) ? $home_logo_img_src : get_bloginfo('template_directory').'/img/logo.png';
-                ?>
-                    <div class="info-img"><img src="<?php echo $optimize_home_logo_img_src; ?>" alt="" /></div>
+                <div class="info-icon"><?php echo substr(get_bloginfo('name'),0,1); ?></div>
             </div>
             <div class="pallete-col-92-100">
-                <div class="home-info">
-                    <h2 class="title"><?php bloginfo('name'); ?></h2>
+                <div class="info-text">
+                    <h2 class="title"><?php bloginfo('name') ?></h2>
                     <p class="description"><?php bloginfo('description'); ?></p>
                 </div>
             </div>
         </div>
+
         <div class="home-component">
             <div class="component-identifier">No<span class="inner">1</span></div>
             <div class="content">
