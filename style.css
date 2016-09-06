@@ -1544,11 +1544,30 @@ body {
   color: #666666;
   text-align: center;
 }
-.page-home .home-comments {
-  padding-left: 50px;
+.page-home .home-component li {
+  padding: 5px 0;
 }
-.page-home .latest-comment .inner {
-  padding: 10px 0 70px 10px;
+.page-home .home-component li .comment-author {
+  border: 1px solid #03a9f4;
+  color: #03a9f4;
+  padding: 0 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.page-home .home-component li .home-comments {
+  padding-left: 50px;
+  font-size: 15px;
+}
+.page-home .home-component .content {
+  padding-bottom: 20px;
+}
+.page-home .home-component .content .tweets p {
+  font-size: 15px;
+}
+.page-home .home-component .content .tweets .tweet-time {
+  float: right;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.25);
 }
 .page-home .footer-info {
   text-align: center;

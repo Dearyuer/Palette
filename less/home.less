@@ -120,14 +120,42 @@
     		}
     	}
 	}
-    .home-comments{
-        padding-left:50px;
+    .home-component{
+        li{
+            padding:5px 0;
+            .comment-author{
+                border:1px solid @deepskyblue;
+                color: @deepskyblue;
+                padding: 0 15px;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+            .home-comments{
+                padding-left:50px;
+                font-size:15px;
+            }
+
+        }
+   }
+
+    .home-component{
+        .content{
+        padding-bottom: 20px;
+            .tweets{
+                
+                p{
+                    font-size:15px;
+                }
+                .tweet-time{
+                    float:right;
+                    font-size:14px;
+                    color:@paletteLineDarkerGrey;
+                }
+            }
+        }
+        
     }
-	.latest-comment{
-		.inner{
-			padding: 10px 0 70px 10px;
-		}
-	}
+    
 
 	.footer-info{
 		text-align: center;

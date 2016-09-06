@@ -51,8 +51,9 @@
                 ));
                 foreach((array)$comments as $comment){
                     echo '<li>';
-                    echo '<div class="comment-avatar float-left clearfix"><a href="'.$comment->comment_author_url.'">'.get_avatar($comment,40).'</a></div>';
-                    echo '<p class="home-comments">'.$comment->comment_content.'</p><br/>';
+                    // echo '<div class="comment-avatar float-left clearfix"><a href="'.$comment->comment_author_url.'">'.get_avatar($comment,40).'</a></div>';
+                    echo '<div class="comment-author float-left clearfix">'.$comment->comment_author.'</div>';
+                        echo '<p class="home-comments">'.$comment->comment_content.'</p>';
                     echo '</li>';
                 }
                 
