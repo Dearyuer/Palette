@@ -138,6 +138,18 @@ body {
   margin-right: auto;
   width: ;
 }
+.palette-col-2 {
+  width: 50%;
+  float: left;
+}
+.palette-col-8-100 {
+  width: 8%;
+  float: left;
+}
+.palette-col-92-100 {
+  width: 92%;
+  float: left;
+}
 .header {
   height: 66px;
   font-size: 15px;
@@ -1448,18 +1460,6 @@ body {
 .btn:focus {
   outline: none;
 }
-.pallete-col-2 {
-  width: 50%;
-  float: left;
-}
-.pallete-col-8-100 {
-  width: 8%;
-  float: left;
-}
-.pallete-col-92-100 {
-  width: 92%;
-  float: left;
-}
 .page-home {
   margin-bottom: 40px;
 }
@@ -1597,6 +1597,27 @@ body {
 .page-info .info-text .description {
   width: 500px;
   font-size: 16px;
+}
+.about .about-component {
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+}
+.about .about-component .about-page-profile-img {
+  padding: 7px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  width: 40%;
+  height: auto;
+  margin: 35px 0;
+}
+.about .about-component .info-card {
+  padding: 35px 40px 35px 0px;
+  margin: 0 auto;
+  font-size: 16px;
+  text-align: left;
 }
 .main-post {
   -webkit-transition: background-color 0.2s;

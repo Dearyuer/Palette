@@ -16,11 +16,7 @@
 					 ?>
 				<!-- </th> -->
 				<td>
-					<input type="file" name="logo_image_upload" id="logo_image_upload" class="inputfile" multiple="false" />
-					<label for="logo_image_upload"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span><?php _e("Choose a file...", "palette") ?></span></label>
-					<input type="hidden" name="post_id" value="0" />
-					<?php wp_nonce_field( 'logo_image_upload', 'logo_image_upload_nonce'); ?>
-					<input class="button button-primary" name="logo_image_upload_submit" type="submit" value="Upload" />
+                    <?php handle_img_form('logo_image_upload');?>
 				</td>
 			</tr>
 			<tr>
@@ -90,15 +86,22 @@
 				</td>
 			</tr>
             <tr>
-                <th><?php _e("Home logo")?></th>
+                <th><?php _e("Home logo");?></th>
                 <td>
-                    <input type="file" name="home_logo_image_upload" id="home_logo_image_upload" class="inputfile" multiple="false" />
-					<label for="home_logo_image_upload"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span><?php _e("Choose a file...", "palette") ?></span></label>
-					<input type="hidden" name="post_id" value="0" />
-					<?php wp_nonce_field( 'home_logo_image_upload', 'home_logo_image_upload_nonce'); ?>
-					<input class="button button-primary" name="home_logo_image_upload_submit" type="submit" value="Upload" />
+
+                    <?php handle_img_form('home_logo_image_upload');?>
                 </td>
             </tr>
+            <tr>
+				<th><?php _e("Image for About page profile", "palette"); ?></th>
+				<td>
+                    <?php handle_img_form('about_avatar_image_upload');?>
+				</td>
+			</tr>
+            <tr>
+                <th><?php _e("");?></th>
+            </tr>
+
 		</tbody>
 		</table>
 		<?php wp_nonce_field( 'palette_settings_submit', 'palette_settings_submit_nonce'); ?>
