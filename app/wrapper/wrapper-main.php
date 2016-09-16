@@ -99,7 +99,11 @@
 				</td>
 			</tr>
             <tr>
-                <th><?php _e("");?></th>
+                <th><?php _e("Awards count on about page");?></th>
+                <td>
+                <?php $retrieve_about_page_awards_count = get_option("palette_about_page_awards_count");?>
+                <input type="number" name="about_page_awards_count" value="<?php echo empty($retrieve_about_page_awards_count) ? 0 : $retrieve_about_page_awards_count;  ?>">
+                </td>
             </tr>
 
 		</tbody>

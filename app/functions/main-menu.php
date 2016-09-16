@@ -41,6 +41,8 @@ function handle_img_upload($name,$post_id,$option_id,$option_src){
 }
 
 
+
+
 function handle_img_form($name){
 ?>
     <input type="file" name="<?php echo $name; ?>" id="<?php echo $name; ?>" class="inputfile" multiple="false" />
@@ -99,6 +101,7 @@ function palette_add_menu_page_fn() {
                 $noChangesSaved++;
             }
         }
+    
         $pelettePrefix = "palette_";
         $api_data = [
             'twitter_api_key',

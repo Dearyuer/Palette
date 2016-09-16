@@ -3,10 +3,10 @@
 	<div class="page-home">
 
         <div class="row page-info">
-            <div class="pallete-col-8-100">
+            <div class="palette-col-8-100">
                 <div class="info-icon"><?php echo substr(get_bloginfo('name'),0,1); ?></div>
             </div>
-            <div class="pallete-col-92-100">
+            <div class="palette-col-92-100">
                 <div class="info-text">
                     <h2 class="title"><?php bloginfo('name') ?></h2>
                     <p class="description"><?php bloginfo('description'); ?></p>
@@ -40,7 +40,7 @@
             <div class="component-identifier">No<span class="inner">2</span></div>
             <div class="content">
                 <div class="component-title"><p>Lastest comments</p></div>
-                <ul>
+                <ul class="home-recent-comments">
                 <?php 
                 $comments = get_comments(array(
                     'number'      => 3,

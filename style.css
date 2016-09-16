@@ -1049,6 +1049,7 @@ body {
 }
 .header,
 .footer,
+.blog-page-info,
 .side-area,
 .main-area,
 .main-post {
@@ -1058,6 +1059,12 @@ body {
   transition: transform 0.6s, -webkit-transform 0.6s;
 }
 .view-single .header {
+  -webkit-transform: translate3d(-100vw, 0, 0);
+          transform: translate3d(-100vw, 0, 0);
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.view-single .blog-page-info {
   -webkit-transform: translate3d(-100vw, 0, 0);
           transform: translate3d(-100vw, 0, 0);
   -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -1494,6 +1501,7 @@ body {
   font-weight: 300;
   font-size: 17px;
   line-height: 2em;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25);
 }
 .page-home .home-component .component-identifier span {
   font-weight: 500;
@@ -1515,7 +1523,7 @@ body {
   border-radius: 5px;
   background-color: white;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.07);
-  padding: 12px;
+  padding: 27px 35px;
 }
 .page-home .home-component .inner {
   padding: 20px 0 70px 0;
@@ -1530,22 +1538,24 @@ body {
   color: #666666;
   text-align: center;
 }
-.page-home .home-component li {
+.page-home .home-component ul.home-recent-comments {
+  padding: 0;
+}
+.page-home .home-component ul.home-recent-comments li {
   padding: 5px 0;
 }
-.page-home .home-component li .comment-author {
+.page-home .home-component ul.home-recent-comments li .comment-author {
   border: 1px solid #03a9f4;
   color: #03a9f4;
   padding: 0 15px;
-  border-radius: 5px;
+  border-radius: 12px;
   margin-right: 10px;
 }
-.page-home .home-component li .home-comments {
-  padding-left: 50px;
+.page-home .home-component ul.home-recent-comments li .home-comments {
   font-size: 15px;
 }
-.page-home .home-component .content {
-  padding-bottom: 20px;
+.page-home .home-component .content .tweets {
+  padding: 0;
 }
 .page-home .home-component .content .tweets p {
   font-size: 15px;
@@ -1557,7 +1567,7 @@ body {
 }
 .page-home .footer-info {
   text-align: center;
-  padding: 40px 0 80px 0;
+  padding: 40px 0 20px 0;
   font-size: 30px;
 }
 .page-home .footer-info .btn {
