@@ -17,7 +17,7 @@ jQuery(function(){
 	).done(function(data){
 		$('.git-contri-loading-anim').hide();
 		result = '<div class="animated fadeIn">';
-		data = data.replace(/class="js-calendar-graph-svg"/,'viewBox="0 -7 796 126"');
+		data = data.replace(/class="js-calendar-graph-svg"/,'viewBox="-16 5 700 100"');
 		data = data.replace(/#1e6823/g,'#1d9af6');
 		data = data.replace(/#8cc665/g,'#00a8f2');
 		data = data.replace(/#44a340/g,'#00bfff');

@@ -27,7 +27,7 @@ class Palette_Home_Twitter_Widget extends WP_Widget{
 		}
 		echo '<ul class="tweets">';
 			echo '<li class="loading-anim clearfix">';
-				// echo '<img src="'.get_template_directory_uri().'/img/spinner.gif'.'" alt="Loading">';
+				echo '<img src="'.get_template_directory_uri().'/img/spinner.gif'.'" alt="Loading">';
 			echo '</li>';
 
 
@@ -36,30 +36,25 @@ class Palette_Home_Twitter_Widget extends WP_Widget{
              * Test Case
              *
              */
-            echo '<li><p class="tweet-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. <span class="tweet-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 7 hours ago</span></p></li>';
-            echo '<li><p class="tweet-text">When an unknown printer took a galley of type<span class="tweet-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 7 hours ago</span></p></li>';
-            echo '<li><p class="tweet-text">Scrambled it to make a type specimen book. It has survived not only five centuries<span class="tweet-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 7 hours ago</span></p></li>';
 
 		echo '</ul>';
 		echo '</div>';
         echo $args['after_widget'];
-		if(! (home_url() == "http://localhost:8888") ){
-			wp_enqueue_script('twitter_ajax',get_template_directory_uri().'/js/widgets/twitterAjax.js',[],false,true);
+		wp_enqueue_script('home_twitter_ajax',get_template_directory_uri().'/js/widgets/home-twitterAjax.js',[],false,true);
 
-			wp_localize_script('twitter_ajax', 'TWITTER_AJAX_SETTINGS', array(
-				'home_url' => home_url(),
-				'count'=> $count,
-				'lan'=> strtolower(get_locale()),
-				'time_ago' => array(
-					'just_now'=>__('just now', 'palette'),
-					'min_ago'=>__(' minutes ago', 'palette'),
-					'h_a_ago'=>__('half an hour ago', 'palette'),
-					'h_ago'=>__(' hours ago', 'palette'),
-					'yes'=>__('yesterday', 'palette'),
-					'days_ago'=>__(' days ago', 'palette'),
-				)
-			));
-		}
+		wp_localize_script('home_twitter_ajax', 'HOME_TWITTER_AJAX_SETTINGS', array(
+			'home_url' => home_url(),
+			'count'=> $count,
+			'lan'=> strtolower(get_locale()),
+			'time_ago' => array(
+				'just_now'=>__('just now', 'palette'),
+				'min_ago'=>__(' minutes ago', 'palette'),
+				'h_a_ago'=>__('half an hour ago', 'palette'),
+				'h_ago'=>__(' hours ago', 'palette'),
+				'yes'=>__('yesterday', 'palette'),
+				'days_ago'=>__(' days ago', 'palette'),
+			)
+		));
 		?>
 		<?php
 
