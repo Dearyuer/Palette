@@ -1,3 +1,5 @@
+@import "widgets/home-evernote";
+@import "widgets/home-twitter";
 .btn{
 	border:1px solid @deepskyblue !important;
 	background: none;
@@ -38,20 +40,32 @@
         // }
 
 
-        .home-info{
-            padding:12px 0 0 0;
-            .title{
+    .home-info{
+        padding:12px 0 0 0;
+        .title{
 
-                font-size: 20px;
-                font-weight:500;
-            }
-            .description{
-                width: 500px;
-                // margin:15px auto 20px auto;
-                font-size: 16px;
-            }
+            font-size: 20px;
+            font-weight:500;
         }
-	// }
+        .description{
+            width: 500px;
+            // margin:15px auto 20px auto;
+            font-size: 16px;
+        }
+    }
+    .home-banner{
+
+        margin:25px;
+        margin-bottom:10px;
+        .banner-content{
+            margin: 10px;
+            padding:30px;
+            background:white;
+            color:@deepskyblue;
+            border-radius:5px;
+        }
+    }
+// }
 	.home-component{
 		// margin-bottom: 40px;
         // margin-left: 40px;
@@ -134,29 +148,6 @@
         }
         
     }
-
-    .home-component{
-        .content{
-            .tweets{
-                
-                padding:0;
-                .loading-anim{
-
-                    text-align: center;
-                }
-                p{
-                    font-size:15px;
-                }
-                .tweet-time{
-                    float:right;
-                    font-size:14px;
-                    color:@paletteLineDarkerGrey;
-                }
-            }
-        }
-        
-    }
-    
 
 	.footer-info{
 		text-align: center;
