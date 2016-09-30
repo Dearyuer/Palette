@@ -16,7 +16,7 @@ class Palette_Home_Twitter_Widget extends WP_Widget{
 		// echo get_template_directory_uri();
 		// require get_template_directory().'/libs/tmhOAuth/tmhOAuth.php';
         echo $args['before_widget'];
-        echo '<div class="component-identifier">No<span class="inner">3</span></div>';
+        echo '<div class="component-identifier"><span class="home-twitter-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span></div>';
 		echo '<div class="palette-twitter content">';
 
 		if ( ! empty( $instance['title'] ) ) {

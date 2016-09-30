@@ -23,7 +23,7 @@
         </div>-->
 
         <div class="home-component">
-            <div class="component-identifier">No<span class="inner">1</span></div>
+            <div class="component-identifier"><span class="home-posts-icon"><i class="fa fa-file-text" aria-hidden="true"></i></span></div>
             <div class="content">
                 <div class="component-title"><p>Latest post</p></div>
                 <div>
@@ -45,7 +45,7 @@
             </div>
 		</div>
         <div class="home-component">
-            <div class="component-identifier">No<span class="inner">2</span></div>
+            <div class="component-identifier"><i class="fa fa-comments" aria-hidden="true"></i></div>
             <div class="content">
                 <div class="component-title"><p>Lastest comments</p></div>
                 <ul class="home-recent-comments">
