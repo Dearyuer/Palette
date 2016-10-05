@@ -21,6 +21,12 @@
                 <div class="banner-content">test</div>
             </div>
         </div>-->
+        <div class="home-component night-component">
+            <div class="component-identifier"><span class="home-posts-icon"><i class="fa fa-file-text" aria-hidden="true"></i></span></div>
+            <div class="content night-component-content">
+            </div>
+
+        </div>
 
         <div class="home-component">
             <div class="component-identifier"><span class="home-posts-icon"><i class="fa fa-file-text" aria-hidden="true"></i></span></div>
