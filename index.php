@@ -13,66 +13,58 @@
             </div>
         </div>
 
-        <!--<div class="row home-banner">
-            <div class="palette-col-1-2">
-                <div class="banner-content">test</div>
-            </div>
-            <div class="palette-col-1-2">
-                <div class="banner-content">test</div>
-            </div>
-        </div>-->
-        <div class="home-component night-component">
-            <div class="component-identifier"><span class="home-posts-icon"><i class="fa fa-file-text" aria-hidden="true"></i></span></div>
-            <div class="content night-component-content">
-            </div>
-
-        </div>
-
-        <div class="home-component">
-            <div class="component-identifier"><span class="home-posts-icon"><i class="fa fa-file-text" aria-hidden="true"></i></span></div>
-            <div class="content">
-                <div class="component-title"><p>Latest post</p></div>
-                <div>
-                    <?php 
-                    $home_latest_post = new WP_Query('posts_per_page=1');
-                    $home_latest_post_title = '';
-                    if($home_latest_post->have_posts()){
-                        while($home_latest_post->have_posts()){
-                            $home_latest_post->the_post();
-                            $home_latest_post_title = get_the_title();
-                            ?>
-                            <p><?php the_excerpt(); ?></p>
-                            <?php
+        <div class="row">
+            <div class="palette-col-5-10">
+                <div class="home-component">
+                    <div class="component-identifier"><span class="home-posts-icon"><i class="fa fa-file-text" aria-hidden="true"></i></span></div>
+                    <div class="content">
+                        <div class="component-title"><p>Latest post</p></div>
+                        <div class="component-content">
+                        <?php 
+                        $home_latest_post = new WP_Query('posts_per_page=1');
+                        $home_latest_post_title = '';
+                        if($home_latest_post->have_posts()){
+                            while($home_latest_post->have_posts()){
+                                $home_latest_post->the_post();
+                                $home_latest_post_title = get_the_title();
+                                ?>
+                                <p><?php the_excerpt(); ?></p>
+                                <?php
+                            }
                         }
-                    }
-                    wp_reset_postdata();
-                    ?>
+                        wp_reset_postdata();
+                        ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-		</div>
-        <div class="home-component">
-            <div class="component-identifier"><i class="fa fa-comments" aria-hidden="true"></i></div>
-            <div class="content">
-                <div class="component-title"><p>Lastest comments</p></div>
-                <ul class="home-recent-comments">
-                <?php 
-                $comments = get_comments(array(
-                    'number'      => 3,
-                    'status'      => 'approve',
-                    'post_status' => 'publish'
-                ));
-                foreach((array)$comments as $comment){
-                    echo '<li>';
-                    // echo '<div class="comment-avatar float-left clearfix"><a href="'.$comment->comment_author_url.'">'.get_avatar($comment,40).'</a></div>';
-                    echo '<div class="comment-author float-left clearfix">'.$comment->comment_author.'</div>';
-                        echo '<p class="home-comments">'.$comment->comment_content.'</p>';
-                    echo '</li>';
-                }
-                
-                ?>
-                </ul>
+            <div class="palette-col-5-10">
+                <div class="home-component">
+                    <div class="component-identifier"><i class="fa fa-comments" aria-hidden="true"></i></div>
+                    <div class="content">
+                        <div class="component-title"><p>Lastest comments</p></div>
+                        <ul class="home-recent-comments">
+                        <?php 
+                        $comments = get_comments(array(
+                            'number'      => 3,
+                            'status'      => 'approve',
+                            'post_status' => 'publish'
+                        ));
+                        foreach((array)$comments as $comment){
+                            echo '<li>';
+                            // echo '<div class="comment-avatar float-left clearfix"><a href="'.$comment->comment_author_url.'">'.get_avatar($comment,40).'</a></div>';
+                            echo '<div class="comment-author float-left clearfix">'.substr($comment->comment_author,0,1).'</div>';
+                                echo '<p class="home-comments">'.$comment->comment_content.'</p>';
+                            echo '</li>';
+                        }
+                        
+                        ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+
 
         <?php dynamic_sidebar('home_page'); ?>
         <div class="footer-info ">

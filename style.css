@@ -157,6 +157,18 @@ body {
 .center {
   text-align: center;
 }
+.palette-col-4-10 {
+  width: 40%;
+  float: left;
+}
+.palette-col-6-10 {
+  width: 60%;
+  float: left;
+}
+.palette-col-5-10 {
+  width: 50%;
+  float: left;
+}
 .header {
   height: 66px;
   font-size: 15px;
@@ -1567,6 +1579,9 @@ body {
   text-align: left;
   text-align: center;
 }
+.page-home .home-component .component-title p {
+  font-weight: 500;
+}
 .page-home .home-component .content {
   border-radius: 5px;
   background-color: white;
@@ -1595,8 +1610,8 @@ body {
 .page-home .home-component ul.home-recent-comments li .comment-author {
   border: 1px solid #03a9f4;
   color: #03a9f4;
-  padding: 0 15px;
-  border-radius: 12px;
+  padding: 0px 6px;
+  border-radius: 50%;
   margin-right: 10px;
 }
 .page-home .home-component ul.home-recent-comments li .home-comments {
