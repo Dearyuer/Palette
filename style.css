@@ -1106,7 +1106,7 @@ body {
 }
 .header,
 .footer,
-.blog-page-info,
+.page-info,
 .side-area,
 .main-area,
 .main-post {
@@ -1121,7 +1121,7 @@ body {
   -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
           transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.view-single .blog-page-info {
+.view-single .page-info {
   -webkit-transform: translate3d(-100vw, 0, 0);
           transform: translate3d(-100vw, 0, 0);
   -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -1547,23 +1547,10 @@ body {
   outline: none;
 }
 .page-home-bg {
-  background-image: url(http://codrips.com/wp-content/uploads/2016/10/Minimalistic_Picture_Laptop_Coffee_uhd-copy.png);
+  background-image: url(img/home-bg.png);
   background-repeat: no-repeat;
   background-position: center -100px;
   background-size: 100% auto;
-}
-.header-info {
-  text-align: center;
-  margin: 80px 0;
-}
-.header-info .info-title {
-  color: white;
-}
-.header-info .btn {
-  background-color: #03a9f4;
-  border: none !important;
-  color: white;
-  padding: 0;
 }
 .page-home {
   margin-bottom: 40px;
@@ -1574,6 +1561,30 @@ body {
 }
 .page-home .page-info p {
   color: white;
+}
+.page-home .header-info {
+  text-align: center;
+  margin: 0 0 0 0;
+}
+.page-home .header-info .indicator {
+  width: 10%;
+  margin: 0 auto;
+  border: 2px solid #03a9f4;
+}
+.page-home .header-info .btn {
+  background-color: #03a9f4;
+  border: none !important;
+  padding: 0;
+}
+.page-home .header-info .btn p {
+  color: white;
+  font-size: 17px;
+}
+.page-home .header-info .btn:hover {
+  background-color: white;
+}
+.page-home .header-info .btn:hover p {
+  color: #03a9f4;
 }
 .page-home .home-gallery {
   display: -webkit-box;
@@ -1588,126 +1599,33 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .page-home .home-gallery .home-grid {
-  height: 300px;
   padding: 20px;
   border: 1px solid #e6e6e6;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   width: 50%;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 .page-home .home-gallery .home-grid:hover {
-  background-color: #e6e6e6;
+  background-color: rgba(230, 230, 230, 0.7);
+  cursor: pointer;
 }
 .page-home .home-gallery .home-grid:last-child {
   margin-right: 0;
 }
-.page-home .home-info {
-  padding: 12px 0 0 0;
-}
-.page-home .home-info .title {
-  font-size: 20px;
-  font-weight: 500;
-}
-.page-home .home-info .description {
-  width: 500px;
-  font-size: 16px;
-}
-.page-home .home-banner {
-  margin: 25px;
-  margin-bottom: 10px;
-}
-.page-home .home-banner .banner-content {
-  margin: 10px;
-  padding: 30px;
-  background: white;
-  color: #03a9f4;
-  border-radius: 5px;
-}
-.page-home .home-component {
-  margin-top: 0px;
-  margin-bottom: 30px;
-  position: relative;
-  padding-left: 25px;
-  padding-top: 25px;
-  padding-right: 25px;
-}
-.page-home .home-component .component-identifier {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #03a9f4;
-  color: white;
+.page-home .home-gallery .home-grid .grid-title {
   text-align: center;
+  padding: 5px 0 20px 0;
+  font-size: 18px;
   font-weight: 300;
-  font-size: 21px;
-  line-height: 2.4em;
-  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25);
 }
-.page-home .home-component .component-identifier span.home-twitter-icon {
-  line-height: 2.5em;
-}
-.page-home .home-component .component-identifier span.home-posts-icon {
-  font-size: 17px;
-}
-.page-home .home-component .component-identifier span.home-evernote-icon {
-  display: block;
-  padding-top: 3px;
-}
-.page-home .home-component .component-title {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  margin-bottom: 0;
-  font-size: 0.83em;
-  padding: 8px 10px;
-  font-weight: 500;
-  text-align: left;
-  text-align: center;
-}
-.page-home .home-component .component-title p {
-  font-weight: 500;
-}
-.page-home .home-component .content {
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.07);
-  padding: 27px 35px;
-}
-.page-home .home-component .inner {
-  padding: 20px 0 70px 0;
-}
-.page-home .home-component .inner .sticky-note {
-  text-align: center;
-  padding: 20px 0 0 0;
-  font-size: 80px;
+.page-home .home-gallery .home-grid .grid-content {
+  letter-spacing: .5px;
   color: #666666;
-}
-.page-home .home-component .inner .title {
-  color: #666666;
-  text-align: center;
-}
-.page-home .home-component ul.home-recent-comments {
-  padding: 0;
-}
-.page-home .home-component ul.home-recent-comments li {
-  padding: 5px 0;
-}
-.page-home .home-component ul.home-recent-comments li .comment-author {
-  border: 1px solid #03a9f4;
-  color: #03a9f4;
-  padding: 0px 6px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.page-home .home-component ul.home-recent-comments li .home-comments {
-  font-size: 15px;
+  padding-bottom: 15px;
 }
 .page-home .footer-info {
   text-align: center;

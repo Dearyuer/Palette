@@ -13,31 +13,92 @@
                     </div>
                 </div>
             </div>
-
             <div class="header-info">
-
-                <button class="btn"><p class="info-title"><?php _e("Posts","palette"); ?></p></button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button class="btn"><a href="<?php echo home_url().'/blog'; ?>"><p class="info-title"><?php _e("Blog","palette"); ?></p></a></button>
+            <br>
+            
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+              <!--   <div class="indicator"></div> -->
             </div>
             <div class="row home-gallery">
+                <?php 
+                $home_latest_post = new WP_Query('posts_per_page=1');
+                $home_latest_post_title = '';
+                $home_latest_post_content = '';
+                if($home_latest_post->have_posts()){
+                    while($home_latest_post->have_posts()){
+                        $home_latest_post->the_post();
+                        $home_latest_post_title = get_the_title();
+                        $home_latest_post_content = get_the_excerpt();
+                    }
+                }
+                wp_reset_postdata();
+                ?>
                 <div class="home-grid">
-                    <div class="grid-title"></div>
-                    <div class="grid-content"></div>
+                    <p class="grid-title"><?php echo $home_latest_post_title; ?></p>
+                    <p class="grid-content">
+                        <?php //echo preg_replace('/(<pre>|<\/pre>|\s)/ig','',mb_substr($home_latest_post_content,0,250)).'...'; ?>
+                        <?php echo $home_latest_post_content; ?>
+                    </p>
                 </div>
-                <div class="home-grid"></div>
-                <div class="home-grid"></div>
+                <div class="home-grid">
+                    <?php 
+                    $home_latest_post = new WP_Query([
+                        'posts_per_page' => 1,
+                        'offset' => 1
+                        ]);
+                    if($home_latest_post->have_posts()){
+                        while($home_latest_post->have_posts()){
+                            $home_latest_post->the_post();
+                            $home_latest_post_title = get_the_title();
+                            $home_latest_post_content = get_the_excerpt();
+                        }
+                    }
+                    wp_reset_postdata();
+                    ?>
+                    <p class="grid-title"><?php echo $home_latest_post_title; ?></p>
+                    <p class="grid-content">
+                        <?php echo $home_latest_post_content; ?>
+                    </p>
+                </div>
+                <div class="home-grid">
+                    <?php 
+                    $home_latest_post = new WP_Query([
+                        'posts_per_page' => 1,
+                        'offset' => 2
+                        ]);
+                    if($home_latest_post->have_posts()){
+                        while($home_latest_post->have_posts()){
+                            $home_latest_post->the_post();
+                            $home_latest_post_title = get_the_title();
+                            $home_latest_post_content = get_the_excerpt();
+                        }
+                    }
+                    wp_reset_postdata();
+                    ?>
+                    <p class="grid-title"><?php echo $home_latest_post_title; ?></p>
+                    <p class="grid-content">
+                        <?php echo $home_latest_post_content; ?>
+                    </p>
+                </div>
             </div>
-            <!-- <div class="row home-gallery">
-                <div class="home-grid">1</div>
-                <div class="home-grid">2</div>
-                <div class="home-grid">3</div>
-            </div> -->
-
-
             <div class="footer-info ">
     			<button class="btn"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
     		</div>	
-
-
         	</div>
         </div>
     </div>

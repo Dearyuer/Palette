@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="row about-component">
-            awards
+            <!-- awards -->
         </div>
     </div>
 </div>
