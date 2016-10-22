@@ -16,9 +16,11 @@
             <div class="home-grid">1</div>
             <div class="home-grid">2</div>
             <div class="home-grid">3</div>
-            <div class="home-grid">4</div>
-            <div class="home-grid">5</div>
-
+        </div>
+        <div class="row home-gallery">
+            <div class="home-grid">1</div>
+            <div class="home-grid">2</div>
+            <div class="home-grid">3</div>
         </div>
 
 

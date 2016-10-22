@@ -1560,6 +1560,30 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+.page-home .home-gallery .home-grid {
+  height: 100px;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  background-color: white;
+  border-radius: 5px;
+  width: 50%;
+  margin-right: 20px;
+}
+.page-home .home-gallery .home-grid:hover {
+  background-color: #e6e6e6;
+}
+.page-home .home-gallery .home-grid:last-child {
+  margin-right: 0;
 }
 .page-home .home-info {
   padding: 12px 0 0 0;
