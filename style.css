@@ -169,6 +169,10 @@ body {
   width: 50%;
   float: left;
 }
+.palette-col-1-3 {
+  width: 33.3333%;
+  float: left;
+}
 .page-info {
   margin-top: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -1542,8 +1546,20 @@ body {
 .btn:focus {
   outline: none;
 }
+.header-info {
+  text-align: center;
+}
+.header-info img {
+  max-width: 50%;
+}
 .page-home {
   margin-bottom: 40px;
+}
+.page-home .home-gallery {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 .page-home .home-info {
   padding: 12px 0 0 0;
