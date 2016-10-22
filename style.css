@@ -1546,14 +1546,34 @@ body {
 .btn:focus {
   outline: none;
 }
+.page-home-bg {
+  background-image: url(http://codrips.com/wp-content/uploads/2016/10/Minimalistic_Picture_Laptop_Coffee_uhd-copy.png);
+  background-repeat: no-repeat;
+  background-position: center -100px;
+  background-size: 100% auto;
+}
 .header-info {
   text-align: center;
+  margin: 80px 0;
 }
-.header-info img {
-  max-width: 50%;
+.header-info .info-title {
+  color: white;
+}
+.header-info .btn {
+  background-color: #03a9f4;
+  border: none !important;
+  color: white;
+  padding: 0;
 }
 .page-home {
   margin-bottom: 40px;
+}
+.page-home .page-info {
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.page-home .page-info p {
+  color: white;
 }
 .page-home .home-gallery {
   display: -webkit-box;
@@ -1571,7 +1591,7 @@ body {
   margin-top: 20px;
 }
 .page-home .home-gallery .home-grid {
-  height: 100px;
+  height: 300px;
   padding: 20px;
   border: 1px solid #e6e6e6;
   background-color: white;

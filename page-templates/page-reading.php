@@ -7,7 +7,7 @@
 ?>
 <?php get_header(); ?>
 <div class="container clearfix">
-	<div class="page-home">
+	<div class="page-reading">
         <?php get_info(); ?>
     </div>
 </div>

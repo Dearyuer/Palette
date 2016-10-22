@@ -18,14 +18,31 @@
 		outline: none;
 	}
 }
+
+.page-home-bg{
+    background-image: url(http://codrips.com/wp-content/uploads/2016/10/Minimalistic_Picture_Laptop_Coffee_uhd-copy.png);
+    background-repeat: no-repeat;
+    background-position: center -100px;
+    background-size: 100% auto;
+    // padding-top: 75px;
+}
 .header-info{
     text-align: center;
-    img{
-        max-width: 50%;
+    margin:80px 0;
+    // img{
+    //     max-width: 50%;
+    // }
+    .info-title{
+        color:white;
+
+    }
+    .btn{
+        background-color: @deepskyblue;
+        border:none !important;
+        color:white;
+        padding:0;
     }
 }
-
-
 
 .page-home{
     //.content-mixin;
@@ -47,34 +64,33 @@
                 // border-radius:5px;
             // }
         // }
+    .page-info{
+        color:white;
+        border-bottom: 1px solid rgba(255, 255, 255, .4);
 
+        p{
+            color:white;
+        }
+    }
 
 
 
     .home-gallery{
+        // margin-top: 40px;
         display: flex;
         // flex-wrap: wrap;
         justify-content:space-between;
         align-items: center;
         margin-top: 20px;
         .home-grid{
-            height:100px;
+            height:300px;
             padding: 20px;
             border:1px solid #e6e6e6;
             background-color: white;
             border-radius: 5px;
             width: 50%;
             margin-right: 20px;
-             // box-shadow:2px 2px 7px rgba(0,0,0,.05);
-            // width: 30%;
-            // background-color: @deepskyblue;
-            // box-sizing: border-box;
-            // padding-right: 20px;
-            // height:50px;
             
-            //     // width: 100%;
-            //     height: 30px;
-            //     
             &:hover{
                 background-color: #e6e6e6;
             }
