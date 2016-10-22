@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pure Minus\n"
-"POT-Creation-Date: 2016-08-20 10:29+0800\n"
-"PO-Revision-Date: 2016-08-20 10:29+0800\n"
+"POT-Creation-Date: 2016-10-22 14:10+0800\n"
+"PO-Revision-Date: 2016-10-22 14:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -98,23 +98,27 @@ msgstr ""
 msgid "(Edit)"
 msgstr ""
 
-#: app/functions/main-menu.php:4
-msgid "You do not have sufficient permissions to access this page."
-msgstr ""
-
-#: app/functions/main-menu.php:37
+#: app/functions/main-menu.php:22
 msgid "There's an error while uploading"
 msgstr ""
 
-#: app/functions/main-menu.php:49
+#: app/functions/main-menu.php:34
 msgid "Uploaded."
 msgstr ""
 
-#: app/functions/main-menu.php:94
+#: app/functions/main-menu.php:49
+msgid "Choose a file..."
+msgstr ""
+
+#: app/functions/main-menu.php:58
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: app/functions/main-menu.php:124
 msgid "Updated settings"
 msgstr ""
 
-#: app/utils.php:8 app/widgets/twitter.php:51
+#: app/utils.php:8 app/widgets/home-twitter.php:50 app/widgets/twitter.php:52
 msgid "just now"
 msgstr "刚刚"
 
@@ -123,7 +127,7 @@ msgstr "刚刚"
 msgid "%d minutes ago"
 msgstr "%d 分钟前"
 
-#: app/utils.php:13 app/widgets/twitter.php:53
+#: app/utils.php:13 app/widgets/home-twitter.php:52 app/widgets/twitter.php:54
 msgid "half an hour ago"
 msgstr "半小时前"
 
@@ -132,7 +136,7 @@ msgstr "半小时前"
 msgid "%d hours ago"
 msgstr "%d 小时前"
 
-#: app/utils.php:18 app/widgets/twitter.php:55
+#: app/utils.php:18 app/widgets/home-twitter.php:54 app/widgets/twitter.php:56
 msgid "yesterday"
 msgstr "昨天"
 
@@ -141,50 +145,64 @@ msgstr "昨天"
 msgid "%d days ago"
 msgstr "%d 天前"
 
-#: app/utils.php:88
-msgid "Chinese"
-msgstr "英文"
-
-#: app/utils.php:108
-msgid "Activity"
-msgstr "动态"
-
-#: app/utils.php:109
-msgid "Archive"
-msgstr "归档"
-
-#: app/utils.php:110
-msgid "About"
-msgstr "关于"
-
-#: app/utils.php:117
-msgid "Theme"
-msgstr "主题"
-
-#: app/utils.php:120
-msgid "License"
-msgstr "条款"
-
-#: app/widgets.php:15
+#: app/widgets.php:24
 msgid "Sidebar"
 msgstr "边栏"
+
+#: app/widgets.php:36
+msgid "Home Page"
+msgstr ""
 
 #: app/widgets/evernote.php:14
 msgid "Palette Evernote"
 msgstr ""
 
-#: app/widgets/evernote.php:15
+#: app/widgets/evernote.php:15 app/widgets/home-evernote.php:15
 msgid "Recent notes"
 msgstr ""
 
-#: app/widgets/evernote.php:95
+#: app/widgets/evernote.php:95 app/widgets/home-evernote.php:87
 msgid "New title"
 msgstr ""
 
-#: app/widgets/evernote.php:103 app/widgets/recent-comments.php:63
-#: app/widgets/twitter.php:95
+#: app/widgets/evernote.php:103 app/widgets/home-evernote.php:95
+#: app/widgets/home-twitter.php:73 app/widgets/recent-comments.php:63
+#: app/widgets/twitter.php:96
 msgid "Number of comments to view"
 msgstr "评论数量"
+
+#: app/widgets/home-evernote.php:14
+msgid "Palette Home Evernote"
+msgstr ""
+
+#: app/widgets/home-twitter.php:7
+msgid "Palette Home Twitter"
+msgstr ""
+
+#: app/widgets/home-twitter.php:8 app/widgets/twitter.php:8
+msgid "Recent tweets"
+msgstr ""
+
+#: app/widgets/home-twitter.php:24
+msgid "Twitter"
+msgstr ""
+
+#: app/widgets/home-twitter.php:51 app/widgets/twitter.php:53
+msgid " minutes ago"
+msgstr " 分钟前"
+
+#: app/widgets/home-twitter.php:53 app/widgets/twitter.php:55
+msgid " hours ago"
+msgstr " 小时前"
+
+#: app/widgets/home-twitter.php:55 app/widgets/twitter.php:57
+msgid " days ago"
+msgstr " 天前"
+
+#: app/widgets/home-twitter.php:69 app/widgets/profile.php:105
+#: app/widgets/recent-posts.php:62 app/widgets/twitter.php:76
+msgid "Title:"
+msgstr ""
 
 #: app/widgets/profile.php:7
 msgid "Palette Profile"
@@ -192,11 +210,6 @@ msgstr ""
 
 #: app/widgets/profile.php:8
 msgid "Your profile"
-msgstr ""
-
-#: app/widgets/profile.php:105 app/widgets/recent-posts.php:62
-#: app/widgets/twitter.php:75
-msgid "Title:"
 msgstr ""
 
 #: app/widgets/profile.php:109
@@ -267,35 +280,19 @@ msgstr ""
 msgid "Palette Twitter"
 msgstr ""
 
-#: app/widgets/twitter.php:8
-msgid "Recent tweets"
-msgstr ""
-
-#: app/widgets/twitter.php:52
-msgid " minutes ago"
-msgstr " 分钟前"
-
-#: app/widgets/twitter.php:54
-msgid " hours ago"
-msgstr " 小时前"
-
-#: app/widgets/twitter.php:56
-msgid " days ago"
-msgstr " 天前"
-
-#: app/widgets/twitter.php:79
+#: app/widgets/twitter.php:80
 msgid "API Key:"
 msgstr ""
 
-#: app/widgets/twitter.php:83
+#: app/widgets/twitter.php:84
 msgid "API Secret:"
 msgstr ""
 
-#: app/widgets/twitter.php:87
+#: app/widgets/twitter.php:88
 msgid "Access Token:"
 msgstr ""
 
-#: app/widgets/twitter.php:91
+#: app/widgets/twitter.php:92
 msgid "Token Secret:"
 msgstr ""
 
@@ -307,40 +304,48 @@ msgstr ""
 msgid "Image for navigation bar logo."
 msgstr ""
 
-#: app/wrapper/wrapper-main.php:20
-msgid "Choose a file..."
-msgstr ""
-
-#: app/wrapper/wrapper-main.php:27
+#: app/wrapper/wrapper-main.php:23
 msgid "Transparent panel"
 msgstr ""
 
-#: app/wrapper/wrapper-main.php:34
+#: app/wrapper/wrapper-main.php:30
 msgid "Enable/Disable transparent panel"
 msgstr ""
 
-#: app/wrapper/wrapper-main.php:38
+#: app/wrapper/wrapper-main.php:34
 msgid "Twitter API key"
 msgstr ""
 
-#: app/wrapper/wrapper-main.php:47
+#: app/wrapper/wrapper-main.php:43
 msgid "Twitter API secret"
 msgstr ""
 
-#: app/wrapper/wrapper-main.php:57
+#: app/wrapper/wrapper-main.php:53
 msgid "Twitter user token"
 msgstr ""
 
-#: app/wrapper/wrapper-main.php:66
+#: app/wrapper/wrapper-main.php:62
 msgid "Twitter user secret"
 msgstr ""
 
-#: app/wrapper/wrapper-main.php:75
+#: app/wrapper/wrapper-main.php:71
 msgid "Github username"
 msgstr ""
 
-#: app/wrapper/wrapper-main.php:84
+#: app/wrapper/wrapper-main.php:80
 msgid "Evernote auth token"
+msgstr ""
+
+#: app/wrapper/wrapper-main.php:89
+msgid "Home logo"
+msgstr ""
+
+#: app/wrapper/wrapper-main.php:96
+msgid "Image for About page profile"
+msgstr ""
+
+#: app/wrapper/wrapper-main.php:102
+msgid "Awards count on about page"
 msgstr ""
 
 #: comments.php:11
@@ -366,11 +371,19 @@ msgstr "新的评论"
 msgid "Comments are closed."
 msgstr "评论关闭了"
 
-#: functions.php:30
+#: functions.php:48
 msgid "Nav Menu"
 msgstr "导航栏"
 
-#: functions.php:45
+#: functions.php:49
+msgid "Footer Left Menu"
+msgstr ""
+
+#: functions.php:50
+msgid "Footer Right Menu"
+msgstr ""
+
+#: functions.php:74
 msgid "Palette Theme"
 msgstr ""
 
@@ -378,23 +391,31 @@ msgstr ""
 msgid "You should update your browser!"
 msgstr "你的浏览器版本过低，请更新=）"
 
-#: index.php:35
+#: page-templates/page-blog.php:13
+msgid "Contribution"
+msgstr "代码贡献"
+
+#: page-templates/page-blog.php:27
+msgid "Posts"
+msgstr "博文"
+
+#: page-templates/page-blog.php:41
 msgid "Posted on"
 msgstr "发表于"
 
-#: index.php:48
+#: page-templates/page-blog.php:54
 msgid "in Category"
 msgstr "在分类"
 
-#: index.php:52
+#: page-templates/page-blog.php:58
 msgid "No comments"
 msgstr "0 则评论"
 
-#: index.php:52
+#: page-templates/page-blog.php:58
 msgid "1 comments"
 msgstr "1 则评论"
 
-#: index.php:52
+#: page-templates/page-blog.php:58
 #, php-format
 msgid "%s comments"
 msgstr "%s 则评论"
@@ -415,6 +436,24 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://codrips.com/"
 msgstr ""
+
+#~ msgid "Chinese"
+#~ msgstr "英文"
+
+#~ msgid "Activity"
+#~ msgstr "动态"
+
+#~ msgid "Archive"
+#~ msgstr "归档"
+
+#~ msgid "About"
+#~ msgstr "关于"
+
+#~ msgid "Theme"
+#~ msgstr "主题"
+
+#~ msgid "License"
+#~ msgstr "条款"
 
 #~ msgid "Language"
 #~ msgstr "语言"

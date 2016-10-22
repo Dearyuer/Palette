@@ -9,6 +9,7 @@ Template Name: Page Archives
 <?php get_header(); ?>
 <div class="container clearfix">
     <div class="page-archive">
+        <?php get_info(); ?>
         <div class="archi-content-before">
             <div class="category">
                 <div class="title">分类</div>
