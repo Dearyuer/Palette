@@ -1,6 +1,31 @@
 @media screen and (max-width: 767px) {
-
-
+	.page-home-bg{
+		background-position: center -10px!important;
+	}
+	.page-info{
+		display: none;
+		position: absolute;
+		opacity: 0;
+		top:-999;
+		left:-999;
+	}
+	.page-home{
+		.home-gallery{
+			display: block!important;
+			margin-top: 0!important;
+			.home-grid{
+				display: block;
+				width: 100%!important;
+				margin:0;
+				border-radius: 0px!important;
+				border:none!important;
+				border-bottom:1px solid @borderColor!important;
+				&:first-child{
+					border-top:1px solid @borderColor!important;
+				}
+			}
+		}
+	}
 
 	.header{
 		.navigation {
@@ -21,6 +46,12 @@
 			    		display: block;
 			    	}
 			    	
+			    }
+			    .site-logo{
+			    	display: none;
+			    }
+			    .search-bar{
+			    	display: none;
 			    }
 			    
 			}

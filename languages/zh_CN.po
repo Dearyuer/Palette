@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pure Minus\n"
-"POT-Creation-Date: 2016-10-22 20:09+0800\n"
-"PO-Revision-Date: 2016-10-22 20:10+0800\n"
+"POT-Creation-Date: 2016-10-23 15:04+0800\n"
+"PO-Revision-Date: 2016-10-23 15:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -348,26 +348,26 @@ msgstr ""
 msgid "Awards count on about page"
 msgstr ""
 
-#: comments.php:11
+#: comments.php:10
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 
-#: comments.php:18 comments.php:33
+#: comments.php:17 comments.php:32
 msgid "Comment navigation"
 msgstr "评论导航"
 
-#: comments.php:19 comments.php:34
+#: comments.php:18 comments.php:33
 msgid "&larr; Older Comments"
 msgstr "&larr; 旧的评论"
 
-#: comments.php:20 comments.php:35
+#: comments.php:19 comments.php:34
 msgid "Newer Comments &rarr;"
 msgstr "新的评论"
 
-#: comments.php:41
+#: comments.php:40
 msgid "Comments are closed."
 msgstr "评论关闭了"
 
@@ -395,6 +395,10 @@ msgstr "你的浏览器版本过低，请更新=）"
 msgid "Blog"
 msgstr "博客"
 
+#: index.php:65 page-templates/page-blog.php:54
+msgid "in Category"
+msgstr "分类"
+
 #: page-templates/page-blog.php:13
 msgid "Contribution"
 msgstr "代码贡献"
@@ -406,10 +410,6 @@ msgstr "博文"
 #: page-templates/page-blog.php:41
 msgid "Posted on"
 msgstr "发表于"
-
-#: page-templates/page-blog.php:54
-msgid "in Category"
-msgstr "在分类"
 
 #: page-templates/page-blog.php:58
 msgid "No comments"
@@ -440,6 +440,15 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://codrips.com/"
 msgstr ""
+
+#~ msgid "in the"
+#~ msgstr "在分类"
+
+#~ msgid "Category"
+#~ msgstr "中"
+
+#~ msgid "Cate"
+#~ msgstr "中"
 
 #~ msgid "Chinese"
 #~ msgstr "英文"

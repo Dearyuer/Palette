@@ -53,10 +53,10 @@ $palette_settings_cache = new Palette_Settings_Cache;
 function get_info(){
 	echo '
      <div class="row page-info">
-        <div class="palette-col-8-100">
+        <div class="palette-col-8-100 info-left">
             <div class="info-icon ">'.mb_substr(get_the_title(),0,1).'</div>
         </div>
-        <div class="palette-col-92-100">
+        <div class="palette-col-92-100 info-right">
             <div class="info-text">
                 <h2 class="title">'.get_the_title().'</h2>
                 <p class="description">'.get_bloginfo('description').'</p>
