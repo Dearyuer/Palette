@@ -2,7 +2,6 @@
 	return;
 }
 ?>
-
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : ?>
 
@@ -44,7 +43,5 @@
 	<?php endif; // have_comments() ?>
 
 	<?php palette_comment_form(); ?>
-
-	
 
 </div><!-- #comments -->
