@@ -173,6 +173,18 @@ body {
   width: 33.3333%;
   float: left;
 }
+.palette-col-2-3 {
+  width: 66.6666%;
+  float: left;
+}
+.palette-col-3-10 {
+  width: 30%;
+  float: left;
+}
+.palette-col-7-10 {
+  width: 70%;
+  float: left;
+}
 .page-info {
   margin-top: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -1711,6 +1723,25 @@ body {
 }
 .page-msg-board .comments-area .comment-list {
   padding-top: 80px;
+}
+.page-workshop .workshop-component {
+  margin-top: 15px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.07);
+}
+.page-workshop .workshop-component .workshop-title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 0.83em;
+  padding: 8px 10px;
+  font-weight: 500;
+  text-align: left;
+}
+.page-workshop .workshop-component .workshop-content {
+  padding: 20px;
 }
 .main-post {
   -webkit-transition: background-color 0.2s;

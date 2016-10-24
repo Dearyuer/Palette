@@ -1,19 +1,31 @@
 <?php 
 
 /*
-Template Name: Workshop
+Template Name: Page Workshop
 */
 
 ?>
 <?php get_header(); ?>
 <div class="container clearfix">
-    <div class="workshop">
+    <div class="page-workshop">
 	    <?php get_info(); ?>
-        <div class="ws-header">
-            <h1>Workshop</h1>
-            <p>this is a content</p>
-
-        </div>
+		<div class="workshop-area row">
+		    <div class="palette-col-2-3">
+		    	<div class="workshop-component">
+		    		<div class="workshop-title">
+		   			this is a title
+			   		</div>
+			    	<div class="workshop-content">
+			    		
+			    	</div>
+		    	</div>
+		   		
+		    	
+		    </div>
+		    <div class="palette-col-1-3">
+		    	
+		    </div>
+	    </div>
     </div>
 </div>
 <?php get_footer();?>
