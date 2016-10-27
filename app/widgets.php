@@ -8,6 +8,14 @@ require_once get_template_directory().'/app/widgets/recent-comments.php';
 require_once get_template_directory().'/app/widgets/home-evernote.php';
 require_once get_template_directory().'/app/widgets/home-twitter.php';
 
+// Activity page
+require_once get_template_directory().'/app/widgets/activity-codewars.php';
+require_once get_template_directory().'/app/widgets/activity-udemy.php';
+require_once get_template_directory().'/app/widgets/activity-steam.php';
+
+
+
+
 add_action( 'widgets_init', function(){
 	register_widget( 'Palette_Evernote_Widget' );
 	register_widget( 'Palette_Profile_Widget' );
@@ -17,6 +25,8 @@ add_action( 'widgets_init', function(){
 
     register_widget( 'Palette_Home_Evernote_Widget' );
     register_widget( 'Palette_Home_Twitter_Widget' );
+
+    register_widget( 'Palette_Activity_Codewars_Widget');
     /*
      * Register Blog sidebar
      */
@@ -41,6 +51,21 @@ add_action( 'widgets_init', function(){
         'after_title' => '</p></div>',
     ]);
 
+    /*
+     *
+     */
+    register_sidebar([
+        'id' => 'activity_page',
+        'name' => __('Activity Page'),
+        'description' => 'Add widget to activity page',
+        'before_widget' => '<div class="activity-component">',
+        'after_widget' => '</div>',
+        'before_title' => '<div class="component-title"><p>',
+        'after_title' => '</p></div>',
+    ]);
+
 
 });
+//add_action( 'widgets_init', create_function( '', "register_widget( 'Palette_Activity_Codewars_Widget' );" ) );
  ?>
+

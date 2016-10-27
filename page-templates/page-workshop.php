@@ -13,7 +13,6 @@ Template Name: Page Workshop
 		    <div class="palette-col-2-3">
 		    	<div class="workshop-component">
 		    		<div class="workshop-title">
-		   			this is a title
 			   		</div>
 			    	<div class="workshop-content">
 			    		
@@ -23,6 +22,7 @@ Template Name: Page Workshop
 		    	
 		    </div>
 		    <div class="palette-col-1-3">
+
 		    	
 		    </div>
 	    </div>
