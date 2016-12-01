@@ -5,8 +5,8 @@ require_once get_template_directory().'/app/widgets/twitter.php';
 require_once get_template_directory().'/app/widgets/recent-posts.php';
 require_once get_template_directory().'/app/widgets/recent-comments.php';
 // Home page
-require_once get_template_directory().'/app/widgets/home-evernote.php';
-require_once get_template_directory().'/app/widgets/home-twitter.php';
+// require_once get_template_directory().'/app/widgets/home-evernote.php';
+// require_once get_template_directory().'/app/widgets/home-twitter.php';
 
 // Activity page
 require_once get_template_directory().'/app/widgets/activity-codewars.php';
@@ -23,8 +23,8 @@ add_action( 'widgets_init', function(){
 	register_widget( 'Palette_Recent_Posts_Widget' );
 	register_widget( 'Palette_Comments_Widget' );
 
-    register_widget( 'Palette_Home_Evernote_Widget' );
-    register_widget( 'Palette_Home_Twitter_Widget' );
+    // register_widget( 'Palette_Home_Evernote_Widget' );
+    // register_widget( 'Palette_Home_Twitter_Widget' );
 
     register_widget( 'Palette_Activity_Codewars_Widget');
     /*
@@ -41,15 +41,15 @@ add_action( 'widgets_init', function(){
     /*
      * Register Home component
      */
-    register_sidebar([
-        'id' => 'home_page',
-        'name' => __('Home Page'),
-        'description' => 'Add widget to home page',
-        'before_widget' => '<div class="home-component">',
-        'after_widget' => '</div>',
-        'before_title' => '<div class="component-title"><p>',
-        'after_title' => '</p></div>',
-    ]);
+    // register_sidebar([
+    //     'id' => 'home_page',
+    //     'name' => __('Home Page'),
+    //     'description' => 'Add widget to home page',
+    //     'before_widget' => '<div class="home-component">',
+    //     'after_widget' => '</div>',
+    //     'before_title' => '<div class="component-title"><p>',
+    //     'after_title' => '</p></div>',
+    // ]);
 
     /*
      *
@@ -68,4 +68,3 @@ add_action( 'widgets_init', function(){
 });
 //add_action( 'widgets_init', create_function( '', "register_widget( 'Palette_Activity_Codewars_Widget' );" ) );
  ?>
-
