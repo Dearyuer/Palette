@@ -105,6 +105,12 @@
                 <input type="number" name="about_page_awards_count" value="<?php echo empty($retrieve_about_page_awards_count) ? 0 : $retrieve_about_page_awards_count;  ?>">
                 </td>
             </tr>
+            <tr>
+            	<th><?php echo __("Upload site Logo","palette"); ?></th>
+            	<td>
+            		<?php handle_img_form('site_logo_image_upload'); ?>
+            	</td>
+            </tr>
 
 		</tbody>
 		</table>

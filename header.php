@@ -4,6 +4,11 @@
 		<meta charset="<?php bloginfo('charset'); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title><?php bloginfo('name'); ?></title>
+		<?php 
+		$site_logo_img_src = get_option("palette_site_logo_image_src");
+		$optimize_site_logo_img_src = !empty($site_logo_img_src) ? $site_logo_img_src : get_bloginfo('template_directory')."/img/logo.png";
+		 ?>
+		<link rel="shortcut icon" type="image/png" href="<?php echo $site_logo_img_src; ?>"/>
 		<?php wp_head(); ?>
 	</head>
 	<!--[if lte IE 8]>

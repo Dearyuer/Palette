@@ -67,6 +67,8 @@ function palette_add_menu_page_fn() {
     $paletteOptionHomeLogoId = $paletteOptionPrefix.'home_logo_id';
     $paletteOptionAboutImgSrc = $paletteOptionPrefix.'about_avatar_image_src';
     $paletteOptionAboutImgId = $paletteOptionPrefix.'about_avatar_id';
+    $paletteOptionSiteImgId = $paletteOptionPrefix.'site_logo_id';
+    $paletteOptionSiteImgSrc = $paletteOptionPrefix.'site_logo_image_src';
     //state
 
     $transparent_effect_state;
@@ -76,11 +78,13 @@ function palette_add_menu_page_fn() {
     $palette_settings_cache->registerSetting($paletteOptionLogoImgSrc);
     $palette_settings_cache->registerSetting($paletteOptionLogoId);
     // $palette_settings_cache->registerSetting($paletteOptionParticle);
+    
     $palette_settings_cache->registerSetting($paletteOptionTransparence);
 
     handle_img_upload('logo_image_upload','post_id',$paletteOptionLogoId,$paletteOptionLogoImgSrc);
     handle_img_upload('home_logo_image_upload', 'post_id', $paletteOptionHomeLogoId, $paletteOptionHomeLogoImgSrc);
     handle_img_upload('about_avatar_image_upload', 'post_id', $paletteOptionAboutImgId, $paletteOptionAboutImgSrc);
+    handle_img_upload('site_logo_image_upload','post_id',$paletteOptionSiteImgId,$paletteOptionSiteImgSrc);
    //&& wp_verify_nonce( $_POST['logo_image_upload_nonce'], 'logo_image_upload' )
     
     if( isset($_POST['palette_settings_submit']) && check_admin_referer('palette_settings_submit', 'palette_settings_submit_nonce') ){
